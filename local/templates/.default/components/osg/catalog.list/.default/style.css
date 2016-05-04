@@ -1,0 +1,46 @@
+.sort {width:100%;}
+.sort div {float:left; padding:3px 3px 0px 0px;}
+.sort table td div {padding:3px 2px 0px 0px; height:18px;}
+.sort table td a {display:block; padding:3px 9px 0px 9px; height:18px; float:left; color:#476e95;}
+.sort table td a:hover {background:url('images/sort.gif'); color:#fff; text-decoration:none;}
+
+.sort table td.active a {color:#fff;background:url('images/sort.gif');padding-left:19px; }
+.sort table td.sort_down a {background:url('images/sort_down.gif'); background-position: 8px 10px; background-repeat:no-repeat;}
+.sort table td.sort_up a {background:url('images/sort_up.gif'); background-position: 8px 10px; background-repeat:no-repeat;}
+.sort table .active_a {background:url('images/sort.gif'); color:#fff;}
+.sort .padd_left {padding-left:9px;}
+.sort .show {padding-left:10px;}
+.sort .active {background:url('images/sort.gif');}
+
+.form_show {float:left; color:#969696; padding:8px 0px 15px 0px; border-bottom:1px solid #e5e5e5; width:100%;}
+
+.categody_line td {border-bottom:1px solid #e5e5e5; padding:16px 0px 16px 0px;}
+.categody_line img {border:4px solid #e5e5e5; margin-left:3px; float:left}
+.category_href {color:#476e95; font-size:14px; display:block; margin:5px 0px 15px 0px;}
+.category_href:hover {color:#ed155c;}
+.category_content {margin-right:10px;}
+.category_content h3 {font-size:1.5em; color:#ef135b; font-weight:100; float:left; width:100%;}
+.category_content img {border:0px; vertical-align:middle; margin-right:0px; }
+.category_content span img {margin-right:1px; vertical-align:middle; margin-top:0px;}
+.category_content .yes {color:#88ae5b;}
+.category_content .no {color:#ff0101;}
+.category_content p {float:left; color:#666; margin:7px 0px 7px 0px; width:100%;}
+.category_content span {float:left; margin-right:1px; vertical-align:middle;}
+.category_content span a {color:#000; text-decoration:none; border-bottom:1px dashed #000;}
+.category_content span a:hover {color:#ef135b; text-decoration:none; border-bottom:1px dashed #ef135b;}
+.category_content .status img { margin-top:4px; margin-bottom:7px;}
+.category_content .status span img {margin-top:0px;}
+.category_content .status { padding-top:5px; width:100%; float:left;}
+.category_content div.add_box { padding:2px 20px; background:#e7e5e8; float:left; margin-top:5px;}
+
+
+
+.catalog_mozaic td {padding:12px 0px 20px 0px; border-bottom:1px solid #e5e4df; vertical-align:bottom;}
+.catalog_img_small {width:100%; height:20px; text-align:center; padding-bottom:7px;}
+.catalog_img_small img {margin:0px 7px;}
+.catalog_mozaic span {font-size:1.5em; color:#ef135b;}
+.name {color:#000; display:block; position:relative; width:200px;}
+.name:hover {color:#ef135b;}
+
+.img_tovar {width:114px; margin:6px auto 10px auto; border:4px solid #e5e5e5;}
+.img_tovar img {display:block;}

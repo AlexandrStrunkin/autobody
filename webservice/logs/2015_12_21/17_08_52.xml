@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body><ProcResetStatus xmlns="http://tempuri.org/"><Login>s1</Login><Command>0</Command><Data>P8rRQft8fFYdJrTi2xe19A==</Data><Response>ResetStatus: System.Exception(System.InvalidOperationException): Клиент обнаружил тип содержимого ответа "text/html; charset=UTF-8", но ожидается тип "text/xml".
+Сбой запроса с сообщением об ошибке:
+--
+&lt;br /&gt;
+&lt;b&gt;Warning&lt;/b&gt;:  Unknown: Unable to allocate memory for pool. in &lt;b&gt;Unknown&lt;/b&gt; on line &lt;b&gt;0&lt;/b&gt;&lt;br /&gt;
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://tempuri.org/"&gt;&lt;SOAP-ENV:Body&gt;&lt;ns1:ProcResetStatusResponse&gt;&lt;ns1:ProcResetStatusResult&gt;0&lt;/ns1:ProcResetStatusResult&gt;&lt;ns1:Data&gt;&lt;/ns1:Data&gt;&lt;ns1:Response&gt;All Right!&lt;/ns1:Response&gt;&lt;/ns1:ProcResetStatusResponse&gt;&lt;/SOAP-ENV:Body&gt;&lt;/SOAP-ENV:Envelope&gt;
+ 
+--.</Response></ProcResetStatus></soap:Body></soap:Envelope>

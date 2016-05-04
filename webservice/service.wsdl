@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:types>
+        <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+            <s:element name="Add">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="1" maxOccurs="1" name="a" type="s:int" />
+                        <s:element minOccurs="1" maxOccurs="1" name="b" type="s:int" />
+                    </s:sequence>
+
+                </s:complexType>
+            </s:element>
+            <s:element name="AddResponse">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="1" maxOccurs="1" name="AddResult" type="s:int" />
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+
+            <s:element name="MakeWSWait">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="1" maxOccurs="1" name="mode" type="s:int" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Comments" type="s:string" />
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="MakeWSWaitResponse">
+
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="1" maxOccurs="1" name="MakeWSWaitResult" type="s:int" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Comments" type="s:string" />
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="GetMetaInfo">
+                <s:complexType>
+
+                    <s:sequence>
+                        <s:element minOccurs="1" maxOccurs="1" name="mode" type="s:int" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Version" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Comments" type="s:string" />
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="GetMetaInfoResponse">
+                <s:complexType>
+
+                    <s:sequence>
+                        <s:element minOccurs="1" maxOccurs="1" name="GetMetaInfoResult" type="s:int" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Version" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Comments" type="s:string" />
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="GetLocalHostIPList">
+                <s:complexType />
+
+            </s:element>
+            <s:element name="GetLocalHostIPListResponse">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="GetLocalHostIPListResult" type="s:string" />
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="GetDataBack">
+
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="Command" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Reserved" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Data" type="s:base64Binary" />
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="GetDataBackResponse">
+
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="GetDataBackResult" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Command" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Reserved" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Data" type="s:base64Binary" />
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+
+            <s:element name="SendXML2Server">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="Login" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Command" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Reserved" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Data" type="s:base64Binary" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Response" type="s:string" />
+                    </s:sequence>
+
+                </s:complexType>
+            </s:element>
+            <s:element name="SendXML2ServerResponse">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="1" maxOccurs="1" name="SendXML2ServerResult" type="s:int" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Reserved" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Data" type="s:base64Binary" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Response" type="s:string" />
+
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="GetNewOrders">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="Login" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Command" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Reserved" type="s:string" />
+
+                        <s:element minOccurs="0" maxOccurs="1" name="Data" type="s:base64Binary" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Response" type="s:string" />
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="GetNewOrdersResponse">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="1" maxOccurs="1" name="GetNewOrdersResult" type="s:int" />
+
+                        <s:element minOccurs="0" maxOccurs="1" name="Reserved" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Data" type="s:base64Binary" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Response" type="s:string" />
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="GetDataFromServer">
+                <s:complexType>
+                    <s:sequence>
+
+                        <s:element minOccurs="0" maxOccurs="1" name="Login" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Command" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Reserved" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Data" type="s:base64Binary" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Response" type="s:string" />
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="GetDataFromServerResponse">
+
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="1" maxOccurs="1" name="GetDataFromServerResult" type="s:int" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Reserved" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Data" type="s:base64Binary" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Response" type="s:string" />
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+
+            <s:element name="ProcResetStatus">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="Login" type="s:string" />
+                        <s:element minOccurs="1" maxOccurs="1" name="Command" type="s:int" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Data" type="s:base64Binary" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Response" type="s:string" />
+                    </s:sequence>
+                </s:complexType>
+
+            </s:element>
+            <s:element name="ProcResetStatusResponse">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="1" maxOccurs="1" name="ProcResetStatusResult" type="s:int" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Data" type="s:base64Binary" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Response" type="s:string" />
+                    </s:sequence>
+                </s:complexType>
+
+            </s:element>
+            <s:element name="ProcClearShopsInfo">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="Login" type="s:string" />
+                        <s:element minOccurs="1" maxOccurs="1" name="Command" type="s:int" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Data" type="s:base64Binary" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Response" type="s:string" />
+                    </s:sequence>
+
+                </s:complexType>
+            </s:element>
+            <s:element name="ProcClearShopsInfoResponse">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="1" maxOccurs="1" name="ProcClearShopsInfoResult" type="s:int" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Data" type="s:base64Binary" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Response" type="s:string" />
+                    </s:sequence>
+
+                </s:complexType>
+            </s:element>
+            <s:element name="SendFile2Server">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="Login" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="FileName" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Reserved" type="s:string" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Data" type="s:base64Binary" />
+
+                        <s:element minOccurs="0" maxOccurs="1" name="Response" type="s:string" />
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="SendFile2ServerResponse">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="1" maxOccurs="1" name="SendFile2ServerResult" type="s:int" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Reserved" type="s:string" />
+
+                        <s:element minOccurs="0" maxOccurs="1" name="Data" type="s:base64Binary" />
+                        <s:element minOccurs="0" maxOccurs="1" name="Response" type="s:string" />
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+        </s:schema>
+    </wsdl:types>
+    <wsdl:message name="AddSoapIn">
+        <wsdl:part name="parameters" element="tns:Add" />
+
+    </wsdl:message>
+    <wsdl:message name="AddSoapOut">
+        <wsdl:part name="parameters" element="tns:AddResponse" />
+    </wsdl:message>
+    <wsdl:message name="MakeWSWaitSoapIn">
+        <wsdl:part name="parameters" element="tns:MakeWSWait" />
+    </wsdl:message>
+    <wsdl:message name="MakeWSWaitSoapOut">
+        <wsdl:part name="parameters" element="tns:MakeWSWaitResponse" />
+
+    </wsdl:message>
+    <wsdl:message name="GetMetaInfoSoapIn">
+        <wsdl:part name="parameters" element="tns:GetMetaInfo" />
+    </wsdl:message>
+    <wsdl:message name="GetMetaInfoSoapOut">
+        <wsdl:part name="parameters" element="tns:GetMetaInfoResponse" />
+    </wsdl:message>
+    <wsdl:message name="GetLocalHostIPListSoapIn">
+        <wsdl:part name="parameters" element="tns:GetLocalHostIPList" />
+
+    </wsdl:message>
+    <wsdl:message name="GetLocalHostIPListSoapOut">
+        <wsdl:part name="parameters" element="tns:GetLocalHostIPListResponse" />
+    </wsdl:message>
+    <wsdl:message name="GetDataBackSoapIn">
+        <wsdl:part name="parameters" element="tns:GetDataBack" />
+    </wsdl:message>
+    <wsdl:message name="GetDataBackSoapOut">
+        <wsdl:part name="parameters" element="tns:GetDataBackResponse" />
+
+    </wsdl:message>
+    <wsdl:message name="SendXML2ServerSoapIn">
+        <wsdl:part name="parameters" element="tns:SendXML2Server" />
+    </wsdl:message>
+    <wsdl:message name="SendXML2ServerSoapOut">
+        <wsdl:part name="parameters" element="tns:SendXML2ServerResponse" />
+    </wsdl:message>
+    <wsdl:message name="GetNewOrdersSoapIn">
+        <wsdl:part name="parameters" element="tns:GetNewOrders" />
+
+    </wsdl:message>
+    <wsdl:message name="GetNewOrdersSoapOut">
+        <wsdl:part name="parameters" element="tns:GetNewOrdersResponse" />
+    </wsdl:message>
+    <wsdl:message name="GetDataFromServerSoapIn">
+        <wsdl:part name="parameters" element="tns:GetDataFromServer" />
+    </wsdl:message>
+    <wsdl:message name="GetDataFromServerSoapOut">
+        <wsdl:part name="parameters" element="tns:GetDataFromServerResponse" />
+
+    </wsdl:message>
+    <wsdl:message name="ProcResetStatusSoapIn">
+        <wsdl:part name="parameters" element="tns:ProcResetStatus" />
+    </wsdl:message>
+    <wsdl:message name="ProcResetStatusSoapOut">
+        <wsdl:part name="parameters" element="tns:ProcResetStatusResponse" />
+    </wsdl:message>
+    <wsdl:message name="ProcClearShopsInfoSoapIn">
+        <wsdl:part name="parameters" element="tns:ProcClearShopsInfo" />
+
+    </wsdl:message>
+    <wsdl:message name="ProcClearShopsInfoSoapOut">
+        <wsdl:part name="parameters" element="tns:ProcClearShopsInfoResponse" />
+    </wsdl:message>
+    <wsdl:message name="SendFile2ServerSoapIn">
+        <wsdl:part name="parameters" element="tns:SendFile2Server" />
+    </wsdl:message>
+    <wsdl:message name="SendFile2ServerSoapOut">
+        <wsdl:part name="parameters" element="tns:SendFile2ServerResponse" />
+
+    </wsdl:message>
+    <wsdl:portType name="UtilSoap">
+        <wsdl:operation name="Add">
+            <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Returns sum of 2 integers. Just for fun and test</documentation>
+            <wsdl:input message="tns:AddSoapIn" />
+            <wsdl:output message="tns:AddSoapOut" />
+        </wsdl:operation>
+        <wsdl:operation name="MakeWSWait">
+
+            <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Experimantal method to test some async aspects</documentation>
+            <wsdl:input message="tns:MakeWSWaitSoapIn" />
+            <wsdl:output message="tns:MakeWSWaitSoapOut" />
+        </wsdl:operation>
+        <wsdl:operation name="GetMetaInfo">
+            <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Returns meta info on web-service to client</documentation>
+            <wsdl:input message="tns:GetMetaInfoSoapIn" />
+            <wsdl:output message="tns:GetMetaInfoSoapOut" />
+
+        </wsdl:operation>
+        <wsdl:operation name="GetLocalHostIPList">
+            <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Returns IPList of local host</documentation>
+            <wsdl:input message="tns:GetLocalHostIPListSoapIn" />
+            <wsdl:output message="tns:GetLocalHostIPListSoapOut" />
+        </wsdl:operation>
+        <wsdl:operation name="GetDataBack">
+            <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">try to send data back to client</documentation>
+
+            <wsdl:input message="tns:GetDataBackSoapIn" />
+            <wsdl:output message="tns:GetDataBackSoapOut" />
+        </wsdl:operation>
+        <wsdl:operation name="SendXML2Server">
+            <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Gets the XML from client and updates server database</documentation>
+            <wsdl:input message="tns:SendXML2ServerSoapIn" />
+            <wsdl:output message="tns:SendXML2ServerSoapOut" />
+        </wsdl:operation>
+
+        <wsdl:operation name="GetNewOrders">
+            <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Sends information on orders to client in XML form</documentation>
+            <wsdl:input message="tns:GetNewOrdersSoapIn" />
+            <wsdl:output message="tns:GetNewOrdersSoapOut" />
+        </wsdl:operation>
+        <wsdl:operation name="GetDataFromServer">
+            <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Sends information to the client in XML form</documentation>
+            <wsdl:input message="tns:GetDataFromServerSoapIn" />
+
+            <wsdl:output message="tns:GetDataFromServerSoapOut" />
+        </wsdl:operation>
+        <wsdl:operation name="ProcResetStatus">
+            <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Resets status of new users and orders so that they won't be returned from the server next time</documentation>
+            <wsdl:input message="tns:ProcResetStatusSoapIn" />
+            <wsdl:output message="tns:ProcResetStatusSoapOut" />
+        </wsdl:operation>
+        <wsdl:operation name="ProcClearShopsInfo">
+
+            <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Clears tables on the server according to Command</documentation>
+            <wsdl:input message="tns:ProcClearShopsInfoSoapIn" />
+            <wsdl:output message="tns:ProcClearShopsInfoSoapOut" />
+        </wsdl:operation>
+        <wsdl:operation name="SendFile2Server">
+            <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Saves sent file to file system</documentation>
+            <wsdl:input message="tns:SendFile2ServerSoapIn" />
+            <wsdl:output message="tns:SendFile2ServerSoapOut" />
+
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="UtilSoap" type="tns:UtilSoap">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+        <wsdl:operation name="Add">
+            <soap:operation soapAction="http://tempuri.org/Add" style="document" />
+            <wsdl:input>
+                <soap:body use="literal" />
+            </wsdl:input>
+
+            <wsdl:output>
+                <soap:body use="literal" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="MakeWSWait">
+            <soap:operation soapAction="http://tempuri.org/MakeWSWait" style="document" />
+            <wsdl:input>
+                <soap:body use="literal" />
+            </wsdl:input>
+
+            <wsdl:output>
+                <soap:body use="literal" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetMetaInfo">
+            <soap:operation soapAction="http://tempuri.org/GetMetaInfo" style="document" />
+            <wsdl:input>
+                <soap:body use="literal" />
+            </wsdl:input>
+
+            <wsdl:output>
+                <soap:body use="literal" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetLocalHostIPList">
+            <soap:operation soapAction="http://tempuri.org/GetLocalHostIPList" style="document" />
+            <wsdl:input>
+                <soap:body use="literal" />
+            </wsdl:input>
+
+            <wsdl:output>
+                <soap:body use="literal" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetDataBack">
+            <soap:operation soapAction="http://tempuri.org/GetDataBack" style="document" />
+            <wsdl:input>
+                <soap:body use="literal" />
+            </wsdl:input>
+
+            <wsdl:output>
+                <soap:body use="literal" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="SendXML2Server">
+            <soap:operation soapAction="http://tempuri.org/SendXML2Server" style="document" />
+            <wsdl:input>
+                <soap:body use="literal" />
+            </wsdl:input>
+
+            <wsdl:output>
+                <soap:body use="literal" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetNewOrders">
+            <soap:operation soapAction="http://tempuri.org/GetNewOrders" style="document" />
+            <wsdl:input>
+                <soap:body use="literal" />
+            </wsdl:input>
+
+            <wsdl:output>
+                <soap:body use="literal" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetDataFromServer">
+            <soap:operation soapAction="http://tempuri.org/GetDataFromServer" style="document" />
+            <wsdl:input>
+                <soap:body use="literal" />
+            </wsdl:input>
+
+            <wsdl:output>
+                <soap:body use="literal" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="ProcResetStatus">
+            <soap:operation soapAction="http://tempuri.org/ProcResetStatus" style="document" />
+            <wsdl:input>
+                <soap:body use="literal" />
+            </wsdl:input>
+
+            <wsdl:output>
+                <soap:body use="literal" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="ProcClearShopsInfo">
+            <soap:operation soapAction="http://tempuri.org/ProcClearShopsInfo" style="document" />
+            <wsdl:input>
+                <soap:body use="literal" />
+            </wsdl:input>
+
+            <wsdl:output>
+                <soap:body use="literal" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="SendFile2Server">
+            <soap:operation soapAction="http://tempuri.org/SendFile2Server" style="document" />
+            <wsdl:input>
+                <soap:body use="literal" />
+            </wsdl:input>
+
+            <wsdl:output>
+                <soap:body use="literal" />
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="Util">
+        <wsdl:port name="UtilSoap" binding="tns:UtilSoap">
+            <soap:address location="http://fodex/webservice/" />
+        </wsdl:port>
+
+    </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,78 @@
+/* Page */
+
+/*ul, ul li{list-style: none;}
+ul.text {margin-bottom: 1em; line-height: 1.5em; height: 34px;}
+h2 {font: normal 26px Arial, sans-serif; padding: 20px 0; margin: 0 0 30px 0;}*/
+
+
+
+/* Page */
+.graphite {width: 99.5%}
+
+.demo-container ul, .demo-container ul li{list-style: none; width: 100%; float: left; padding:  0 0 0 0; margin: 0 0 0 0;  }
+
+.demo-container > ul > li > ul{  font:13px Arial, sans-serif;list-style: none; width: 100%; padding:  0 0 0 0px;; margin: 0 0 0 0;line-height: 1.3em;}
+
+.dgraphite demo-container ul.text {margin-bottom: 1em; line-height: 1.5em; height: 34px;padding: 0 0 0 0;}
+.demo-container .text-center {text-align: center;}
+.demo-container h2 { padding: 0 0 0 0; margin: 0 0 30px 0;}
+.demo-container .wrap {width: 100%; margin: 0 auto;}
+.demo-container .demo-container {padding: 0; float: left; width: 100%;}
+.demo-container .demo-container h4 {font-size: 12px; margin: 0 0 5px 0;}
+
+.demo-container a {
+	color: #448ccb;
+	text-decoration: none;
+	border-bottom: 1px solid #caddee;
+	padding-bottom: 2px;
+	font-size: 12px;
+}
+.demo-container a:hover {
+	color: #333333;
+	/*text-decoration: underline;*/
+}
+.demo-container .dcjq-count {float: right; padding: 0 0 0 0;}
+
+.dcjq-icon	{
+	width: 10px;
+	height: 10px;
+}
+
+.graphite .accordion > li > ul > li > ul > li > ul  { font:12px Arial, sans-serif; float: right; }
+
+.graphite .accordion > li > ul > li > ul > li > ul > li > ul  { font:11px Arial, sans-serif; float: right; }
+
+.graphite .accordion{font: bold 13px Arial, sans-serif; float: right; }
+
+.graphite .accordion, .graphite .accordion li {margin: 0; padding: 0; border: none;}
+.graphite .accordion > li  {background: url(/img/menu_big_arrow.png) no-repeat; padding-left:20px; background-position: left 15px ; }
+.graphite .accordion > li > a {padding: 10px 10px 10px 4px;height: 13px;  display: block; color: #448ccb;  position: relative; font: 15px Times New Roman;  }
+.graphite .accordion > ul > a {color: #448ccb; border-bottom: 1px solid #caddee;}
+.graphite .accordion > li > a.dcjq-parent, .graphite .accordion > li > a.dcjq-parent:hover { }
+.graphite .accordion  li ul  a.dcjq-parent {clear: both;    padding: 0 0 2px 5px;   border-bottom: 1px dashed #caddee; line-height:23px;} 
+.graphite .accordion  li ul  li {  padding-left:+10px; text-align: left; line-height:23px; }
+.graphite .accordion  li ul  li ul li{  padding-left:+20px; text-align: left; line-height:23px; } 
+.graphite .accordion  li ul   {padding-top: 0px;}
+.graphite .accordion li ul  a.dcjq-parent:hover { /*text-decoration: underline;*/ color: #666666;}
+.graphite .accordion li ul  a.dcjq-parent.active {color: #666666; text-decoration: none; border: none;}
+.graphite .accordion li ul  a.dcjq-parent.active  {padding: 0 0 0 5px;  z-index: 10000;}
+
+.graphite .accordion  > li > a.dcjq-parent.active {  color: #666666; background: none;  }
+
+.graphite .accordion  li > ul >.dcjq-parent-li span {background: url(/img/menu_small_noactive_arrow.png) no-repeat; float: left; width: 5px; background-position: 0 8px; height: 16px;}
+.graphite .accordion  li  span{}
+.graphite .accordion > li > a .dcjq-icon {position: absolute; top: 50%; left: 14px; width: 20px; margin-top: -17px; height: 34px; }
+
+.graphite .accordion > li > ul > li a.dcjq-parent.active  .dcjq-icon { width: 5px; background: url(/img/menu_small_active_arrow.png) no-repeat; float: left; background-position: 0 8px;height: 16px;}
+
+.graphite .accordion > li > ul > li a.dcjq-parent:hover { /*text-decoration: underline;*/ color: #666666;}
+
+.graphite .accordion > li > a.dcjq-parent.active > .dcjq-icon { }
+.graphite .accordion > li > a:hover { color: #464646;}
+.graphite .accordion > li > a:active{}
+
+
+.graphite .accordion > li > a {border-bottom: none;}
+.graphite .accordion > li > a >.lv1 {padding-bottom: 2px; border-bottom: 1px solid #caddee;font-size: 15px;}
+
+.graphite .accordion > li > a:hover >.lv1 {padding-bottom: 2px; }

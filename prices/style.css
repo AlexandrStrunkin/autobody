@@ -1,0 +1,9 @@
+.subscribe-form input[type="text"] {
+    color: #807971;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 20px;
+    border: 2px solid #d3d3d3;
+    outline: none;
+    background: white;
+}

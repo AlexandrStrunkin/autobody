@@ -1,0 +1,6 @@
+.compare_table td{padding:10px; margin:0px;}
+.top_border {border-top:1px dashed #bfbfbf;}
+.left_border  {border-left:1px dashed #bfbfbf;}
+.compare_table span {color:#486F96;}
+.compare_table {margin-bottom:100px}
+.title {font-style:italic; color:#486F96; font-size:14px;}

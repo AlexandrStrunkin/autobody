@@ -1,0 +1,6 @@
+<?
+$sSectionName = "Брэнды";
+$arDirProperties = Array(
+
+);
+?>

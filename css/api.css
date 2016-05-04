@@ -1,0 +1,447 @@
+@font-face {
+    font-family: 'rouble';
+    src: url('/fonts/rouble.eot');
+    src: url('/fonts/rouble.eot') format('embedded-opentype'),
+    url('/fonts/rouble.woff2') format('woff2'),
+    url('/fonts/rouble.woff') format('woff'),
+    url('/fonts/rouble.ttf') format('truetype'),
+    url('/fonts/rouble.svg#ALSRublRegular') format('svg');
+}
+
+
+@font-face {
+    font-family: OpenSans;
+    src:url(/fonts/OpenSans-Regular.eot);
+}
+
+@font-face {
+    font-family: OpenSans;
+    src:url(/fonts/OpenSans-Regular.ttf);
+}
+
+@font-face {
+    font-family: OpenSans-Bold;
+    src:url(/fonts/OpenSans-Bold.eot);
+}
+
+@font-face {
+    font-family: OpenSans-Bold;
+    src:url(/fonts/OpenSans-Bold.ttf);
+}
+
+
+@font-face {
+    font-family: OpenSansLight;
+    src:url(/fonts/OpenSans-Light.eot);
+}
+
+@font-face {
+    font-family: OpenSansLight;
+    src:url(/fonts/OpenSans-Light.ttf);
+}
+
+
+@font-face {
+    font-family: OpenSansSemibold;
+    src:url(/fonts/OpenSansSemibold.eot);
+}
+
+@font-face {
+    font-family: OpenSansSemibold;
+    src:url(/fonts/OpenSansSemibold.ttf);
+}
+
+@font-face {
+    font-family: 'clear_sansbold';
+    src: url('/fonts/clearsans-bold.eot');
+    src: url('/fonts/clearsans-bold.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/clearsans-bold.woff') format('woff'),
+    url('/fonts/clearsans-bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'clear_sansbold_italic';
+    src: url('/fonts/clearsans-bolditalic.eot');
+    src: url('/fonts/clearsans-bolditalic.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/clearsans-bolditalic.woff') format('woff'),
+    url('/fonts/clearsans-bolditalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'clear_sansitalic';
+    src: url('/fonts/clearsans-italic.eot');
+    src: url('/fonts/clearsans-italic.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/clearsans-italic.woff') format('woff'),
+    url('/fonts/clearsans-italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'clear_sans_lightregular';
+    src: url('/fonts/clearsans-light.eot');
+    src: url('/fonts/clearsans-light.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/clearsans-light.woff') format('woff'),
+    url('/fonts/clearsans-light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'clear_sans_mediumregular';
+    src: url('/fonts/clearsans-medium.eot');
+    src: url('/fonts/clearsans-medium.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/clearsans-medium.woff') format('woff'),
+    url('/fonts/clearsans-medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'clear_sans_mediumitalic';
+    src: url('/fonts/clearsans-mediumitalic.eot');
+    src: url('/fonts/clearsans-mediumitalic.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/clearsans-mediumitalic.woff') format('woff'),
+    url('/fonts/clearsans-mediumitalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'clear_sansregular';
+    src: url('/fonts/clearsans-regular.eot');
+    src: url('/fonts/clearsans-regular.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/clearsans-regular.woff') format('woff'),
+    url('/fonts/clearsans-regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'clear_sans_thinregular';
+    src: url('/fonts/clearsans-thin.eot');
+    src: url('/fonts/clearsans-thin.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/clearsans-thin.woff') format('woff'),
+    url('/fonts/clearsans-thin.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PTSerifItalic';
+    src: url('/fonts/ptf56f.eot');
+    src: url('/fonts/ptf56f.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/ptf56f.woff') format('woff'),
+    url('/fomts/ptf56f.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'bebas_neuebold';
+    src: url('/fonts/bebasneue_bold.eot');
+    src: url('/fonts/bebasneue_bold.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/bebasneue_bold.woff') format('woff'),
+    url('/fonts/bebasneue_bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PTSerifBold';
+    src: url('/fonts/ptf75f.eot');
+    src: url('/fonts/ptf75f.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/ptf75f.woff') format('woff'),
+    url('/fonts/ptf75f.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'clear_sansbold';
+    src: url('/fonts/clearsans-bold.eot');
+    src: url('/fonts/clearsans-bold.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/clearsans-bold.woff') format('woff'),
+    url('/fonts/clearsans-bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'clear_sansregular';
+    src: url('/fonts/clearsans-regular.eot');
+    src: url('/fonts/clearsans-regular.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/clearsans-regular.woff') format('woff'),
+    url('/fonts/clearsans-regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PTSerifRegular';
+    src: url('/fonts/ptf55f.eot');
+    src: url('/fonts/ptf55f.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/ptf55f.woff') format('woff'),
+    url('/fonts/ptf55f.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PTSerifItalic';
+    src: url('/fonts/ptf56f.eot');
+    src: url('/fonts/ptf56f.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/ptf56f.woff') format('woff'),
+    url('/fonts/ptf56f.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/* Сброс стилей */
+html{color:#000;background:#FFF;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0}
+table{border-collapse:collapse;border-spacing:0}
+fieldset,img{border:0;margin:0}
+address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal}
+ol,ul{list-style:none}
+caption,th{text-align:left}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}
+q:before,q:after{content:''}
+abbr,acronym{border:0;font-variant:normal}
+sup{vertical-align:text-top}
+sub{vertical-align:text-bottom}
+input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit}
+input,textarea,select{font-size:100%}
+legend{color:#000}
+
+body{
+	height:100%;
+}
+
+.api_header{
+  background:#00A3CB;
+  color:white;
+  font-family: 'clear_sans_mediumregular';
+  font-size:21px;
+  height:60px;
+  line-height:60px;
+  padding-left:40px;
+  position:fixed;
+  width:100%;
+  z-index: 999;
+}
+
+.api_header a{
+	color:white;
+	text-decoration:none;
+}
+
+.api_body{
+	position:absolute;
+	height:100%;
+	width:100%;
+    padding-top: 60px;
+	/*-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;*/
+}
+
+.api_body > div{
+	display:inline-block;
+	height:100%;
+	vertical-align: top;
+}
+
+.api_left_menu{
+	width:25%;
+	background:#f3efeb;
+	padding-left: 40px;
+	position:fixed;
+	-ms-box-sizing: border-box; /* Для Firefox */ 
+	-webkit-box-sizing: border-box; /* Для Firefox */  
+	-moz-box-sizing: border-box; /* Для Firefox */  
+    box-sizing: border-box; /* Ширина блока с полями */
+}
+
+.api_left_menu h2{
+	font-family: 'clear_sansbold';
+	font-size:20px;
+	margin:15px 0;
+}
+
+.api_left_menu li{
+	border-bottom: 1px solid #E6E6E6;
+	margin-right: 15px;
+	margin-top: 5px;
+	font-size: 13px;
+	font-family: 'clear_sansbold';
+	list-style-type: none;
+	margin-left: 15px;
+}
+
+.api_left_menu li a{
+	line-height: 40px;
+	width: 190px;
+	color: black;
+	text-decoration: none;
+}
+
+.api_content{
+	width:74%;
+	margin-left:25%;
+	padding-bottom:40px;
+}
+
+.api_content h2{
+	font-family: 'clear_sansbold';
+	font-size:20px;
+	margin:15px 20px;
+}
+
+.api_content p{
+	font-family: 'PTSerifItalic';
+	font-size:20px;
+	margin:15px 20px;
+	color: #7F7F7F;
+}
+
+.api_content .method_desc{
+	font-family: 'PTSerifRegular';
+	font-size: 14px;
+	color: #808080;
+	margin-left:20px;
+}
+
+.api_content .url_ex{
+	font-family: 'PTSerifRegular';
+	font-size: 16px;
+	margin-left:20px;
+}
+
+.api_content .resp_ex{
+	font-family: 'PTSerifRegular';
+	font-size: 16px;
+	margin-left:20px;
+}
+
+.api_content .params_table{
+	margin-left:20px;
+}
+
+.api_content .params_table th{
+	font-family: 'PTSerifRegular';
+	font-size: 16px;
+	height:40px;
+	vertical-align:middle;
+	padding-left:30px;
+}
+
+.api_content .params_table tr th{
+	background: #f3efeb;
+}
+
+.api_content .params_table td{
+	font-family: 'PTSerifRegular';
+	font-size: 16px;
+	height:60px;
+	vertical-align:middle;
+	padding-left:30px;
+	line-height: 25px;
+	border-bottom:2px solid #f3efeb;
+}
+
+.api_content .important{
+	font-family: 'PTSerifRegular';
+	font-size: 14px;
+	margin-left:20px;
+	position:relative;
+	border:1px solid #ED252E;
+	padding: 20px;
+	margin-top:40px;
+}
+
+.api_content .important span:first-child{
+	 font-family: 'clear_sans_mediumregular';
+	position:absolute;
+	display:block;
+	text-transform: uppercase;
+	color:white;
+	background:#ED252E;
+	top: -15px;
+	padding: 5px 10px;
+}
+
+.api_content .important span:last-child{
+	line-height: 20px;
+}
+
+.api_content .code_example{
+	margin-left:20px;
+	border: 1px solid #fdc689;
+	padding:10px;
+	background-color: #fbeee0;
+	overflow-x:hidden;
+}
+
+.api_content .code_example code,.api_content .code_example pre{
+	font-family:consolas;
+	font-size:14px;
+	color:black;
+}
+
+.api_content > div:last-child{
+	margin-bottom:40px;
+}
+
+.error_field{
+	border:1px solid #CC2A31 !important;
+	background:#DE8C8C !important;
+	margin-bottom:20px; 
+}
+
+.error_sep{
+	height:2px;
+	margin-left:20px;
+	width:95%;
+	background:#E37D7F;
+	margin-top:20px;
+}
+
+.descr_table{
+	margin-left:20px;
+	font-family: 'PTSerifRegular';
+}
+
+.descr_table th{
+	background:#00a3cb;
+	color:white;
+	font-size:16px;
+	padding:5px 0 5px 30px;
+}
+
+.descr_table td{
+	border-bottom: 1px solid #00a3cb;
+	font-size:14px;
+	padding:10px 0 10px 30px;
+}
+.api_answer{
+	margin: 15px 20px;
+    font-family: 'clear_sansregular';
+    font-size: 16px;
+}
+
+.api_answer ul{
+	margin-left: 25px;
+    margin-top: 20px;
+}
+
+.api_answer li{
+    margin-top: 10px;
+}

@@ -1,0 +1,57 @@
+.item_table {margin-bottom:35px;}
+.item_table a:hover {color:#ed155c;}
+.middleImgWrapper img {border:1px solid #C8C7C1;padding:3px;}
+.item_photo {font-size:.9em; color:#363636; margin:5px 0px 20px 0px;}
+.item_photo strong {color:#cf0000;}
+.item_photo a {color:#363636;}
+
+.biger {padding:0px 0px 25px 20px;}
+.biger a {font-size:13px; color:#363636; margin:0px 0px 0px 8px;}
+.biger img {vertical-align:middle;}
+
+.left_bottom_href {padding-left:20px; padding-top:10px}
+.left_bottom_href a {color:#363636; font-size:13px; text-decoration:none; border-bottom:1px dashed #363636;}
+.left_bottom_href a:hover {color:#ed155c; border-bottom:1px dashed #cf0000;}
+.left_bottom_href img {vertical-align:middle; margin-right:4px;}
+
+.print {width:68px; height:28px; border:1px solid #e5e5e5; background:url('/bitrix/templates/demo/images/print.gif') no-repeat center 4px; color:#959595; text-align:center; font-size:11px; padding-top:40px;}
+.print a {width:13px; height:13px; float:right; display:block; margin-top:-38px; margin-right:2px;}
+.print div {width:66px; text-align:center}
+
+.item_right {padding-left:23px;}
+.tovar_text {margin-top:20px; padding:15px; color:#707070; background:#F4F3EC; font-size:.9em; margin-bottom:20px;}
+
+.about_tovar span {color:#959595;}
+.about_tovar a {color:#457093;}
+
+.feature span {color:#959595;}
+.feature select {width:160px;margin-right:5px; vertical-align:middle;}
+.feature td, .feature img {vertical-align:middle;}
+.feature a {color:#ed155c; font-size:11px;}
+
+.textureBlock {margin:20px 0; padding:5px 0 5px 0px; background:#F4F3EC;}
+.textureBlock table {margin:0px 10px 0px 15px;}
+.textureBlock td {padding-top:5px;}
+.textureBlock span {margin-left:20px; color:#666; font-size:11px;}
+.textureBlock td {text-align:center;} 
+
+.textureWrapper {width:50px; border:4px solid #fff;	margin:0 5px 4px auto;}
+.textureWrapper img {display:block;}
+
+.price {color:#959595;}
+.price span {font-size:1.5em; color:#ed155c;}
+.price input {width:33px; height:14px; color:#5c90c2; font-size:10px; color:#000; margin-right:2px; vertical-align:middle;}
+
+.table_rezult {margin:20px 0;}
+.table_rezult td {padding:5px;}
+.price_rezult {vertical-align:middle; background-color:#f5f5f5;}
+.item_submit {background-color:#e5e5e5;}
+
+.accompanying {border-top:1px solid #e5e5e5; border-bottom:1px solid #e5e5e5; padding:10px 17px;}
+.accompanying img {cursor:pointer;}
+.accompanying h5 {color:#666; font-size:12px; font-weight:bold;}
+.accompanying_tovar td {padding-top:20px;}
+.accompanying_right .tovar_name {color:#486f96; font-weight:bold;}
+.accompanying_right p {padding:5px 0px 15px 0px; color:#656565; font-size:11px;}
+.accompanying_right div {padding:0px;}
+.accompanying_right span {color:#ed155c; margin-right:15px; font-weight:bold;}

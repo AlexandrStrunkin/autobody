@@ -1,0 +1,23 @@
+.basket_tovar td input {width:29px; height:16px; border:1px solid #5c90c2; font-size:12px; text-align:center;}
+.basket_tovar td {padding-top:11px; padding-bottom:11px;}
+
+.summa {font-size:15px; color:#ef135b;}
+.main_table .text {font-size:12px;}
+.main_table .head .summa {color:#ef135b;}
+.summa input {margin-top:-3px; width:29px;}
+
+.price div {padding-top:3px; width:100%; text-align:center; color:#000;}
+
+.tovar {font-size:11px; padding:11px 0px 11px 0px;}
+.tovar table {color:#000;}
+.tovar table td {border:0px;}
+.tovar a {color:#476e95; font-size:14px;}
+.tovar table {margin-top:8px;}
+.tovar span {color:#959595;}
+.tovar a:hover {color:#ef135b;}
+.tovar td {padding:0px; border:0px;}
+
+.oformlenie td {height:60px; padding-top:26px; padding-left:11px;}
+.oformlenie input {width:auto; float:right}
+.oformlenie a {color:#476e95; border-bottom:1px dashed #476e95; text-decoration:none;}
+.oformlenie a:hover {color:#ef135b; border-bottom:1px dashed #ef135b;}

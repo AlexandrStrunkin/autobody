@@ -1,0 +1,6 @@
+<?
+$sSectionName = "Polyway ";
+$arDirProperties = Array(
+
+);
+?>

@@ -1,0 +1,93 @@
+/* Left menu*/
+
+@font-face {
+    font-family: 'clear_sans_mediumregular';
+    src: url('/fonts/clearsans-medium.eot');
+    src: url('/fonts/clearsans-medium.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/clearsans-medium.woff') format('woff'),
+    url('/fonts/clearsans-medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+ul.left-menu
+{
+	list-style:none;
+	margin:0; padding:0;
+	margin-bottom:8px;
+	position: relative; /*IE bug*/
+}
+
+ul.left-menu li
+{
+	padding: 10px 16px;
+	background:#F5F5F5 url(images/left_menu_bg.gif) top repeat-x;
+}
+
+ul.left-menu li a
+{
+	font-size:100%;
+	color:#BC262C;
+	font-weight:bold;
+	text-decoration:none;
+}
+
+ul.left-menu li a:visited
+{
+	color:#BC262C;
+}
+
+ul.left-menu li a:hover
+{
+	color:#BC262C;
+}
+
+
+ul.left-menu li a.selected:link, 
+ul.left-menu li a.selected:visited, 
+ul.left-menu li a.selected:active, 
+ul.left-menu li a.selected:hover
+{
+	color:#FC8D3D;
+}
+.second_lvl_menu{
+    margin-bottom: 32px;
+    width: 730px !important;
+    font-size: 14px !important;
+    font-family: "clear_sans_mediumregular";      
+    margin-top: 25px;
+    padding-bottom: 15px;
+    
+ 
+}
+.sec_menu{
+    margin: 0!important;
+    padding: 0!important;
+    font-family: 'clear_sans_mediumregular';
+    font-size: 14px;
+    text-transform: uppercase;   
+    vertical-align: top;
+}
+.margin_td{
+    width: 330px;   
+}
+.a_border:hover{
+    color: #cc2a31;             
+    padding-bottom: 10px;
+    border-bottom: #cc2a31 3px solid;
+}
+.second_menu{
+    border-bottom: 2px solid #e8e8e8;
+    height: 30px;
+    margin-bottom: 35px;
+}
+.margin2{
+    width: 40px;
+}
+.active_top_menu{
+    color: #cc2a31 !important;             
+    padding-bottom: 10px !important;
+    border-bottom: #cc2a31 3px solid !important;    
+}
+

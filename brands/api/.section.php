@@ -1,0 +1,6 @@
+<?
+$sSectionName = "API";
+$arDirProperties = Array(
+
+);
+?>

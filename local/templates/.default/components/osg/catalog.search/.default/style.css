@@ -1,0 +1,21 @@
+.search_form td {padding-left:20px; border-top:1px solid #ebebeb; background:#adc7e0; vertical-align:middle;}
+.search_form .head td {background:#8db1d5; height:45px; padding-top:0px; padding-bottom:0px;}
+.search_form .head select {width:350px; margin:0px 0px 0px 20px;}
+
+.search_form .head table td {padding-left:0px; padding-right:0px;}
+.search_form td table td {border:0px; padding-left:0px; padding-right:25px; padding-top:6px; padding-bottom:7px;}
+.search_form td table td input {width:100%; margin-top:3px;}
+.search_form td table td select {width:100%; margin-top:4px;}
+
+.search_form .min_input input {width:62px; margin:4px 3px; vertical-align:middle;}
+.search_form .min_input div table {margin-top:4px;}
+.search_form .min_input div table td {padding:3px 0px;}
+.search_form .min_input div select {width:170px; margin:0px 0px 0px 10px;}
+
+
+
+.search_submit td {border:0px; background:none; padding:11px 0px 25px 20px;}
+.search_submit td input {margin-right:10px;}
+
+.search_form .characteristic td {padding-bottom:12px;}
+.search_form .characteristic td table td {padding-bottom:0px;}

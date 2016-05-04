@@ -1,0 +1,91 @@
+.add-entity-plus {
+font-size:25px;
+color:#00A2CB;
+display:inline-block;
+}
+.add-entity {
+border-bottom:dotted;
+border-bottom-color: #00A2CB;
+margin-left:15px;
+color:black;
+font-size:14px;
+font-family:'clear_sansbold';
+}
+.entity_adding_button {
+    background-color: #1AA1C8;
+  width: 150px;
+  height: 40px;
+  border: none;
+  color: white;
+  font-size: 13px;
+  font-family: 'clear_sansbold';
+  cursor: pointer;
+  margin-left: 120px;
+  margin-top:20px;
+  display: block;
+  float: left;
+  line-height: 40px;
+  text-align: center;
+}
+.entity_block {
+   /* height:78px; */
+    border:1px solid black;
+    position:relative;
+    margin-top:30px;
+        background: url(/i/search/order_list_arrow.png) no-repeat;
+    background-position: 50% 3px;
+    cursor: pointer;
+}
+.active_entity_block {
+    background: url(/i/search/order_list_active.png) no-repeat;
+    background-position: 50% 3px;
+    border:1px solid black;
+}
+.entity_block table tr:first-child td{
+    padding-left:30px;
+    height:27px;
+    font-size: 20px;
+    padding-top:7px;
+}
+.entity_block table .more {
+    padding-left:30px;
+}
+.entity_deleting {
+  font-size:18px;
+  position:absolute;
+  right:10px;
+  top:0;  
+}
+.form_closing, .edit_form_closing {
+    position:absolute;
+    right:11px;
+    top:6px;
+    font-size:15px;
+    cursor:pointer;
+}
+.element_edit {
+    position:absolute;
+    right:40px;
+    top:2px;
+}
+.ent_add_info {
+    font-size:10px;
+    color:red;
+    margin-left:32px;
+}
+.store-info {
+    padding-left:35px;
+    margin-bottom:30px;
+}
+.table_field {
+    display:inline-block;
+    width:250px;
+    color: #7F7F7F;
+    line-height:40px;
+}
+.more {
+    width:840px;
+}
+.ent_prop {
+    border-bottom: 1px solid #e1e1e1;
+}

@@ -1,0 +1,1 @@
+<a href="/"><img src="/bitrix/templates/demo/images/logo_top.gif" alt="LOGO" /></a>

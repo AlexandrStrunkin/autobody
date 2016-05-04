@@ -1,0 +1,13 @@
+
+/*верхн€€*/
+.car_box2 {width:860px;height:275px; margin:-5px 0 0 0 ; position:relative; display:block; overflow:visible}
+.anyClass2 {width:860px;height:275px; padding:0px; }
+.anyClass2_bord {width:860px;height:275px;position:absolute; z-index:101;}
+.anyClass2 ul {margin:0; position: relative;}
+.anyClass2 li {margin:0;position:relative; width: 860px; height:275px; overflow:hidden;}
+.anyClass2 img {max-width:860px; margin:0 auto; display:block}
+
+.btnGoActive {background: url(/i/slider/dot_o.png) no-repeat; width:12px; height:12px;float:left; margin:0 3px; border:1px solid #3088BA;background:  #3088BA;}
+.car_top_nav {position:absolute;z-index:2;float:right;bottom:-15px; right:24px;height:12px !important;}
+.car_top_nav .but {background-color: #fff; width:12px; height:12px;float:left; margin:0 3px; border:1px solid #ddd; }
+.car_top_nav .but:hover { cursor:pointer;}

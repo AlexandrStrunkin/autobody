@@ -1,0 +1,46 @@
+<?
+$aMenuLinks = Array(
+	Array(
+		"Новости", 
+		"/personal/news/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Корзина", 
+		"/personal/basket/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Заказы", 
+		"/personal/cabinet/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Баланс", 
+		"/personal/balance/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Настройки", 
+		"/personal/settings/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Мои юридические лица", 
+		"/personal/yuridicheskie-litsa-klienta/", 
+		Array(), 
+		Array(), 
+		"" 
+	)
+);
+?>

@@ -1,0 +1,6 @@
+<?
+$sSectionName = "TYC";
+$arDirProperties = Array(
+
+);
+?>

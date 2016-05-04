@@ -1,0 +1,46 @@
+.basket_tovar td input {width:29px; height:16px; border:1px solid #5c90c2; font-size:12px; text-align:center;}
+.basket_tovar td {padding-top:11px; padding-bottom:11px;}
+
+.summa {font-size:1.5em; color:#ef135b;}
+.main_table .head .summa {color:#ef135b;}
+.summa input {margin-top:-3px; width:29px;}
+
+.price div {padding-top:3px; width:100%; text-align:center; color:#000;}
+
+.tovar {font-size:11px; padding:11px 0px 11px 0px;}
+.tovar table {color:#000;}
+.tovar table td {border:0px;}
+.tovar .number {color:#476e95; font-size:14px; font-weight:bold;}
+.tovar table {margin-top:8px;}
+.tovar span {color:#959595;}
+.tovar a:hover {color:#ef135b;}
+.tovar td {padding:0px; border:0px;}
+
+.oformlenie td {height:60px; padding-top:26px; padding-left:11px;}
+.oformlenie input {width:auto; float:right}
+.oformlenie a {color:#476e95; border-bottom:1px dashed #476e95; text-decoration:none;}
+.oformlenie a:hover {color:#ef135b; border-bottom:1px dashed #ef135b;}
+
+.main_table td {vertical-align:top}
+.main_table img {margin:4px 0px 4px 10px;}
+
+.tovar h5 {font-style:italic; color:#959595; font-size:12px; font-weight:100; margin-top:10px;}
+.summa span {font-size:11px; color:#ef135b;}
+.main_table .head span {color:#70706e; float:right;}
+.main_table .head div {float:left;}
+.tovat table .summa {padding:0px;}
+
+
+
+/* new class */
+.number_zakaz .summa{color:#ef135b; font-size:18px; font-weight:100;}
+.tovar .number_zakaz {margin:0px;}
+
+.main_table .oplata {padding-left:25px;}
+.oplata h5 {font-style:italic; color:#959595; font-size:12px; font-weight:100; margin-top:6px; margin-bottom:4px;}
+.oplata a {color:#496e98;}
+.oplata a:hover {color:#ed135d;}
+.oplata img {margin:4px 2px; vertical-align:middle;}
+.oplata table td {border:none; padding:0px;vertical-align:top; padding-right:3px;}
+.oplata table td span {color:#ed165a;}
+.oplata table td strong {color:#87af57; font-weight:100;}

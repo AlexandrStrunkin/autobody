@@ -1,0 +1,25 @@
+<?
+$aMenuLinks = Array(
+	Array(
+		"Корзина", 
+		"/personal/basket/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Заказы", 
+		"/personal/cabinet/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Настройки", 
+		"/personal/settings/", 
+		Array(), 
+		Array(), 
+		"" 
+	)
+);
+?>

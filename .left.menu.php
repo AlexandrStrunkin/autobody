@@ -1,0 +1,53 @@
+<?
+$aMenuLinks = Array(
+	Array(
+		"API", 
+		"http://www.autobody.ru/brands/api/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"DEPO", 
+		"http://www.autobody.ru/brands/depo/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"GORDON", 
+		"http://www.autobody.ru/brands/gordon/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"TYG", 
+		"http://www.autobody.ru/brands/tyg/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"KOYORAD", 
+		"http://www.autobody.ru/brands/koyorad/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"TYC", 
+		"http://www.autobody.ru/brands/tyc/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"POLYWAY", 
+		"http://www.autobody.ru/brands/polyway/", 
+		Array(), 
+		Array(), 
+		"" 
+	)
+);
+?>

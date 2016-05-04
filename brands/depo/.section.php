@@ -1,0 +1,6 @@
+<?
+$sSectionName = "DEPO";
+$arDirProperties = Array(
+
+);
+?>
