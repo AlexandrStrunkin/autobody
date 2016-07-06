@@ -22,6 +22,7 @@
                     <li><a href="http://www.tradesoft.ru">tradesoft.ru</a></li>
                     <li><a href="http://www.zaptrade.ru">zaptrade.ru</a></li>
                     <li><a href="http://www.abcp.ru">abcp.ru</a></li>
+                    <li><a href="http://web-origami.ru/autoprofi/">Web-студия Origami</a></li>
                 </ul>
             </div>
         </div>
