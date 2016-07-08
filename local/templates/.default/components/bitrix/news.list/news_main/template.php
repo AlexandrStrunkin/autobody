@@ -29,19 +29,18 @@
 
         <?if ($arItem["PROPERTIES"]["NEWS_MAIN"]["VALUE"]=='Y') {
             
-            $renderImage = CFile::ResizeImageGet($arItem["PREVIEW_PICTURE"]["ID"], Array("width" => 480, "height" => 360 ), BX_RESIZE_IMAGE_EXACT, false, false, false, false);
+            $renderImage = CFile::ResizeImageGet($arItem["PREVIEW_PICTURE"]["ID"], Array("width" => 480, "height" => 360), BX_RESIZE_IMAGE_PROPORTIONAL_ALT, false, false, false, false);
         
-         ?>
+         ?>	<div class="main-news-date"><?=$arItem["DISPLAY_ACTIVE_FROM"]?></div>
+            <div class="main-news-title"><?=$arItem["NAME"]?></div>
             <div class="news-section-main" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
                 <img title="<?=htmlspecialchars($arItem["NAME"])?>" alt="Форвард - <?=htmlspecialchars($arItem["NAME"])?>" src="<?=$renderImage["src"]?>"/>
                 <div class="mask"> </div> 
                 <div class="mask2">
-                    <div class="main-news-date"><?=$arItem["DISPLAY_ACTIVE_FROM"]?></div>
-                    <div class="main-news-title"><?=$arItem["NAME"]?></div>
                     <div class="main-news-note"><?=$arItem["PREVIEW_TEXT"]?></div>
-                    <a class="url" href="<?=$arItem["DETAIL_PAGE_URL"]?>"><button class="detail-news-button" type="submit">ПОДРОБНЕЕ</button></a>
                 </div> 
-            </div>       
+            </div>
+            <a class="url" href="<?=$arItem["DETAIL_PAGE_URL"]?>"><button class="detail-news-button" type="submit">ПОДРОБНЕЕ</button></a>       
             <? 
         $main_news_id=$arItem["ID"];
         break;

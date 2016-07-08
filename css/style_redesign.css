@@ -1061,7 +1061,6 @@ label.custom-radio {
 
 .news-section-main {
 	width: 480px;
-	height: 360px;
 	float: left;
 	overflow: hidden;
 	position: relative;
@@ -1099,14 +1098,12 @@ label.custom-radio {
 	color: #FAD9B9;
 	font-size: 30px;
 	margin-top: 40px;
-	margin-left: 30px;
 }
 
 .main-news-title {
 	font-family: 'clear_sansbold';
 	color: white;
 	margin-top: 10px;
-	margin-left: 30px;
 	font-size: 16px;
 	text-transform: uppercase;
 }
@@ -1120,15 +1117,14 @@ label.custom-radio {
 }
 
 .detail-news-button {
-	margin-left: 30px;
-	margin-top: 20px;
+	margin-top: 10px;
 	background: url(/images/background-button.png);
 	width: 120px;
 	height: 40px;
 	border: solid;
-	border-color: white;
+	border-color: black;
 	border-width: 1px;
-	color: white;
+	color: black;
 	font-size: 12px;
 	font-family: 'clear_sansbold';
 	cursor: pointer;
@@ -4579,7 +4575,7 @@ label.custom-radio-wh {
 	top: 0;
 	left: 0;
 	background-color: #6B5F59;
-	opacity: 0.5;
+	opacity: 0;
 }
 
 .news-page .news-section-main img {
@@ -4589,17 +4585,16 @@ label.custom-radio-wh {
 
 .main-news-date {
 	font-family: 'bebas_neuebold';
-	color: #FAD9B9;
-	font-size: 30px;
+	color: #CC2A31;
+	font-size: 20px;
 	margin-top: 40px;
-	margin-left: 30px;
 }
 
 .main-news-title {
 	font-family: 'clear_sansbold';
-	color: white;
-	margin-top: 10px;
-	margin-left: 30px;
+	color: black;
+	margin-top: 5px;
+	margin-bottom: 10px;
 	font-size: 16px;
 }
 
