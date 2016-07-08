@@ -1117,7 +1117,6 @@ label.custom-radio {
 }
 
 .detail-news-button {
-	margin-top: 10px;
 	background: url(/images/background-button.png);
 	width: 120px;
 	height: 40px;
@@ -1160,13 +1159,11 @@ label.custom-radio {
 }
 
 .item-news:nth-child(2n+1) .item-news-left-section {
-	margin-top: 590px;
 	margin-left: 260px;
 	position: absolute;
 }
 
 .item-news:nth-child(2n+1) .item-news-right-section {
-	margin-top: 590px;
 	position: absolute;
 }
 
