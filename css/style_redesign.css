@@ -1873,8 +1873,6 @@ label.custom-radio {
     position: absolute;
     display: none;
     box-sizing: border-box;
-    /*background-color: #fff8e7;
-    border: 1px solid #f7d263;*/
     background-color: #adffff;
     border: 1px solid #88d0eb;
     border-radius: 13px;
@@ -1887,9 +1885,6 @@ label.custom-radio {
     font-size: 15px;
     letter-spacing: 0px;
     color: #fa8900;
-    /*color: #dc9d00;*/
-    /*color: #f7933b;*/
-    /*color: #1b877e;*/
     padding-top: 9px;
     line-height: 19px;
 }
@@ -1898,8 +1893,6 @@ label.custom-radio {
     position: absolute;
     display: block;
     box-sizing: border-box;
-    /*background-color: #3d2405;
-    border: 0px solid #f7d263;*/ 
     background-color: #0a0a0a;
     border-radius: 4px;
     height: 30px;
@@ -1910,7 +1903,6 @@ label.custom-radio {
     font-family: 'bebas_neuebold';
     font-size: 18px;
     letter-spacing: 1px;
-    /*color: #f7933b; */
     color: #ffffff;
     line-height: 32px;
     cursor: pointer;

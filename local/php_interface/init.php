@@ -21,7 +21,7 @@
     CModule::IncludeModule('form');
     CModule::IncludeModule('main');
     CModule::IncludeModule('subscribe');
-    if(CModule::IncludeModule('osg')){
+    if (CModule::IncludeModule('osg')) {
         COSGUser::SetUserInfo();    
     }
 
