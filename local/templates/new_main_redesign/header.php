@@ -1,3 +1,5 @@
+<?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
+
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>      
 <head>
@@ -166,18 +168,9 @@
     <?if (!CModule::IncludeModule("iblock")){
         CModule::IncludeModule("iblock");
     }?>
-
-
-
-
-    <?require_once($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_before.php");?>
 </head>
 
 <body onload="initialize(); ">
-<?
-    CModule::IncludeModule('osg');
-    COSGUser::SetUserInfo();
-?>
 <div class="new_overlay"></div>
 <div id="panel"><?$APPLICATION->ShowPanel();?></div>
 <div class="div-header">
@@ -390,24 +383,24 @@
                     <div class="left-vote">
 
                         <?$APPLICATION->IncludeComponent(
-	"bitrix:voting.current", 
-	"vote-main", 
-	array(
-		"CHANNEL_SID" => "RANDOM",
-		"VOTE_ID" => "8",
-		"VOTE_ALL_RESULTS" => "Y",
-		"CACHE_TYPE" => "A",
-		"CACHE_TIME" => "3600",
-		"CACHE_NOTES" => "",
-		"AJAX_MODE" => "Y",
-		"AJAX_OPTION_JUMP" => "N",
-		"AJAX_OPTION_STYLE" => "Y",
-		"AJAX_OPTION_HISTORY" => "N",
-		"AJAX_OPTION_ADDITIONAL" => "",
-		"COMPONENT_TEMPLATE" => "vote-main"
-	),
-	false
-);?> 
+                                "bitrix:voting.current", 
+                                "vote-main", 
+                                array(
+                                    "CHANNEL_SID" => "RANDOM",
+                                    "VOTE_ID" => "8",
+                                    "VOTE_ALL_RESULTS" => "Y",
+                                    "CACHE_TYPE" => "A",
+                                    "CACHE_TIME" => "3600",
+                                    "CACHE_NOTES" => "",
+                                    "AJAX_MODE" => "Y",
+                                    "AJAX_OPTION_JUMP" => "N",
+                                    "AJAX_OPTION_STYLE" => "Y",
+                                    "AJAX_OPTION_HISTORY" => "N",
+                                    "AJAX_OPTION_ADDITIONAL" => "",
+                                    "COMPONENT_TEMPLATE" => "vote-main"
+                                ),
+                                false
+                            );?> 
 
                         <!--<div class="left-vote-title">КАК ВАМ НОВЫЙ <br> ДИЗАЙН?</div>
                         <div class="left-vote-note">Поделитесь Вашим <br> мнением с нами, <br> учавствуйте в опросе!</div>

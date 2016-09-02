@@ -1852,9 +1852,97 @@ label.custom-radio {
 	background: #F7F7F7;
 	padding: 0;
 }
-.forward_catalog_new_foto:hover .forward_catalog_new_foto_container {
-	display: block;
+
+.forward_catalog_new_info_popup_background {
+    position: absolute;
+    display: block;
+    background-color: black;
+    background-color: rgba(255, 0, 0, 0.5);
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    top: 0;
+    left: 0;
 }
+
+.info_popup_relative {
+    position: relative;
+}
+
+.forward_catalog_new_info_popup {
+    position: absolute;
+    display: none;
+    box-sizing: border-box;
+    /*background-color: #fff8e7;
+    border: 1px solid #f7d263;*/
+    background-color: #adffff;
+    border: 1px solid #88d0eb;
+    border-radius: 13px;
+    height: 135px;
+    width: 325px;
+    top: -140px;
+    right: 50%;
+    z-index: 7;
+    font-family: 'PTSerifRegular';
+    font-size: 15px;
+    letter-spacing: 0px;
+    color: #fa8900;
+    /*color: #dc9d00;*/
+    /*color: #f7933b;*/
+    /*color: #1b877e;*/
+    padding-top: 9px;
+    line-height: 19px;
+}
+
+.forward_catalog_new_popup_close_button {
+    position: absolute;
+    display: block;
+    box-sizing: border-box;
+    /*background-color: #3d2405;
+    border: 0px solid #f7d263;*/ 
+    background-color: #0a0a0a;
+    border-radius: 4px;
+    height: 30px;
+    width: 192px;
+    bottom: 11px;
+    right: 62px;
+    z-index: 7;
+    font-family: 'bebas_neuebold';
+    font-size: 18px;
+    letter-spacing: 1px;
+    /*color: #f7933b; */
+    color: #ffffff;
+    line-height: 32px;
+    cursor: pointer;
+}
+
+.forward_catalog_new_popup_triangle{
+    position: absolute;
+    background: url(/i/catalog_popup_blue.png) no-repeat;
+    width: 20px;
+    height: 35px;
+    right: -1px;
+    bottom: -20px;
+    z-index: 7;
+}
+
+.forward_catalog_new_popup_img{    
+    float: right;
+    margin-left: -75px;
+    margin-right: 75px;
+}
+
+.forward_catalog_new_popup_background{
+    display:none;
+  position: fixed;
+  background-color: rgba(26,161,200,0.7);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 6;
+}
+
 
 .catalog_table tr:hover > td:last-child {
 	background: url(/i/info_bg_h.png) no-repeat 50% 50%;
