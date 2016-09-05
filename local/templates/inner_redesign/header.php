@@ -1,3 +1,5 @@
+<?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
+
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
@@ -155,12 +157,9 @@
 
 
 
-    <?require_once($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_before.php");?>
 </head>
 
 <body onload="initialize()">
-<?CModule::IncludeModule('osg');?>
-<?COSGUser::SetUserInfo()?>
 <div id="panel"><?$APPLICATION->ShowPanel();?></div>
 <div class="div-header">
 

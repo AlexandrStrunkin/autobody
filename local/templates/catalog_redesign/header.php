@@ -184,8 +184,7 @@
 </head>
 
 <body onload="initialize()"> 
-<?CModule::IncludeModule('osg');?>   
-<?COSGUser::SetUserInfo()?>
+
 <div id="panel"><?$APPLICATION->ShowPanel();?></div>
 <div class="div-header">
 

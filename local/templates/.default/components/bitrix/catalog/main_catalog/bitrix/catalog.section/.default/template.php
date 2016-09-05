@@ -59,9 +59,17 @@
             <th width="40">Срав.</th>
             <th width="69">Цена, руб</th>
             <th width="75">Купить</th>
-            <th width="37">Инфо</th>
-        </tr>
-
+            <th width="37" class="info_popup_relative">
+                <div class="forward_catalog_new_popup_background"></div>
+                <div class="forward_catalog_new_info_popup">
+                    <?=GetMessage("POPUP_MESSAGE")?><div class="forward_catalog_new_popup_img"><img src="/i/info_bg.png"></div>
+                    <div class="forward_catalog_new_popup_close_button"><?=GetMessage("POPUP_BUTTON_MESSAGE")?></div>
+                    <div class="forward_catalog_new_popup_triangle">
+                    </div>
+                </div>
+                Инфо
+            </th>
+        </tr>        
         <?
             //проверяем корзину пользователя.
             //если текущий товар уже есть в корзине, то вместо кнопки добавления выводим соответствующее сообщение

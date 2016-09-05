@@ -1,3 +1,5 @@
+<?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
+
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
@@ -11,12 +13,12 @@
     <link rel="icon" type="image/png" href="/images/favicon.png"/> 
     <link rel="apple-touch-icon" href="/images/favicon-iphone.png"/> 
     
-    <!--стилизация каталога-->
+    <!--СЃС‚РёР»РёР·Р°С†РёСЏ РєР°С‚Р°Р»РѕРіР°-->
     <?$url = explode("/", $APPLICATION->GetCurDir());?>
     <?if ($url[1] == "new_products" || $url[1] == "test"){?>
         <link rel="stylesheet" type="text/css" href="/css/catalog_style.css" /> 
         <?}?>
-     <!--стилизация каталога-->
+     <!--СЃС‚РёР»РёР·Р°С†РёСЏ РєР°С‚Р°Р»РѕРіР°-->
     
     <script type="text/javascript" src="/js/jquery-1.7.1.js"></script>
 
@@ -125,7 +127,7 @@
             if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
         })(document, window);
     </script><noscript><div style="position:absolute;left:-10000px;">
-            <img src="//top-fwz1.mail.ru/counter?id=2544150;js=na" style="border:0;" height="1" width="1" alt="Рейтинг@Mail.ru" />
+            <img src="//top-fwz1.mail.ru/counter?id=2544150;js=na" style="border:0;" height="1" width="1" alt="Р РµР№С‚РёРЅРі@Mail.ru" />
         </div></noscript>
     <!-- //Rating@Mail.ru counter -->
 
@@ -140,8 +142,6 @@
 </head>
 
 <body>
-<?CModule::IncludeModule('osg');?>
-<?COSGUser::SetUserInfo()?>
 <div id="panel"><?$APPLICATION->ShowPanel();?></div>
 <div class="div-header">
 
@@ -192,16 +192,16 @@
         }?>
         <div class="top-menu">              
             <?$APPLICATION->IncludeComponent("bitrix:menu", $menu_template, Array(
-                    "ROOT_MENU_TYPE" => $menu_type,    // ��� ���� ��� ������� ������
-                    "MENU_CACHE_TYPE" => "A",    // ��� �����������
-                    "MENU_CACHE_TIME" => "3600",    // ����� ����������� (���.)
-                    "MENU_CACHE_USE_GROUPS" => "N",    // ��������� ����� �������
-                    "MENU_CACHE_GET_VARS" => "",    // �������� ���������� �������
-                    "MAX_LEVEL" => "1",    // ������� ����������� ����
-                    "CHILD_MENU_TYPE" => "left",    // ��� ���� ��� ��������� �������
-                    "USE_EXT" => "N",    // ���������� ����� � ������� ���� .���_����.menu_ext.php
-                    "DELAY" => "N",    // ����������� ���������� ������� ����
-                    "ALLOW_MULTI_SELECT" => "Y",    // ��������� ��������� �������� ������� ������������
+                    "ROOT_MENU_TYPE" => $menu_type,    // Тип меню для первого уровня
+                    "MENU_CACHE_TYPE" => "A",    // Тип кеширования
+                    "MENU_CACHE_TIME" => "3600",    // Время кеширования (сек.)
+                    "MENU_CACHE_USE_GROUPS" => "N",    // Учитывать права доступа
+                    "MENU_CACHE_GET_VARS" => "",    // Значимые переменные запроса
+                    "MAX_LEVEL" => "1",    // Уровень вложенности меню
+                    "CHILD_MENU_TYPE" => "left",    // Тип меню для остальных уровней
+                    "USE_EXT" => "N",    // Подключать файлы с именами вида .тип_меню.menu_ext.php
+                    "DELAY" => "N",    // Откладывать выполнение шаблона меню
+                    "ALLOW_MULTI_SELECT" => "Y",    // Разрешить несколько активных пунктов одновременно
                     ),
                     false
                 );?>
@@ -213,19 +213,19 @@
     <table class="under-top-menu-items">
     <tr>
     <td class="under-top-menu-item under-top-menu-active">
-    <a class="url" href="#">Как купить</a>
+    <a class="url" href="#">РљР°Рє РєСѓРїРёС‚СЊ</a>
     </td>
     <td class="under-top-menu-item">
-    <a class="url" href="#">Гарантии</a>
+    <a class="url" href="#">Р“Р°СЂР°РЅС‚РёРё</a>
     </td>
     <td class="under-top-menu-item">
-    <a class="url" href="#">Доставка</a>
+    <a class="url" href="#">Р”РѕСЃС‚Р°РІРєР°</a>
     </td>
     <td class="under-top-menu-item">
-    <a class="url" href="#">Траспортные компании</a>
+    <a class="url" href="#">РўСЂР°СЃРїРѕСЂС‚РЅС‹Рµ РєРѕРјРїР°РЅРёРё</a>
     </td>
     <td class="under-top-menu-item">
-    <a class="url" href="#">Наши дилеры</a>
+    <a class="url" href="#">РќР°С€Рё РґРёР»РµСЂС‹</a>
     </td>
     </tr>
     </table>
@@ -259,7 +259,7 @@
 );?>
 
 <!--<div class="search-div">
-<input type="text" class="search-input" placeholder="Поиск по артикулу, наименованию, по номеру производителя, по оригинальному номеру">
+<input type="text" class="search-input" placeholder="РџРѕРёСЃРє РїРѕ Р°СЂС‚РёРєСѓР»Сѓ, РЅР°РёРјРµРЅРѕРІР°РЅРёСЋ, РїРѕ РЅРѕРјРµСЂСѓ РїСЂРѕРёР·РІРѕРґРёС‚РµР»СЏ, РїРѕ РѕСЂРёРіРёРЅР°Р»СЊРЅРѕРјСѓ РЅРѕРјРµСЂСѓ">
 </div>-->
 
 <table vertical-align="top">
