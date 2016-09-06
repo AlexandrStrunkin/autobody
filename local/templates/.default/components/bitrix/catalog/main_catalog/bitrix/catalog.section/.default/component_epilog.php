@@ -6,7 +6,7 @@
             $(".forward_catalog_new_info_popup").show(500);
             $("body").on("click", ".forward_catalog_new_popup_close_button",  function(){
                 $(".forward_catalog_new_info_popup").hide(500);
-                $.cookie('info_popup', 'Y', { expires: 365 }, '/', 'www.autobody.ru');
+                $.cookie('info_popup', 'Y', { expires: 365, path: '/'});
             });
         }
     });

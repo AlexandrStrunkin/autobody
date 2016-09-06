@@ -19,7 +19,9 @@ if(!empty($arResult["CATEGORIES"])):?>
 					<td class="title-search-all" onclick="document.location.href = '<?= $arItem["URL"] ?>'"><?echo $arItem["NAME"]?></td>
 				<?elseif(isset($arItem["ICON"])):?>
 					<td class="title-search-item" onclick="document.location.href = '<?= $arItem["DETAIL_PAGE_URL"] ?>'"><img src="<?echo $arItem["ICON"]?>"><?echo $arItem["NAME"]?></td>
-				<?else:?>
+				<?else:
+                    $element_info = $arItem["NAME"];
+                    arshow($arItem);?>
 					<td class="title-search-more" onclick="document.location.href = '<?= $arItem["DETAIL_PAGE_URL"] ?>'"><?echo $arItem["NAME"]?></td>
 				<?endif;?>
 			</tr>
