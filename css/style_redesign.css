@@ -214,7 +214,7 @@ h1 {
 	width: 1000px;
 	margin: 0 auto;
     position: relative;
-    padding-top: 50px !important;/*раскоментить*/
+    padding-top: 50px !important;/*������������*/
 }
 .wrapper-map {
 	width: 100%;
@@ -413,14 +413,14 @@ h1 {
 .logo-container {
 	width: 213px;
 	height: 55px;
-    position: relative;/*раскоментить*/
+    position: relative;/*������������*/
 }
 
 .logo-container img {
 	max-width: 213px;
 	max-height: 99px;
     
-    position: absolute;/*раскоментить 3 строки*/
+    position: absolute;/*������������ 3 ������*/
     top: -24px;
     left: 0;
 }
@@ -482,7 +482,7 @@ logo-button {
     width: 100%;
     height: 10px;
     position: absolute;
-    top: 266px;/*220 было раскоментить*/
+    top: 266px;/*220 ���� ������������*/
     box-shadow: 0px 7px 13px 2px #e8e8e8;    
 }
 
@@ -519,7 +519,7 @@ logo-button {
 
 .under-top-menu-items {
 	color: #0F6488;
-	/*    line-height: 40px;  *//*   РЅРёР¶РЅРёР№ РѕС‚СЃС‚СѓРї РґРѕР»Р¶РµРЅ Р±С‹С‚СЊ Р±РѕР»СЊС€Рµ С‚РµРєСЃС‚Р° РѕС‚ Р»РёРЅРёРё*/
+	/*    line-height: 40px;  *//*   нижний отступ должен быть больше текста от линии*/
 }
 
 .under-top-menu-item {
@@ -1884,7 +1884,7 @@ label.custom-radio {
     font-family: 'PTSerifRegular';
     font-size: 15px;
     letter-spacing: 0px;
-    color: #fa8900;
+    color: #D91016;
     padding-top: 9px;
     line-height: 19px;
 }
@@ -2173,7 +2173,7 @@ label.custom-radio {
 	margin-right:30px;
 }
 
-/*пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ*/
+/*����� ����*/
 .catalog-section-list {
 	font-family: arial;
 }
@@ -2265,7 +2265,7 @@ label.custom-radio {
 	text-transform: none;
 	font-weight: normal;
 }
-/*///////////////////////////пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ*/
+/*///////////////////////////����� ����*/
 
 .catalog_compare_hidden_block {
 	width: 270px;
@@ -2306,7 +2306,62 @@ label.custom-radio {
 	font-size: 14px
 }
 
-/*///////////пїЅпїЅпїЅпїЅпїЅпїЅпїЅ//////////////*/
+/*///////////�������//////////////*/
+
+/*���� � �������� ����������*/
+
+.catalog_history_hidden_block {
+    width: 270px;
+    height: 40px;
+    position: fixed;
+    bottom: 0;
+    background: url(/images/compare.jpg) repeat-x;
+    z-index: 99;
+    border-radius: 5px 5px 0 0;
+    opacity: 0.5;
+    display: none;
+    left: 50%;
+    margin-left: -135px;
+}
+.catalog_history_hidden_block input {
+    width: 70px;
+    height: 30px;
+    margin: 5px 13px 0 13px;
+    font-size: 11px;
+    padding: 0;
+    color: #585858;
+    cursor: pointer;
+    display: block;
+    float: left
+}
+.catalog_history_hidden_block:hover {
+    opacity: 1;
+}
+
+.catalog_history_hidden_block_text {
+    line-height: 40px;
+    font-size: 12px;
+    font-family: arial;
+    color: #fff
+}
+.catalog_history_hidden_block_text span {
+    font-weight: bold;
+    font-size: 14px
+}
+
+.catalog_history_hidden_block_close {
+    background: url(/images/close.png) repeat-x;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    right: -12px;
+    top: -12px;
+    cursor: pointer;
+}
+
+/*����� ����� � �������� ����������*/
+
+
 .forward_catalog_new_basket {
 	width: 742px;
 	color: #999;
@@ -2832,7 +2887,7 @@ label.custom-radio {
 
 }
 
-/* Р¤РѕСЂРёРјРёСЂСѓРµРј СЃР»РѕР№ Р·Р°С‚РµРјРЅРµРЅРёСЏ С„РѕРЅР° */
+/* Форимируем слой затемнения фона */
 .overlay {
 	background-color: rgba(0, 0, 0, 0.7);
 	bottom: 0;
@@ -2854,7 +2909,7 @@ label.custom-radio {
 	visibility: visible;
 	opacity: 1;
 }
-/* РџРѕР·РёС†РёРѕРЅРёСЂСѓРј РјРµРґРёР°-СЌР»РµРјРµРЅС‚С‹ РІРЅСѓС‚СЂРё РѕРєРЅР° */
+/* Позиционирум медиа-элементы внутри окна */
 .is-image {
 	width: 100%;
 	display: inline-block;
@@ -2878,7 +2933,7 @@ embed, iframe {
 	bottom: 0;
 	right: 0;
 }
-/* Р¤РѕСЂРјРёСЂСѓРµРј Рё РїРѕР·РёС†РёРѕРЅРёСЂСѓРµРј РІСЃРїР»С‹РІР°СЋС‰РµРµ РѕРєРЅРѕ */
+/* Формируем и позиционируем всплывающее окно */
 .popup {
 	min-width: 320px;
 	max-width: 760px;
@@ -2896,20 +2951,20 @@ embed, iframe {
 	top: 0;
 	visibility: hidden;
 	z-index: 21;
-	/* РЈСЃС‚Р°РЅР°РІР»РёРІР°РµРј СЌС„С„РµРєС‚ РїРµСЂРµС…РѕРґР° РїРѕСЏРІР»РµРЅРёСЏ РѕРєРЅР° */
+	/* Устанавливаем эффект перехода появления окна */
 	-webkit-transition: opacity .5s, top .5s;
 	-moz-transition: opacity .5s, top .5s;
 	-ms-transition: opacity .5s, top .5s;
 	-o-transition: opacity .5s, top .5s;
 	transition: opacity .5s, top .5s;
 }
-/* РЈСЃС‚Р°РЅР°РІР»РёРІР°РµРј РїРѕР·РёС†РёСЋ РїРѕСЏРІР»РµРЅРёСЏ РѕРєРЅР° */
+/* Устанавливаем позицию появления окна */
 .overlay:target+ .popup {
 	top: 20%;
 	opacity: 1;
 	visibility: visible;
 }
-Р·Р°РєСЂС‹С‚РёСЏ */
+закрытия */
 .close {
 	background-color: rgba(0, 0, 0, 0.8);
 	border: 2px solid #ccc;
@@ -3883,7 +3938,7 @@ label.custom-radio-wh {
 	width: 210px;
 }
 
-/*////////////////пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ//////////////////////*/
+/*////////////////����� ������//////////////////////*/
 .search_form_q {
 	width: 435px;
 	height: 30px;
@@ -3973,7 +4028,7 @@ label.custom-radio-wh {
 	font-size: 12px;
 }
 
-/*////////пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ////////*/
+/*////////���������� ������ �������� � ����� ������////////*/
 
 .search_page_section_1 > .search_select_type, .search_page_section_2 > .search_select_type {
 	float: left;
@@ -4556,7 +4611,7 @@ label.custom-radio-wh {
 
 .about-list li:before {
 	color: red;
-	content: "пїЅ";
+	content: "�";
 	padding-right: 15px;
 }
 
@@ -4898,7 +4953,7 @@ label.custom-radio-wh {
 	padding-right: 15px;
 }
 
-/*Стили для контактов новые*/
+/*����� ��� ��������� �����*/
 .contacts-page .name {
 	font-size: 24px;
 	font-family: 'clear_sansbold';
@@ -5011,9 +5066,9 @@ label.custom-radio-wh {
 	margin-bottom: 50px;
 }
 
-/*Стили для контактов новые*/
+/*����� ��� ��������� �����*/
 
-/*Стили для обратной связи*/
+/*����� ��� �������� �����*/
 
 .feedback {
 	width: 730px;
@@ -5090,7 +5145,7 @@ label.custom-radio-wh {
 	margin-right: 137px;
 }
 
-/*Обратная  связь на главной странице*/
+/*��������  ����� �� ������� ��������*/
 
 .feedback-main {
 	width: 730px;
@@ -5167,7 +5222,7 @@ label.custom-radio-wh {
 	margin-top: 30px;
 }
 
-/*Всплывающее окно*/
+/*����������� ����*/
 
 .popup-overlay {
 	position: fixed;
@@ -5992,7 +6047,7 @@ label.custom-radio-wh {
 
 input[type="checkbox"] {
 	display: none;
-}/*--здесь отключили стандартный checkbox--*/
+}/*--����� ��������� ����������� checkbox--*/
 input[type="checkbox"] + label span {
 	display: inline-block;
 	vertical-align: middle;
@@ -6001,10 +6056,10 @@ input[type="checkbox"] + label span {
 	margin: -1px 4px 0 0;
 	background: url(/images/checkbox-on.png) no-repeat 0 0;
 	cursor: pointer;
-}/*--здесь подключаем спрайт и выбираем нужный элемент--*/
+}/*--����� ���������� ������ � �������� ������ �������--*/
 input[type="checkbox"]:checked + label span {
 	background: url(/images/checkbox-off.png) no-repeat 0 0;
-}/*--сдвиг картинки при наведении--*/
+}/*--����� �������� ��� ���������--*/
 
 .save-data {
 	border-bottom: 1px solid #64BFDA;
@@ -6970,7 +7025,7 @@ span.selectbox .dropdown ul li {
 	padding-left: 20px;
 }
 
-/*Фильтр для заказов*/
+/*������ ��� �������*/
 
 #order_filter {
 	width: 100%;
@@ -7264,7 +7319,7 @@ span.selectbox .dropdown ul li {
 	margin-top: 15px;
 }
 
-/*Фильтр для заказов*/
+/*������ ��� �������*/
 
 .authFromBasket {
 	color: #054d83;
