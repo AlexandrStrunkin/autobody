@@ -201,6 +201,7 @@ if(
 
         $params = array(
             "q" => $arResult["alt_query"]? $arResult["alt_query"]: $arResult["query"],
+            "p" => "name",
         );
         $url = CHTTP::urlAddParams(
             str_replace("#SITE_DIR#", SITE_DIR, $arParams["PAGE"])

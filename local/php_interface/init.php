@@ -1,5 +1,5 @@
 <?
-
+    include($_SERVER["DOCUMENT_ROOT"]."/include/common.php");
 
     function arshow($array, $adminCheck = false){
         global $USER;
@@ -26,7 +26,7 @@
     }
 
 
-    include($_SERVER["DOCUMENT_ROOT"]."/include/common.php");
+    
     // AddEventHandler("sale", "OnOrderUpdate", "OnOrderStatus");  //почтовое сообщение о смене статуса заказа
 
     AddEventHandler("sale", "OnOrderAdd", Array("MyAction", "OnOrderAdd"));

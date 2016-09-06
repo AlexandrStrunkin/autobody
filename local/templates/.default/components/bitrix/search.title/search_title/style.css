@@ -108,3 +108,29 @@ div.title-search-fader {
 	background-repeat: repeat-y;
 	position:absolute;
 }
+table.title-search-result .title-search-all,
+table.title-search-result .title-search-item,
+table.title-search-result .title-search-more {
+    cursor: pointer;
+}
+.searchFilter > li:first-child input {
+    background-image: none;
+    margin-left: -13px;
+}
+.search_butt {
+    display: inline-block;
+    background: url(/images/search-background.png) no-repeat 98% 50%;
+    width: 15px;
+    position: absolute;
+    margin-left: -4px;
+    height: 50px;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+}
+.search_field {
+    margin: 0 auto;
+    width: 975px;
+    position: relative;
+    height: 52px;
+}

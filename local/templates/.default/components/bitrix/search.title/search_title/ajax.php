@@ -15,12 +15,12 @@ if(!empty($arResult["CATEGORIES"])):?>
 					<th>&nbsp;</th>
 				<?endif?>
 
-				<?if($category_id === "all"):?>
-					<td class="title-search-all"><a href="<?echo $arItem["URL"]?>"><?echo $arItem["NAME"]?></td>
+				<?if($category_id === "all"): ?>
+					<td class="title-search-all" onclick="document.location.href = '<?= $arItem["URL"] ?>'"><?echo $arItem["NAME"]?></td>
 				<?elseif(isset($arItem["ICON"])):?>
-					<td class="title-search-item"><a href="<?echo $arItem["DETAIL_PAGE_URL"]?>"><img src="<?echo $arItem["ICON"]?>"><?echo $arItem["NAME"]?></td>
+					<td class="title-search-item" onclick="document.location.href = '<?= $arItem["DETAIL_PAGE_URL"] ?>'"><img src="<?echo $arItem["ICON"]?>"><?echo $arItem["NAME"]?></td>
 				<?else:?>
-					<td class="title-search-more"><a href="<?echo $arItem["DETAIL_PAGE_URL"]?>"><?echo $arItem["NAME"]?></td>
+					<td class="title-search-more" onclick="document.location.href = '<?= $arItem["DETAIL_PAGE_URL"] ?>'"><?echo $arItem["NAME"]?></td>
 				<?endif;?>
 			</tr>
 			<?endforeach;?>
