@@ -22,8 +22,15 @@
 
 
 <div class="detail" vocab="http://schema.org/" typeof="Product">      
-
-
+         
+    <?
+    /*Запись в историю просмотров*/
+    if(!in_array($arResult['ID'],$_SESSION['CATALOG_HISTORY'])){
+        array_push($_SESSION['CATALOG_HISTORY'], $arResult['ID']);    
+    }
+    /*-----------------*/
+    ?>
+    
     <?//arshow($arResult);
         if ($_REQUEST["action"]) { header("location: /catalog/".$arResult["SECTION"]["ID"]."/".$arResult["ID"]."/");}
     ?>

@@ -24,8 +24,7 @@
     if (CModule::IncludeModule('osg')) {
         COSGUser::SetUserInfo();    
     }
-
-
+    
     include($_SERVER["DOCUMENT_ROOT"]."/include/common.php");
     // AddEventHandler("sale", "OnOrderUpdate", "OnOrderStatus");  //почтовое сообщение о смене статуса заказа
 
