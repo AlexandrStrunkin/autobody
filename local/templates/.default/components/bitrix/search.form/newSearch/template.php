@@ -21,7 +21,7 @@ if($_GET['p']){
     <input type="hidden" name="p" value="name">
 <ul class="searchFilter">
     <li>
-		<input type="text" name="q" class="search-input" value="<?if($_GET['q']){echo htmlspecialcharsbx($_GET['q']);}?>"  onclick="placeholder='';" onblur="placeholder='Воспользуйтесь удобным поиском по: артикулу, наименованию, по номеру производителя, по оригинальному номеру';" placeholder="Воспользуйтесь удобным поиском по: артикулу, наименованию, по номеру производителя, по оригинальному номеру">
+        <input type="text" name="q" class="search-input" value="<?if($_GET['q']){echo htmlspecialcharsbx($_GET['q']);}?>"  onclick="placeholder='';" onblur="placeholder='Воспользуйтесь удобным поиском по: артикулу, наименованию, по номеру производителя, по оригинальному номеру';" placeholder="Воспользуйтесь удобным поиском по: артикулу, наименованию, по номеру производителя, по оригинальному номеру">
     </li>
     <!--<li>
         <div class="currentSOption"><?if($default){echo $default;}else{?>артикулу<?}?></div>

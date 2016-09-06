@@ -539,7 +539,7 @@ logo-button {
 .search-div {
 	margin-top: 25px;
 }
-.search-input {
+.search-input, .search-suggest {
     background: url(/images/search-background.png) no-repeat 98% 50%; 
 	width: 975px;
 	height: 50px;
@@ -8224,3 +8224,17 @@ input::-webkit-calendar-picker-indicator {
     font-family: 'clear_sansbold';
     text-transform: uppercase;
 }
+
+.title-search-result {
+    font-family: 'PTSerifItalic' !important;
+    left: 450px !important;
+    width: 1000px !important;
+}
+table.title-search-result tr td{
+    font-size: 15px !important;
+    width: 975px !important;
+}
+table.title-search-result td.title-search-more {
+    font-size: 12px;
+}
+
