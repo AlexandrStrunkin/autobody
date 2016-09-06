@@ -172,7 +172,7 @@
 <body onload="initialize(); ">
 <?
     CModule::IncludeModule('osg');
-    COSGUser::SetUserInfo();
+    //COSGUser::SetUserInfo();
 ?>    
 <div class="new_overlay"></div>
 <div id="panel"><?$APPLICATION->ShowPanel();?></div>
