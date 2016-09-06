@@ -19,8 +19,16 @@ if(!empty($arResult["CATEGORIES"])):?>
 					<td class="title-search-all" onclick="document.location.href = '<?= $arItem["URL"] ?>'"><?echo $arItem["NAME"]?></td>
 				<?elseif(isset($arItem["ICON"])):?>
 					<td class="title-search-item" onclick="document.location.href = '<?= $arItem["DETAIL_PAGE_URL"] ?>'"><img src="<?echo $arItem["ICON"]?>"><?echo $arItem["NAME"]?></td>
-				<?else:?>
-					<td class="title-search-more" onclick="document.location.href = '<?= $arItem["DETAIL_PAGE_URL"] ?>'"><?echo $arItem["NAME"]?></td>
+				<?else:
+                    $element_info = $arItem["NAME"];
+                    if (strlen($arItem['CODE']) > 0) {
+                        $element_info .= ", " . $arItem["CODE"];
+                    }
+                    if (strlen($arItem["PROPERTY_SIZE_VALUE"]) > 0) {
+                        $element_info .= ", " . $arItem['PROPERTY_SIZE_VALUE'];
+                    }
+                    ?>
+					<td class="title-search-more" onclick="document.location.href = '<?= $arItem["DETAIL_PAGE_URL"] ?>'"><?echo $element_info?></td>
 				<?endif;?>
 			</tr>
 			<?endforeach;?>
