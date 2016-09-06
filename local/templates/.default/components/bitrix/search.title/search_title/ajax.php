@@ -20,13 +20,14 @@ if(!empty($arResult["CATEGORIES"])):?>
 				<?elseif(isset($arItem["ICON"])):?>
 					<td class="title-search-item" onclick="document.location.href = '<?= $arItem["DETAIL_PAGE_URL"] ?>'"><img src="<?echo $arItem["ICON"]?>"><?echo $arItem["NAME"]?></td>
 				<?else:
-                    $element_info = $arItem["NAME"];
+                    $element_info = "";
                     if (strlen($arItem['CODE']) > 0) {
-                        $element_info .= ", " . $arItem["CODE"];
+                        $element_info .= $arItem["CODE"] . ", ";
                     }
                     if (strlen($arItem["PROPERTY_SIZE_VALUE"]) > 0) {
-                        $element_info .= ", " . $arItem['PROPERTY_SIZE_VALUE'];
+                        $element_info .= $arItem['PROPERTY_SIZE_VALUE'] . ", ";
                     }
+                    $element_info .= $arItem["NAME"];
                     ?>
 					<td class="title-search-more" onclick="document.location.href = '<?= $arItem["DETAIL_PAGE_URL"] ?>'"><?echo $element_info?></td>
 				<?endif;?>
