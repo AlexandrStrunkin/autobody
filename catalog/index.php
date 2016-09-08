@@ -146,7 +146,7 @@
 		"PAGER_SHOW_ALL" => "Y",
 		"PAGER_SHOW_ALWAYS" => "Y",
 		"PAGER_TEMPLATE" => "catalog",
-		"PAGER_TITLE" => "РўРѕРІР°СЂС‹",
+		"PAGER_TITLE" => "Товары",
 		"PAGE_ELEMENT_COUNT" => "100",
 		"PARTIAL_PRODUCT_PROPERTIES" => "N",
 		"PRICE_CODE" => array(
@@ -215,7 +215,7 @@
 	),
 	false
 );?>
-<?/*$APPLICATION->IncludeComponent(
+<?$APPLICATION->IncludeComponent(
 	"bitrix:catalog.bigdata.products", 
 	"autobody.bigdata.products", 
 	array(
@@ -232,6 +232,7 @@
 			1 => "",
 		),
 		"CART_PROPERTIES_93" => array(
+			0 => "PRODUCT",
 		),
 		"COMPONENT_TEMPLATE" => "autobody.bigdata.products",
 		"CONVERT_CURRENCY" => "N",
@@ -242,7 +243,7 @@
 		"IBLOCK_TYPE" => "OSG_WEB_SHOP",
 		"ID" => $_REQUEST["PRODUCT_ID"],
 		"LABEL_PROP_88" => "-",
-		"LABEL_PROP_93" => "",
+		"LABEL_PROP_93" => "-",
 		"LINE_ELEMENT_COUNT" => "3",
 		"MESS_BTN_BUY" => "Купить",
 		"MESS_BTN_DETAIL" => "Подробнее",
@@ -261,8 +262,9 @@
 			1 => "",
 		),
 		"PROPERTY_CODE_93" => array(
+			0 => "PRODUCT",
 		),
-		"RCM_TYPE" => "personal",
+		"RCM_TYPE" => "similar_sell",
 		"SECTION_CODE" => "",
 		"SECTION_ELEMENT_CODE" => "",
 		"SECTION_ELEMENT_ID" => "",
@@ -279,4 +281,4 @@
 		"USE_PRODUCT_QUANTITY" => "N"
 	),
 	false
-);*/?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+);?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

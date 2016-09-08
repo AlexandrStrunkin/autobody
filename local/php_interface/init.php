@@ -23,7 +23,7 @@
     CModule::IncludeModule('subscribe');
     if (CModule::IncludeModule('osg')) {
         COSGUser::SetUserInfo();    
-    }
+    }    
     
     // AddEventHandler("sale", "OnOrderUpdate", "OnOrderStatus");  //почтовое сообщение о смене статуса заказа
 

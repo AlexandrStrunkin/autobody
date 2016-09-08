@@ -306,7 +306,6 @@
 
     <br/><br/><br/><br/><br/><br/>
     <?echo $arResult['DESCRIPTION']?>
- <?//arshow($arParams);?>
 </div>
 
 
