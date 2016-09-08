@@ -264,7 +264,7 @@
 		"PROPERTY_CODE_93" => array(
 			0 => "PRODUCT",
 		),
-		"RCM_TYPE" => "similar_sell",
+		"RCM_TYPE" => "personal",
 		"SECTION_CODE" => "",
 		"SECTION_ELEMENT_CODE" => "",
 		"SECTION_ELEMENT_ID" => "",
