@@ -1,6 +1,6 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
 <script>
-/* Скрипт вывода всплывающего окна на странице каталога */
+/* РЎРєСЂРёРїС‚ РІС‹РІРѕРґР° РІСЃРїР»С‹РІР°СЋС‰РµРіРѕ РѕРєРЅР° РЅР° СЃС‚СЂР°РЅРёС†Рµ РєР°С‚Р°Р»РѕРіР° */
     $(document).ready(function(){
         if ($.cookie('info_popup') != 'Y') {
             $(".forward_catalog_new_info_popup").show(500);

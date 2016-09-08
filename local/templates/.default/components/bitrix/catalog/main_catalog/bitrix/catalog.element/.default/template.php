@@ -26,15 +26,15 @@
     <?
     /*Запись в историю просмотров*/
     if(!in_array($arResult['ID'],$_SESSION['CATALOG_HISTORY'])){
-        array_push($_SESSION['CATALOG_HISTORY'], $arResult['ID']);    
+        //array_push($_SESSION['CATALOG_HISTORY'], $arResult['ID']);
+        $_SESSION['CATALOG_HISTORY'][] = $arResult['ID'];            
     }
     /*-----------------*/
     ?>
     
-    <?//arshow($arResult);
+    <? 
         if ($_REQUEST["action"]) { header("location: /catalog/".$arResult["SECTION"]["ID"]."/".$arResult["ID"]."/");}
     ?>
-    <? //echo '<div style="color:black"><pre>'; print_r($arResult); echo '</pre></div>';?>
     <? $arItem['ID'] = $arResult['ID'];?>
     <link href="/css/shadowbox.css" type="text/css" rel="stylesheet" />
     <script type="text/javascript" src="/js/shadowbox.js"></script>
@@ -424,4 +424,3 @@
     */?>
 
 </div>
-<?//arshow($arResult)?>
