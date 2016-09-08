@@ -12,7 +12,7 @@
     $APPLICATION->SetTitle($title);
 
     //очищаем кэш
-    BXClearCache(true, "/");
+    BXClearCache(true, "/catalog/");
 ?>
 <? //arshow($_REQUEST);
 

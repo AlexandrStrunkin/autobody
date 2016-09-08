@@ -26,7 +26,7 @@
     }
 
     //чистим кэш
-    BXClearCache(true, "/");
+    BXClearCache(true, "/catalog/");
 
     if ($res) {echo $res;}
 
