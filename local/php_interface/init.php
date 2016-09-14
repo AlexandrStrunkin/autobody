@@ -7,7 +7,7 @@
         if ($adminCheck) {
             if (!$USER->IsAdmin()) {
                 return false;
-            } 
+            }
         }
         echo "<pre>";
         print_r($array);
@@ -22,9 +22,9 @@
     CModule::IncludeModule('main');
     CModule::IncludeModule('subscribe');
     if (CModule::IncludeModule('osg')) {
-        COSGUser::SetUserInfo();    
-    }    
-    
+        COSGUser::SetUserInfo();
+    }
+
     // AddEventHandler("sale", "OnOrderUpdate", "OnOrderStatus");  //почтовое сообщение о смене статуса заказа
 
     AddEventHandler("sale", "OnOrderAdd", Array("MyAction", "OnOrderAdd"));
@@ -37,16 +37,16 @@
     AddEventHandler("main", "OnAfterUserAdd", Array("user_check", "OnAfterUserAddHandler"));
     AddEventHandler("main", "OnAfterUserUpdate", Array("user_check", "OnAfterUserUpdateHandler"));
     //AddEventHandler("main", "OnEpilog", "fixCatalogDuplication");
-    AddEventHandler("iblock", "OnAfterIBlockElementAdd", "NewItemInfo");   
+    AddEventHandler("iblock", "OnAfterIBlockElementAdd", "NewItemInfo");
     AddEventHandler("iblock", "OnAfterIBlockElementUpdate","UpdateItemInfo");
 
     //подмена поля "кем изменен"
-    AddEventHandler("iblock", "OnBeforeIBlockElementAdd", array("itemDataChange","changeModifier"));   
+    AddEventHandler("iblock", "OnBeforeIBlockElementAdd", array("itemDataChange","changeModifier"));
     AddEventHandler("iblock", "OnBeforeIBlockElementUpdate",array("itemDataChange","changeModifier"));
 
     class itemDataChange {
         function changeModifier(&$arFields) {
-            $arFields["MODIFIED_BY"] = 2; 
+            $arFields["MODIFIED_BY"] = 2;
         }
     }
 
@@ -86,7 +86,7 @@
             //отправляем новому пользователю на почту письмо с регистрационными данными
 
             if ($arFields["ID"]>0) {
-                if ( checkSite()=="opt" ) { 
+                if ( checkSite()=="opt" ) {
                     $arPost = array(
                         "LOGIN"             => $arFields["LOGIN"],
                         "EMAIL"             => $arFields["EMAIL"],
@@ -115,12 +115,12 @@
                     $arPost = array(
                         "LOGIN"             => $arFields["LOGIN"],
                         "EMAIL"             => $arFields["EMAIL"],
-                        "NAME"              => $arFields["NAME"]      
+                        "NAME"              => $arFields["NAME"]
                     );
                     //arshow($arFields);
                     //die();
-                    CEvent::Send("NEW_USER_REGISTER_RETAIL", "s1", $arPost,"N", 84);    
-                }    
+                    CEvent::Send("NEW_USER_REGISTER_RETAIL", "s1", $arPost,"N", 84);
+                }
             }
 
 
@@ -209,16 +209,16 @@
 
 
     //меняем валюту при добавлении в корзину
-    function currencyChange(&$arFields){    
+    function currencyChange(&$arFields){
         //$arFields["CURRENCY"] = "RUR";
         //arshow($arFields);
-        //die();                            
+        //die();
     }
 
 
 
 
-    //функция для сортировки массива  
+    //функция для сортировки массива
     function cmpMyArray($a, $b){
         $aa = intval($a["PRICES"]["BASE"]["VALUE_NOVAT"]);
         $bb = intval($b["PRICES"]["BASE"]["VALUE_NOVAT"]);
@@ -278,24 +278,24 @@
 
     function NewItemInfo($arFields) {
         //предложение картинок
-        if ($arFields["IBLOCK_ID"] == 96) {   
+        if ($arFields["IBLOCK_ID"] == 96) {
 
-            $el = CIBlockElement::GetById($arFields["ID"]);     
+            $el = CIBlockElement::GetById($arFields["ID"]);
             $arElement = $el->Fetch();
 
             if ($arElement["WF_NEW"] == "Y") {
                 //получаем свойтво "файл" для данного элемента
                 $file = CIBlockElement::GetProperty(96,$arElement["ID"], Array(), Array("CODE"=>"FILE"));
-                $arFile = $file->GetNext();  
+                $arFile = $file->GetNext();
 
                 $file_path = "http://autobody.ru";
                 $file_path .= CFile::GetPath($arFile["VALUE"]); //путь к картинке, которую перемещаем в каталог
 
-                $action = "http://autobody.ru/img_check.php?ID=".$arFields["ID"];    
+                $action = "http://autobody.ru/img_check.php?ID=".$arFields["ID"];
 
-                //получаем свойто "товар" для данного элемента     
+                //получаем свойто "товар" для данного элемента
                 $product = CIBlockElement::GetList(array(), array("CODE"=>$arElement["NAME"], "IBLOCK_ID"=>88), false, false, array());
-                $arProduct = $product->GetNext(); 
+                $arProduct = $product->GetNext();
 
                 $item_link = "http://autobody.ru/catalog/".$arProduct["IBLOCK_SECTION_ID"]."/".$arProduct["ID"]."/";
 
@@ -306,7 +306,7 @@
                     "ITEM_LINK" =>  $item_link
                 );
                 //генерируем почтовое событие
-                $mail = CEvent::Send("NEW_IMAGE","s1",$arRegFields,"N",78);    
+                $mail = CEvent::Send("NEW_IMAGE","s1",$arRegFields,"N",78);
             }
         }
 
@@ -316,20 +316,20 @@
 
             //получаем инфо о добавленном элементе инфоблока
             $el = CIBlockElement::GetList(array(),array("ID"=>$arFields["ID"], "IBLOCK_ID"=>97),false, false, array("NAME","PROPERTY_TEXT","PROPERTY_PRODUCT", "PROPERTY_TEXT"));
-            $arElement = $el->GetNext(); 
+            $arElement = $el->GetNext();
             //получаем инфо о товаре к которому добавлен коммент
             $product = CIBlockElement::GetById($arElement["PROPERTY_PRODUCT_VALUE"]);
-            $arProduct = $product->GetNext();      
+            $arProduct = $product->GetNext();
 
             $arRegFields = array(
                 "ART" => $arProduct["CODE"],
                 "TEXT" => $arElement["PROPERTY_TEXT_VALUE"],
                 "ACTION_LINK" => "http://autobody.ru/comment_check.php?ID=".$arFields["ID"],
-                "ITEM_LINK" =>  "http://autobody.ru/catalog/".$arProduct["IBLOCK_SECTION_ID"]."/".$arProduct["ID"]."/"    
-            );    
+                "ITEM_LINK" =>  "http://autobody.ru/catalog/".$arProduct["IBLOCK_SECTION_ID"]."/".$arProduct["ID"]."/"
+            );
 
             //отправляем оповещение о новом комменте
-            $mail = CEvent::Send("NEW_COMMENT","s1",$arRegFields,"N",79);   
+            $mail = CEvent::Send("NEW_COMMENT","s1",$arRegFields,"N",79);
         }
 
         //дублируем свойства для поиска
@@ -349,7 +349,7 @@
     }
 
     //Функция которая инициализирует почтовое событие при смене статуса заказа через 1с
-    /*  function OnOrderStatus($ID, $arFields){            
+    /*  function OnOrderStatus($ID, $arFields){
     $order_res = CSaleOrder::GetList(
     Array(),
     Array("ID" => $ID),
@@ -373,7 +373,7 @@
     $date_basket=explode(" ", $order_ob["DATE_INSERT"]);
     $date_baket_new=explode(".", $date_basket[0]);
     if (CModule::IncludeModule('currency')) {
-    $price_basket = CCurrencyRates::ConvertCurrency($basket_ob["PRICE"], "USD", "RUB", $date_baket_new[2]."-".$date_baket_new[1]."-".$date_baket_new[0]);   
+    $price_basket = CCurrencyRates::ConvertCurrency($basket_ob["PRICE"], "USD", "RUB", $date_baket_new[2]."-".$date_baket_new[1]."-".$date_baket_new[0]);
     };
     $order_list .= $basket_ob["NAME"]." Количество: ".$basket_ob["QUANTITY"]." Цена: ".$price_basket." руб.\n";
     endwhile;
@@ -393,7 +393,7 @@
 
     AddEventHandler("main", "OnAfterEpilog", "Prefix_FunctionName");
 
-    function Prefix_FunctionName() {  
+    function Prefix_FunctionName() {
     global $APPLICATION;
 
     // Check if we need to show the content of the 404 page
@@ -405,7 +405,7 @@
     if ($APPLICATION->GetCurPage() != PREFIX_PATH_404) {
     header('X-Accel-Redirect: '.PREFIX_PATH_404);
     exit();
-    }    
+    }
     }*/
 
 
@@ -442,36 +442,36 @@
 
 
     //добавляем свойства CODE, UNC и WARRANTY в доп поля для поиска для элемента $ID
-    function addSearchProps($ID) {     
+    function addSearchProps($ID) {
         $el = CIBLockElement::GetLIst(array(), array("IBLOCK_ID"=>88, "ID"=>$ID), false, false, array("ID","CODE","PROPERTY_UNC","PROPERTY_WARRANTY"));
         while($arElement = $el->Fetch()) {
-            $pattern = "/(\W)/";      
+            $pattern = "/(\W)/";
             $arElement["CODE"] = preg_replace($pattern,"",$arElement["CODE"]);
             $arElement["PROPERTY_WARRANTY_VALUE"] = preg_replace($pattern,"",$arElement["PROPERTY_WARRANTY_VALUE"]);
-            $arElement["PROPERTY_UNC_VALUE"] = preg_replace($pattern,"",$arElement["PROPERTY_UNC_VALUE"]); 
+            $arElement["PROPERTY_UNC_VALUE"] = preg_replace($pattern,"",$arElement["PROPERTY_UNC_VALUE"]);
 
             if (strpos($arElement["PROPERTY_UNC_VALUE"],"/") > 0) {
-                $s = "/"; 
+                $s = "/";
                 $unc = explode($s,$arElement["PROPERTY_UNC_VALUE"]);
-            }           
+            }
             elseif (strpos($arElement["PROPERTY_UNC_VALUE"],"+") > 0) {
                 $s = "+";
                 $unc = explode($s,$arElement["PROPERTY_UNC_VALUE"]);
-            } 
+            }
             else {
                 $unc = $arElement["PROPERTY_UNC_VALUE"];
-            }        
+            }
             CIBlockElement::SetPropertyValuesEx($arElement["ID"], 88, array("SEARCH_CODE"=>$arElement["CODE"]));
-            CIBlockElement::SetPropertyValuesEx($arElement["ID"], 88, array("SEARCH_WARRANTY"=>$arElement["PROPERTY_WARRANTY_VALUE"])); 
-            CIBlockElement::SetPropertyValuesEx($arElement["ID"], 88, array("SEARCH_UNC"=>$unc));  
-        }        
+            CIBlockElement::SetPropertyValuesEx($arElement["ID"], 88, array("SEARCH_WARRANTY"=>$arElement["PROPERTY_WARRANTY_VALUE"]));
+            CIBlockElement::SetPropertyValuesEx($arElement["ID"], 88, array("SEARCH_UNC"=>$unc));
+        }
     }
 
 
     function checkSite() {
         $site = "";
         if (substr_count($_SERVER["HTTP_HOST"], "retail.autobody.ru") > 0) {
-            $site = 'retail'; 
+            $site = 'retail';
         }
         else {
             $site = 'opt';
@@ -483,28 +483,28 @@
     //пишем в сессию массив с данными для передачи на сайт:
     if (checkSite() == 'retail') {
 
-        $_GLOBALS["SITE_VARIABLES"] = array(            
+        $_GLOBALS["SITE_VARIABLES"] = array(
             "PRICE_CODE" => 'PRICE_2',
-        );          
+        );
     }
 
-    else {                           
+    else {
 
-        $_GLOBALS["SITE_VARIABLES"] = array(            
+        $_GLOBALS["SITE_VARIABLES"] = array(
             "PRICE_CODE" => 'PRICE_1',
         );
     }
 
     function getPriceForId($product_id) {
-        if (checkSite() == 'retail') {      
+        if (checkSite() == 'retail') {
             $price_code = 'PRICE_2';
         }
-        else {                           
+        else {
             $price_code = 'PRICE_1';
         }
 
         $res=CIBlockPriceTools::GetCatalogPrices(88,array($price_code));
-        $price_code=$res[$price_code]["ID"]; 
+        $price_code=$res[$price_code]["ID"];
 
         $dbPrice=CPrice::GetList(
             array(),
@@ -514,7 +514,7 @@
             array("PRICE","CATALOG_GROUP_ID"));
         $arPriceCode=array();
         while ($arPrice = $dbPrice->Fetch()) {
-            $arPriceCode[$arPrice["CATALOG_GROUP_ID"]]=$arPrice["PRICE"];    
+            $arPriceCode[$arPrice["CATALOG_GROUP_ID"]]=$arPrice["PRICE"];
         }
 
         return CCurrencyRates::ConvertCurrency($arPriceCode[$price_code], "USD", "RUB");
@@ -523,7 +523,7 @@
 
 
 
-    //Если регистрация с сайта retail, то изменяем группу 
+    //Если регистрация с сайта retail, то изменяем группу
     function OnBeforeUserRegisterHandler($args)
     {
         if (checkSite() == 'retail') {
@@ -541,7 +541,7 @@
 
         //если админ, то не редиректим
         if (!$USER->IsAdmin()) {
-            //$strCurHost=$_SERVER["HTTP_HOST"];   
+            //$strCurHost=$_SERVER["HTTP_HOST"];
             $strCurHost=SITE_SERVER_NAME;  //домен www.autobody.ru
             $strCurDir=$APPLICATION->GetCurPageParam("",array(),false); //страница и GET параметры
 
@@ -557,40 +557,40 @@
 
                     $strCurHost=implode(".",$arCurHost);
                     $strCurHost="http://".$strCurHost.$strCurDir;
-                    header("Location: ".$strCurHost);         
-                }    
+                    header("Location: ".$strCurHost);
+                }
             }
             else if (checkSite()=="retail") {
                 //url = retail.autobody.ru и юзер НЕ в группе 11(клиенты розницы)
-                if ( !in_array(11,$USER->GetUserGroupArray()) && $USER->IsAuthorized() ) {            
+                if ( !in_array(11,$USER->GetUserGroupArray()) && $USER->IsAuthorized() ) {
                     $strCurHost="http://".$strCurHost.$strCurDir;
                     header("Location: ".$strCurHost);
                     //echo $_SERVER['SERVER_NAME']; die();
                 }
 
             }
-        }  
+        }
     }
 
 
 
 
     AddEventHandler('sale', 'OnOrderUpdate', 'OnOrderUpdateFunc');
-    function OnOrderUpdateFunc ($ID, $arFields) {          
-        global $USER;       
-        $order_info=CSaleOrder::GetByID($ID);         
-        
+    function OnOrderUpdateFunc ($ID, $arFields) {
+        global $USER;
+        $order_info=CSaleOrder::GetByID($ID);
+
         //проверяем, если статус изменился только что, отсылаем письмо
         $curTimestamp = date("U");
-        $orderStatusTimestamp = MakeTimeStamp($order_info["DATE_STATUS"], "YYYY-MM-DD HH:MI:SS"); 
+        $orderStatusTimestamp = MakeTimeStamp($order_info["DATE_STATUS"], "YYYY-MM-DD HH:MI:SS");
         $sendMessage = true;
         //если между текущей меткой времени и меткой времени смены статуса заказа больше минуты - письмо не отправляем
         if (($curTimestamp - $orderStatusTimestamp) > 60) {
-           $sendMessage = false; 
+           $sendMessage = false;
         }
         if ($order_info['STATUS_ID']!='N' && $sendMessage) {
             if(strstr($order_info['DATE_UPDATE'],date('Y-m-d H:i')) || strstr($order_info['DATE_STATUS'],date('Y-m-d H:i'))){
-                $status=CSaleStatus::GetByID($order_info['STATUS_ID']);          
+                $status=CSaleStatus::GetByID($order_info['STATUS_ID']);
                 $delivery = CSaleDelivery::GetByID($order_info['DELIVERY_ID']);
                 $payment = CSalePaySystem::GetByID($order_info['PAY_SYSTEM_ID']);
                 $THIS_ORDER_LIST="";
@@ -623,7 +623,7 @@
                         <td>'.$props_value.'</td>
                         <td>'.$executed_value.'</td>
                         <td>-</td>
-                        <td>'.$disallowed_value.'</td>   
+                        <td>'.$disallowed_value.'</td>
                         <td>'.$list_fetch["QUANTITY"].'</td>
                         <td>'.CCurrencyRates::ConvertCurrency($list_fetch['PRICE'], "USD", "RUR").'</td>
                         <td><b>'.(CCurrencyRates::ConvertCurrency($list_fetch['PRICE'], "USD", "RUR")*$list_fetch["QUANTITY"]).'</b></td>
@@ -648,12 +648,12 @@
                     "NUM_TICKET" => $num_ticket['VALUE'],
                     //"PRICE" => CCurrencyRates::ConvertCurrency($list_fetch['PRICE'], "USD", "RUR")+$delivery['PRICE'],
                     "PRICE" => $order_info['PRICE'],
-                    "ORDER_LIST" => $THIS_ORDER_LIST, 
+                    "ORDER_LIST" => $THIS_ORDER_LIST,
                     "EMAIL" =>  $rsUser['EMAIL'],
                     "WAREHOUSE" => $store['TITLE'],
                     "DELIVERY" => $delivery["NAME"],
                     "DELIVERY_PRICE" => $delivery['PRICE'],
-                    "PAYMENT" => $payment["NAME"]             
+                    "PAYMENT" => $payment["NAME"]
 
 
                 );
@@ -661,11 +661,11 @@
                 //  if ($mail_fields['RES_NUMBER']) {
                 if ((is_numeric($mail_fields['RES_NUMBER']) && $order_info['STATUS_ID']!='F') || ($order_info['STATUS_ID']=='F' && strstr($mail_fields['RES_NUMBER'], '('))) {
                     CEvent::Send("ORDERS_STATUS", "s1", $mail_fields, "N", 87);
-                }  
+                }
             }
         }
     }
-    // } 
+    // }
     function morph($n, $f1, $f2, $f5) {
         $n = abs(intval($n)) % 100;
         if ($n>10 && $n<20) return $f5;
@@ -676,7 +676,7 @@
     }
 
 
-    function num2str($num) { 
+    function num2str($num) {
         $nul='ноль';
         $ten=array(
             array('','один','два','три','четыре','пять','шесть','семь', 'восемь','девять'),
@@ -711,8 +711,8 @@
         }
         else $out[] = $nul;
         $out[] = morph(intval($rub), $unit[1][0],$unit[1][1],$unit[1][2]); // rub
-        $out[] = $kop.' '.morph($kop,$unit[0][0],$unit[0][1],$unit[0][2]); // kop 
-        return trim(preg_replace('/ {2,}/', ' ', join(' ',$out)));    
+        $out[] = $kop.' '.morph($kop,$unit[0][0],$unit[0][1],$unit[0][2]); // kop
+        return trim(preg_replace('/ {2,}/', ' ', join(' ',$out)));
     }
 
     /*---Banners on index page----*/
@@ -721,10 +721,10 @@
     * Prepare section code for query
     * %ccc% - this pattern will search for a needle presence in the string
     * https://dev.1c-bitrix.ru/api_help/iblock/filters/string.php
-    * 
+    *
     * @param string $sectionCodePrefix
     * @return string
-    * 
+    *
     * */
 
     function prepareForQuery($sectionCodePrefix){
@@ -732,10 +732,10 @@
     }
 
     /**
-    * 
+    *
     * @param string $sectionCode
     * @return array $sections
-    * 
+    *
     * */
 
     function getSectionsPrefixArr($sectionCode){
@@ -752,7 +752,7 @@
         $res = CIBlockElement::GetList(Array(), Array("IBLOCK_ID"=>118,"ACTIVE"=>"Y","ID"=>$bannersSections[$sectionCode]), false, false, Array("ID","IBLOCK_ID","NAME"));
         if($ob = $res->GetNextElement()){
             $arp = $ob->GetProperties();
-            $sections = array_map("prepareForQuery",$arp['RELATED_SECTIONS']['VALUE']);   
+            $sections = array_map("prepareForQuery",$arp['RELATED_SECTIONS']['VALUE']);
         }
         return $sections;
     }
@@ -760,7 +760,7 @@
     /**
     * @param string $fileName
     * @return string|void
-    * 
+    *
     * */
 
     function isMinifiedExist($fileName){
@@ -770,10 +770,10 @@
     }
 
     /**
-    * 
+    *
     * @param string $code
     * @return string $image
-    * 
+    *
     * */
 
     function isImageExist($code){
@@ -788,10 +788,10 @@
     }
 
     /**
-    * 
+    *
     * @param string $item_code
     * @return string $path
-    * 
+    *
     * */
 
     function getResizedIMGPath($item_code,$width=150,$height=150){
@@ -800,9 +800,9 @@
             $image = isImageExist($item_code);
             if($image){
                 CFile::ResizeImageFile(
-                    $image, 
-                    &$tmp_fold, 
-                    array('width'=>$width, 'height'=>$height), 
+                    $image,
+                    &$tmp_fold,
+                    array('width'=>$width, 'height'=>$height),
                     BX_RESIZE_IMAGE_PROPORTIONAL
                 );
                 $path = "/upload/catalog_resized/".$item_code.".jpg";
@@ -827,8 +827,34 @@
             if(isImageExist($arf['CODE'])){
                 array_push($responseArray,$arf);
                 $counter++;
-            } 
+            }
         }
         return $responseArray;
     }
+
+	/**
+	 *
+	 * @param mixed $data
+	 * @param string $file
+	 * @return void
+	 *
+	 * */
+
+	function logger($data, $file) {
+		file_put_contents(
+			$file,
+			var_export($data, 1)."\n",
+			FILE_APPEND
+		);
+	}
+    // ���� /bitrix/php_interface/init.php
+    // ������������ ����������
+
+    AddEventHandler("main", "OnBeforeUserAdd", "OnBeforeUserAddHandler");
+    // ������� ���������� ������� "OnBeforeUserAdd"
+    function OnBeforeUserAddHandler(&$arFields)
+    {
+        logger($arFields, $_SERVER["DOCUMENT_ROOT"].'/cgi-bin/log_user.txt' );
+    }
+
 ?>
