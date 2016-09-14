@@ -8238,3 +8238,14 @@ table.title-search-result td.title-search-more {
     font-size: 12px;
 }
 
+table .searchStatTable {
+    border-collapse: collapse;
+}
+
+td .searchStatTable {
+    border: 1px solid #E6E6E6;
+    font-size: 12px;
+    text-align: center;
+    padding: 5px 20px;    
+}
+

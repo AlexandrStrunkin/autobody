@@ -1,4 +1,7 @@
-<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");?>
+<?
+require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+$APPLICATION->SetTitle("Поисковая статистика");
+?>
 <p>Поисковые запросы хранятся в течении 62 дней.</p><br>
 <form action="">
     <?$APPLICATION->IncludeComponent(
@@ -42,9 +45,9 @@
         GLOBAL $DB;
         $res = $DB -> query($query);        
 
-        $list = array(iconv("UTF-8", "CP1251", 'Поисковые запросы с '.$date_from.' по '.$date_to.';Число запросов'));
+        $list = array(iconv("UTF-8", "CP1251", 'Поисковые запросы с '.substr($date_from, 0, 10).' по '.substr($date_to, 0, 10).';Число запросов'));
         
-        echo '<br><a download href="/test/searchstat.csv">Скачать .csv</a><br>';
+        echo '<br><a download href="/search-statistics/csv/searchstat'.date('Y-m-d').'.csv">Скачать .csv</a><br>';
         ?>
         <br>
         <table class="searchStatTable">
@@ -65,7 +68,7 @@
         ?>
         </table>
         <?
-        $fp = fopen($_SERVER["DOCUMENT_ROOT"].'/test/searchstat.csv', 'w');
+        $fp = fopen($_SERVER["DOCUMENT_ROOT"].'/search-statistics/csv/searchstat'.date('Y-m-d').'.csv', 'w');
 
         foreach ($list as $line) {
             fputcsv($fp, explode(';', $line),";");
@@ -73,3 +76,4 @@
         fclose($fp);
     }
 ?>
+<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
