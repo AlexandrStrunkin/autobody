@@ -3,7 +3,19 @@ div.title-search-result {
 	display:none;
 	overflow:hidden;
 	z-index:205;
-    left: 340px !important;
+   
+}
+
+@media (max-width: 1330px) {
+    div.title-search-result {
+        left: 20px !important;
+    }
+}
+
+@media (min-width: 1330px) {
+    div.title-search-result {
+        left: 340px !important;
+    }
 }
 
 table.title-search-result {

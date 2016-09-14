@@ -13,7 +13,7 @@ if ($_POST["compare_id"]){
     }
 }
 //arshow($_SESSION["COMPARE"]);
-BXClearCache(true, "/");
+BXClearCache(true, "/catalog/");
 echo count($_SESSION["COMPARE"]);
 
 ?>

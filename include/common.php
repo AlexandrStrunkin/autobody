@@ -37,14 +37,15 @@
                     unset($new_url[$id]);
                     }    */  
                 }
-                if (!strpos($url,"clear_cache")) {
+                BXClearCache(true, "/catalog/");
+                /*if (!strpos($url,"clear_cache")) {
                     $url = implode("&",$new_url);
                     if (strpos($url,"?")) {
                         $s = "&";
                     }
                     else {$s = "?";}
                     $url = $url.$s."clear_cache=Y";
-                }
+                }     */
                 //  echo $url;
                 //  die();
 

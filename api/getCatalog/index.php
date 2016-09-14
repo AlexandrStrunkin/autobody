@@ -2,7 +2,11 @@
 
 include ("../apiCore.php");
 
+global $USER;
+
 class AutoBodyCatalog {
+	
+	const CACHE_TIME_LIMIT = 18000;
     
     public static $currentSection;
     public static $currentSectionName;
@@ -24,6 +28,47 @@ class AutoBodyCatalog {
              return Array('IBLOCK_ID'=>88,"ACTIVE"=>"Y");
         }
      }
+	 
+	 /**
+	  * 
+	  * Действителен ли кеш на данный момент.
+	  * Если да, то вернется json каталога, если нет, то вернется false
+	  * 
+	  * @return json|bool
+	  * 
+	  * */
+	 
+	 private static function isCacheValid() {
+		$filename = glob("cache_*");
+		if (count($filename)) {
+			$pieces = explode("_", $filename[0]);
+			$time = array_pop($pieces);
+			// Если кеш валиден по времени
+			if (time() - $time < self::CACHE_TIME_LIMIT) {
+				$cache = file_get_contents(dirname(__FILE__) . "/" . $filename[0]);
+				if (count(json_decode($cache, true))) {
+					// все нормально распаковалось, отдаем инфу
+					return $cache;
+				}
+			}
+		}
+	 }
+	 
+	 /**
+	  * 
+	  * Перезаписываем кеш
+	  * 
+	  * @param json $data
+	  * 
+	  * */
+	 
+	 private static function setCache($data) {
+		$filename = glob("cache_*");
+		if (count($filename)) {
+			file_put_contents(dirname(__FILE__) . "/" . $filename[0], $data);
+			rename(dirname(__FILE__) . "/" . $filename[0], dirname(__FILE__) . "/cache_" . time());
+		}
+	 }
      
      /*****
      *
@@ -37,6 +82,15 @@ class AutoBodyCatalog {
         $authResult = ApiCore::checkUserByToken($token); 
         $arSelect = Array('NAME','CODE','ID','IBLOCK_SECTION_ID','PROPERTY_COUNTRY','PROPERTY_FIRM','PROPERTY_UNC','PROPERTY_SIZE' ,'SECTION_ID','PROPERTY_WARRANTY','XML_ID');
         $arFilter = self::sectionCodeCheck($section_code);
+		// запрашивают весь каталог
+		if (!array_key_exists("SECTION_ID", $arFilter)) {
+			logger("+", dirname(__FILE__) . "/requests_without_sections.log");
+			if ($cache = self::isCacheValid()) {
+				echo $cache;
+				return false;
+			}
+		}
+		
         $res = CIBlockElement::GetList(Array(), $arFilter, false, Array("nTopCount"=>30000), $arSelect);
         while($ob = $res->GetNextElement()){
             $arFields = $ob->GetFields();
@@ -102,11 +156,18 @@ class AutoBodyCatalog {
         }
             $statusResponse = array('elements' => $DATA);
             $statusResponse = json_encode($statusResponse);
+			
+			// если запросили каталог, но мы пролетели мимо кеша
+			if (!$cache && !array_key_exists("SECTION_ID", $arFilter)) {
+				self::setCache($statusResponse);
+			}
+			
             echo $statusResponse;
      }
 
     
 }
 
-AutoBodyCatalog::GetCatalog($_REQUEST['token'], $_REQUEST['section_code']);
+AutoBodyCatalog::GetCatalog($_REQUEST['token'], $_REQUEST['section_code']);	
+
 ?>  
