@@ -40,7 +40,7 @@
     AddEventHandler("iblock", "OnAfterIBlockElementAdd", "NewItemInfo");
     AddEventHandler("iblock", "OnAfterIBlockElementUpdate","UpdateItemInfo");
 
-    //подмена поля "кем изменен"
+    //РїРѕРґРјРµРЅР° РїРѕР»СЏ "РєРµРј РёР·РјРµРЅРµРЅ"
     AddEventHandler("iblock", "OnBeforeIBlockElementAdd", array("itemDataChange","changeModifier"));
     AddEventHandler("iblock", "OnBeforeIBlockElementUpdate",array("itemDataChange","changeModifier"));
 
@@ -55,15 +55,15 @@
     //заполнение веб-формы
     AddEventHandler('form', 'onAfterResultAdd', 'SendConfirmEmail'); //заполнена веб-форма регистрации
 
-    //Регистрируем обработчик события при регистрации нового пользователя
+    //� егистрируем обработчик события при регистрации нового пользователя
     AddEventHandler("main", "OnBeforeUserRegister", "OnBeforeUserRegisterHandler");
     //Для редиректа на retail
     AddEventHandler("main", "OnBeforeProlog", "MyOnBeforePrologHandler");
 
-    /*----Редирект для дублирующих ссылок в каталоге----*/
+    /*----Р РµРґРёСЂРµРєС‚ РґР»СЏ РґСѓР±Р»РёСЂСѓСЋС‰РёС… СЃСЃС‹Р»РѕРє РІ РєР°С‚Р°Р»РѕРіРµ----*/
     function fixCatalogDuplication(){
         $subdir = explode('/', $GLOBALS["APPLICATION"] -> GetCurPage());
-        if(strpos($GLOBALS["APPLICATION"] -> GetCurPage(),'catalog') && $subdir[2] && $subdir[3] && !strpos($subdir[3],'ndex.php')){
+        if(strpos($GLOBALS["APPLICATION"] -> GetCurPage(),'catalog') && $subdir[2] && $subdir[3] && !strpos($subdir[3],'index.php')){
             $arFilter = Array('SECTION_ID'=>$subdir[2]);
             $db_list = CIBlockSection::GetList(Array(), $arFilter, true);
             if($ar_result = $db_list->GetNext()){
@@ -83,7 +83,7 @@
     {
         // создаем обработчик события "OnAfterUserAdd"
         function OnAfterUserAddHandler($arFields)  {
-            //отправляем новому пользователю на почту письмо с регистрационными данными
+        //отправляем новому пользователю на почту письмо с регистрационными данными
 
             if ($arFields["ID"]>0) {
                 if ( checkSite()=="opt" ) {
@@ -127,9 +127,9 @@
 
         }
 
-        // создаем обработчик события "OnAfterUserUpdate"
+         // создаем обработчик события "OnAfterUserUpdate"
         function OnAfterUserUpdateHandler($arFields)  {
-            //отправляем пользователю на почту письмо с измененными регистрационными данными
+        //отправляем пользователю на почту письмо с измененными регистрационными данными
 
             $arPost = array(
                 "LOGIN"             => $arFields["LOGIN"],
@@ -163,8 +163,8 @@
         //if($USER->GetID()==172333){
         if(!empty($_COOKIE['comment_city']) && !empty($_COOKIE['comment_street'])){
             $arFields['USER_DESCRIPTION'] = $arFields['USER_DESCRIPTION'].'
-            Город: ['.$_COOKIE['comment_city'].'];
-            Адрес: ['.$_COOKIE['comment_street'].']';
+            Р“РѕСЂРѕРґ: ['.$_COOKIE['comment_city'].'];
+            РђРґСЂРµСЃ: ['.$_COOKIE['comment_street'].']';
             unset($_COOKIE['comment_city']);
             unset($_COOKIE['comment_street']);
         }
@@ -177,8 +177,8 @@
 
     class MyAction{
         function OnOrderAdd($ID, $arFields){
-            //добавляем к заказу свойство "количество мест" - номер склада
-            $arFields = array("ORDER_ID"=>$ID,"ORDER_PROPS_ID"=>156, "NAME"=>"Количество мест", "VALUE"=>GKCommon::GetSavedWarehouse(), "CODE"=>"ROOM_NUMBER" );
+        //добавляем к заказу свойство "количество мест" - номер склада
+        $arFields = array("ORDER_ID"=>$ID,"ORDER_PROPS_ID"=>156, "NAME"=>"РљРѕР»РёС‡РµСЃС‚РІРѕ РјРµСЃС‚", "VALUE"=>GKCommon::GetSavedWarehouse(), "CODE"=>"ROOM_NUMBER" );
             // $prop_id = CSaleOrderPropsValue::Add($arFields);
 
         }
@@ -208,8 +208,8 @@
     }
 
 
-    //меняем валюту при добавлении в корзину
-    function currencyChange(&$arFields){
+        //меняем валюту при добавлении в корзину
+        function currencyChange(&$arFields){
         //$arFields["CURRENCY"] = "RUR";
         //arshow($arFields);
         //die();
@@ -254,8 +254,8 @@
 
 
 
-    //письмо о подтверждении регистрации и добавление в бд записи для проверки
-    function SendConfirmEmail($WEB_FORM_ID, $RESULT_ID) {
+        //письмо о подтверждении регистрации и добавление в бд записи для проверки
+        function SendConfirmEmail($WEB_FORM_ID, $RESULT_ID) {
         //die();
         if ($WEB_FORM_ID == 1) {//форма регистрации
             $hash = md5(date("U"));
@@ -341,7 +341,7 @@
     }
 
 
-    //дублируем свойства для поиска
+//дублируем свойства для поиска
     function UpdateItemInfo($arFields) {
         if ($arFields["IBLOCK_ID"] == 88) {
             addSearchProps($arFields["ID"]);
@@ -412,7 +412,6 @@
     //получаем ID товаров в корзине
     function getCurrentBasket() {
         $arBasketItemsIDs = array();  //массив ID товаров, которые в корзине на данный момент
-
         $dbBasketItems = CSaleBasket::GetList(
             array(
                 "NAME" => "ASC",
@@ -832,29 +831,34 @@
         return $responseArray;
     }
 
-	/**
-	 *
-	 * @param mixed $data
-	 * @param string $file
-	 * @return void
-	 *
-	 * */
+    /**
+     *
+     * @param mixed $data
+     * @param string $file
+     * @return void
+     *
+     * */
 
-	function logger($data, $file) {
-		file_put_contents(
-			$file,
-			var_export($data, 1)."\n",
-			FILE_APPEND
-		);
-	}
-    // ���� /bitrix/php_interface/init.php
-    // ������������ ����������
+    function logger($data, $file) {
+        file_put_contents(
+            $file,
+            var_export($data, 1)."\n",
+            FILE_APPEND
+        );
+    }
+    // файл /bitrix/php_interface/init.php
+    // регистрируем обработчик
 
     AddEventHandler("main", "OnBeforeUserAdd", "OnBeforeUserAddHandler");
-    // ������� ���������� ������� "OnBeforeUserAdd"
+    // создаем обработчик события "OnBeforeUserAdd"
     function OnBeforeUserAddHandler(&$arFields)
     {
         logger($arFields, $_SERVER["DOCUMENT_ROOT"].'/cgi-bin/log_user.txt' );
     }
-
+    // файл /bitrix/php_interface/init.php
+    // регистрируем обработчик
+    AddEventHandler("main", "OnBeforeUserUpdate", "OnBeforeUserUpdateHandler");
+    function OnBeforeUserUpdateHandler(&$arFields) {
+        logger($arFields, $_SERVER["DOCUMENT_ROOT"].'/cgi-bin/log_user_update.txt' );
+    }
 ?>

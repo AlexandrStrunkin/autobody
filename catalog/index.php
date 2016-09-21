@@ -1,8 +1,9 @@
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
     $APPLICATION->SetTitle("РљР°С‚Р°Р»РѕРі");
+    //arshow($_GLOBALS["SITE_VARIABLES"]);
 ?><?$APPLICATION->IncludeComponent(
-	"bitrix:catalog", 
-	"main_catalog", 
+	"bitrix:catalog",
+	"main_catalog",
 	array(
 		"ACTION_VARIABLE" => "action",
 		"ADD_ELEMENT_CHAIN" => "Y",
@@ -150,8 +151,7 @@
 		"PAGE_ELEMENT_COUNT" => "100",
 		"PARTIAL_PRODUCT_PROPERTIES" => "N",
 		"PRICE_CODE" => array(
-			0 => "PRICE_1",
-			1 => "PRICE_2",
+			0 => $_GLOBALS["SITE_VARIABLES"]["PRICE_CODE"],
 		),
 		"PRICE_VAT_INCLUDE" => "Y",
 		"PRICE_VAT_SHOW_VALUE" => "N",
@@ -216,8 +216,8 @@
 	false
 );?>
 <?$APPLICATION->IncludeComponent(
-	"bitrix:catalog.bigdata.products", 
-	"autobody.bigdata.products", 
+	"bitrix:catalog.bigdata.products",
+	"autobody.bigdata.products",
 	array(
 		"ACTION_VARIABLE" => "action",
 		"ADDITIONAL_PICT_PROP_88" => "",
