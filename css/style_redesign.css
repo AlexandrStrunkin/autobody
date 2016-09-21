@@ -1703,7 +1703,7 @@ label.custom-radio {
 	border-bottom-width: 2px;
 	margin-top: 28px;
 	padding-bottom: 15px;
-	width: 730px;
+	width: 730px; 
 }
 
 .tech-title a {
@@ -1873,77 +1873,55 @@ label.custom-radio {
     position: absolute;
     display: none;
     box-sizing: border-box;
-    background-color: #ffffff;
-    height: 260px;
-    width: 250px;
-    top: -185px;
-    right: 0px;
-    z-index: 7;;
-    box-shadow: -5px 0 35px rgba(89,58,58,0.25);
-}
-.forward_catalog_new_popup_text {
-    font-family: 'clear_sansregular';
+    background-color: #adffff;
+    border: 1px solid #88d0eb;
+    border-radius: 13px;
+    height: 135px;
+    width: 325px;
+    top: -140px;
+    right: 50%;
+    z-index: 7;
+    font-family: 'PTSerifRegular';
     font-size: 15px;
-    letter-spacing: 0px;    
-    height: 160px;
-    color: #4c4c4c;
-    padding-top: 24px;
-    padding-right: 20px;
-    padding-bottom: 0px;
-    padding-left: 20px;
-    line-height: 22px;
-    text-align: left;
-    font-weight: normal;
-    border-bottom: 1px solid #dadada;
-}
-.forward_catalog_new_popup_text b{
-    font-weight: normal;
-    color: #000000;
-}
-.forward_catalog_new_popup_warning {
-    font-family: 'clear_sansbold';
-    font-size: 18px;
-    color: #e31f1f;
-    line-height: 18px;
-    padding-bottom: 10px;
-    font-weight: normal;
+    letter-spacing: 0px;
+    color: #D91016;
+    padding-top: 9px;
+    line-height: 19px;
 }
 
 .forward_catalog_new_popup_close_button {
     position: absolute;
     display: block;
     box-sizing: border-box;
-    background-color: #e31f1f;
-    border-radius: 2px;
-    height: 40px;
-    width: 210px;
-    bottom: 20px;
-    right: 20px;
+    background-color: #0a0a0a;
+    border-radius: 4px;
+    height: 30px;
+    width: 192px;
+    bottom: 11px;
+    right: 62px;
     z-index: 7;
-    font-family: 'clear_sansregular';
-    font-size: 15px;
+    font-family: 'bebas_neuebold';
+    font-size: 18px;
+    letter-spacing: 1px;
     color: #ffffff;
-    line-height: 40px;
+    line-height: 32px;
     cursor: pointer;
-    text-align: center;
-    font-weight: normal;
 }
 
 .forward_catalog_new_popup_triangle{
     position: absolute;
-    background: url(/i/catalog_popup.png) no-repeat;
-    width: 14px;
-    height: 7px;
-    right: 10px;
-    bottom: -7px;
-    z-index: 7;
+    background: url(/i/catalog_popup_blue.png) no-repeat;
+    width: 20px;
+    height: 35px;
+    right: -1px;
+    bottom: -20px;
     z-index: 7;
 }
 
 .forward_catalog_new_popup_img{    
     float: right;
-    margin-top: 2px;
-    margin-right: 50px;
+    margin-left: -75px;
+    margin-right: 75px;
 }
 
 .forward_catalog_new_popup_background{
