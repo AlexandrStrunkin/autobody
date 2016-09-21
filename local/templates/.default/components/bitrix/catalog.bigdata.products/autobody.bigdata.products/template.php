@@ -191,7 +191,7 @@ if (!empty($arResult['ITEMS']))
 
     ?>
     <div class="bx_item_list_you_looked_horizontal col<? echo $arParams['LINE_ELEMENT_COUNT']; ?> <? echo $templateData['TEMPLATE_CLASS']; ?>">
-    <div class="bx_item_list_title"><? echo GetMessage('CVP_TPL_MESS_RCM') ?></div>
+    <div class="tech-title"><? echo GetMessage('CVP_TPL_MESS_RCM') ?></div>
     <div class="bx_item_list_section">
     <div class="bx_item_list_slide active">
     <div style="clear: both;"></div>
