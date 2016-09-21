@@ -1702,8 +1702,10 @@ label.custom-radio {
 	border-bottom-color: black;
 	border-bottom-width: 2px;
 	margin-top: 28px;
-	padding-bottom: 15px;
-	width: 730px; 
+	padding-bottom: 15px;  
+    width: 730px;
+    color: #000;
+
 }
 
 .tech-title a {
@@ -8082,7 +8084,8 @@ font.notetext {
 .active_sub_form {
 	opacity: 1 !important;
 	visibility: visible !important;
-	top: -42px !important;
+	top: -42px !important;    
+    z-index: 2;
 }
 
 input::-webkit-calendar-picker-indicator {
