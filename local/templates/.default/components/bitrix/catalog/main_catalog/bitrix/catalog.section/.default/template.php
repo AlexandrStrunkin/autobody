@@ -38,9 +38,9 @@
     <?
         global $USER;
         if($USER->IsAuthorized()){
-          $fav_list=CIBlockElement::GetList(array(),array('IBLOCK_ID'=>117, 'PROPERTY_ELEMENT_ID'=>$arResult["ID"], 'PROPERTY_USER_ID'=>$USER->GetID()),false,false,array('ID','PROPERTY_ELEMENT_ID', 'PROPERTY_USER_ID'));?>
-          <div <?if($relElem = $fav_list->Fetch()){?> style="background-position:100% 0" data-related-element="<?=$relElem['ID']?>" data-delete-el="Y" title="Удалить из избранного" <?} else {?>title="Добавить в избранное"<?}?> class="header_star_favorite manage_favotite" data-action-from="public"  id="<?=$arResult["ID"]?>" data-elem-type="81">
-          </div>  
+            $fav_list=CIBlockElement::GetList(array(),array('IBLOCK_ID'=>117, 'PROPERTY_ELEMENT_ID'=>$arResult["ID"], 'PROPERTY_USER_ID'=>$USER->GetID()),false,false,array('ID','PROPERTY_ELEMENT_ID', 'PROPERTY_USER_ID'));?>
+        <div <?if($relElem = $fav_list->Fetch()){?> style="background-position:100% 0" data-related-element="<?=$relElem['ID']?>" data-delete-el="Y" title="Удалить из избранного" <?} else {?>title="Добавить в избранное"<?}?> class="header_star_favorite manage_favotite" data-action-from="public"  id="<?=$arResult["ID"]?>" data-elem-type="81">
+        </div>  
         <?}
     ?>
 </div>
@@ -60,9 +60,11 @@
             <th width="69">Цена, руб</th>
             <th width="75">Купить</th>
             <th width="37" class="info_popup_relative">
-                <div class="forward_catalog_new_popup_background"></div>
                 <div class="forward_catalog_new_info_popup">
-                    <?=GetMessage("POPUP_MESSAGE")?><div class="forward_catalog_new_popup_img"><img src="/i/info_bg.png"></div>
+                    <div class="forward_catalog_new_popup_text">
+                        <div class="forward_catalog_new_popup_warning"><?=GetMessage("POPUP_WARNING")?></div>
+                        <?=GetMessage("POPUP_MESSAGE")?><div class="forward_catalog_new_popup_img"><img src="/i/info_bg.png"></div>
+                    </div>
                     <div class="forward_catalog_new_popup_close_button"><?=GetMessage("POPUP_BUTTON_MESSAGE")?></div>
                     <div class="forward_catalog_new_popup_triangle">
                     </div>
@@ -223,7 +225,7 @@
 
 
             <?endforeach; // foreach($arResult["ITEMS"] as $arElement):?>
-          
+
 
     </table>
 
