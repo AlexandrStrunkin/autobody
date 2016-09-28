@@ -214,7 +214,7 @@ h1 {
 	width: 1000px;
 	margin: 0 auto;
     position: relative;
-    padding-top: 50px !important;/*раскоментить*/
+    padding-top: 50px !important;/*пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ*/
 }
 .wrapper-map {
 	width: 100%;
@@ -413,14 +413,14 @@ h1 {
 .logo-container {
 	width: 213px;
 	height: 55px;
-    position: relative;/*раскоментить*/
+    position: relative;/*пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ*/
 }
 
 .logo-container img {
 	max-width: 213px;
 	max-height: 99px;
     
-    position: absolute;/*раскоментить 3 строки*/
+    position: absolute;/*пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ 3 пїЅпїЅпїЅпїЅпїЅпїЅ*/
     top: -24px;
     left: 0;
 }
@@ -482,7 +482,7 @@ logo-button {
     width: 100%;
     height: 10px;
     position: absolute;
-    top: 266px;/*220 было раскоментить*/
+    top: 266px;/*220 пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ*/
     box-shadow: 0px 7px 13px 2px #e8e8e8;    
 }
 
@@ -2331,7 +2331,7 @@ label.custom-radio {
 
 /*///////////пїЅпїЅпїЅпїЅпїЅпїЅпїЅ//////////////*/
 
-/*Блок с историей прсомотров*/
+/*пїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ*/
 
 .catalog_history_hidden_block {
     width: 270px;
@@ -2382,7 +2382,7 @@ label.custom-radio {
     cursor: pointer;
 }
 
-/*Конец блока с историей прсомотров*/
+/*пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ*/
 
 
 .forward_catalog_new_basket {
@@ -4976,7 +4976,7 @@ label.custom-radio-wh {
 	padding-right: 15px;
 }
 
-/*Стили для контактов новые*/
+/*пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ*/
 .contacts-page .name {
 	font-size: 24px;
 	font-family: 'clear_sansbold';
@@ -5089,9 +5089,9 @@ label.custom-radio-wh {
 	margin-bottom: 50px;
 }
 
-/*Стили для контактов новые*/
+/*пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ*/
 
-/*Стили для обратной связи*/
+/*пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ*/
 
 .feedback {
 	width: 730px;
@@ -5168,7 +5168,7 @@ label.custom-radio-wh {
 	margin-right: 137px;
 }
 
-/*Обратная  связь на главной странице*/
+/*пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ  пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ*/
 
 .feedback-main {
 	width: 730px;
@@ -5245,7 +5245,7 @@ label.custom-radio-wh {
 	margin-top: 30px;
 }
 
-/*Всплывающее окно*/
+/*пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ*/
 
 .popup-overlay {
 	position: fixed;
@@ -6070,7 +6070,7 @@ label.custom-radio-wh {
 
 input[type="checkbox"] {
 	display: none;
-}/*--здесь отключили стандартный checkbox--*/
+}/*--пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ checkbox--*/
 input[type="checkbox"] + label span {
 	display: inline-block;
 	vertical-align: middle;
@@ -6079,10 +6079,10 @@ input[type="checkbox"] + label span {
 	margin: -1px 4px 0 0;
 	background: url(/images/checkbox-on.png) no-repeat 0 0;
 	cursor: pointer;
-}/*--здесь подключаем спрайт и выбираем нужный элемент--*/
+}/*--пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ--*/
 input[type="checkbox"]:checked + label span {
 	background: url(/images/checkbox-off.png) no-repeat 0 0;
-}/*--сдвиг картинки при наведении--*/
+}/*--пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ--*/
 
 .save-data {
 	border-bottom: 1px solid #64BFDA;
@@ -7048,7 +7048,7 @@ span.selectbox .dropdown ul li {
 	padding-left: 20px;
 }
 
-/*Фильтр для заказов*/
+/*пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ*/
 
 #order_filter {
 	width: 100%;
@@ -7342,7 +7342,7 @@ span.selectbox .dropdown ul li {
 	margin-top: 15px;
 }
 
-/*Фильтр для заказов*/
+/*пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ*/
 
 .authFromBasket {
 	color: #054d83;
@@ -8273,3 +8273,168 @@ td .searchStatTable {
     padding: 5px 20px;    
 }
 
+/* Composite preloader */
+#loadFacebookG{
+	width:22px;
+	height: 22px;
+	display: block;
+	position: relative;
+	margin:auto;
+}
+
+.facebook_blockG{
+	background-color:rgb(6,89,127);
+	border:1px solid rgb(255,255,255);
+	float:left;
+	height:16px;
+	margin-left:1px;
+	width:4px;
+	opacity:0.1;
+	animation-name:bounceG;
+		-o-animation-name:bounceG;
+		-ms-animation-name:bounceG;
+		-webkit-animation-name:bounceG;
+		-moz-animation-name:bounceG;
+	animation-duration:1.035s;
+		-o-animation-duration:1.035s;
+		-ms-animation-duration:1.035s;
+		-webkit-animation-duration:1.035s;
+		-moz-animation-duration:1.035s;
+	animation-iteration-count:infinite;
+		-o-animation-iteration-count:infinite;
+		-ms-animation-iteration-count:infinite;
+		-webkit-animation-iteration-count:infinite;
+		-moz-animation-iteration-count:infinite;
+	animation-direction:normal;
+		-o-animation-direction:normal;
+		-ms-animation-direction:normal;
+		-webkit-animation-direction:normal;
+		-moz-animation-direction:normal;
+	transform:scale(0.7);
+		-o-transform:scale(0.7);
+		-ms-transform:scale(0.7);
+		-webkit-transform:scale(0.7);
+		-moz-transform:scale(0.7);
+}
+
+#blockG_1{
+	animation-delay:0.3095s;
+		-o-animation-delay:0.3095s;
+		-ms-animation-delay:0.3095s;
+		-webkit-animation-delay:0.3095s;
+		-moz-animation-delay:0.3095s;
+}
+
+#blockG_2{
+	animation-delay:0.416s;
+		-o-animation-delay:0.416s;
+		-ms-animation-delay:0.416s;
+		-webkit-animation-delay:0.416s;
+		-moz-animation-delay:0.416s;
+}
+
+#blockG_3{
+	animation-delay:0.5225s;
+		-o-animation-delay:0.5225s;
+		-ms-animation-delay:0.5225s;
+		-webkit-animation-delay:0.5225s;
+		-moz-animation-delay:0.5225s;
+}
+
+
+
+@keyframes bounceG{
+	0%{
+		transform:scale(1.2);
+		opacity:1;
+	}
+
+	100%{
+		transform:scale(0.7);
+		opacity:0.1;
+	}
+}
+
+@-o-keyframes bounceG{
+	0%{
+		-o-transform:scale(1.2);
+		opacity:1;
+	}
+
+	100%{
+		-o-transform:scale(0.7);
+		opacity:0.1;
+	}
+}
+
+@-ms-keyframes bounceG{
+	0%{
+		-ms-transform:scale(1.2);
+		opacity:1;
+	}
+
+	100%{
+		-ms-transform:scale(0.7);
+		opacity:0.1;
+	}
+}
+
+@-webkit-keyframes bounceG{
+	0%{
+		-webkit-transform:scale(1.2);
+		opacity:1;
+	}
+
+	100%{
+		-webkit-transform:scale(0.7);
+		opacity:0.1;
+	}
+}
+
+@-moz-keyframes bounceG{
+	0%{
+		-moz-transform:scale(1.2);
+		opacity:1;
+	}
+
+	100%{
+		-moz-transform:scale(0.7);
+		opacity:0.1;
+	}
+}
+
+.auth_block > * {
+	display: inline-flex;
+	min-height: 100%;
+	align-content: center;
+	vertical-align: middle;
+	align-items: center;
+	height: 50px;
+}
+
+.first_auth_block {
+	padding-right: 25px;
+	padding-left: 20px;
+	border-right: 1px solid #E7E7E7;
+	border-left: 1px solid #E7E7E7;
+}
+
+.second_auth_block {
+	padding: 0 20px;
+	border-right: 1px solid #E7E7E7;
+}
+
+.third_auth_block {
+	padding: 0 20px;
+}
+
+#login_composite {
+	text-align: right;
+	border-left: 0 !important;
+}
+
+#unathorized_user_block {
+	padding-right: 25px;
+	padding-left: 20px;
+	border-left: 1px solid #E7E7E7;
+}

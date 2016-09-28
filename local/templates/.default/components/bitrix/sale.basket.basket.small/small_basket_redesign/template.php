@@ -1,5 +1,5 @@
 <?if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
-<?//arshow($arResult)?>
+<? $frame = $this->createFrame()->begin() ?>
 <?
     $total_price = 0;
     $total_quantity = 0;
@@ -12,13 +12,11 @@
         {
             if ($v["DELAY"]=="N" && $v["CAN_BUY"]=="Y")
             {
-                //  arshow($v);
                 //если пользоваткль не авторизован и сайт оптовый, то все равно показываем оптовые цены
                 if (!$USER->IsAuthorized() && checkSite() != "retail"){
                     $productPrice = CPrice::GetList( array(),array("PRODUCT_ID" => $v["PRODUCT_ID"], "CATALOG_GROUP_ID"=>1), false, false, array())->Fetch();
                     $v["PRICE"] = $productPrice["PRICE"];
                 }
-
 
                 $total_price += $v["PRICE"]*$v["QUANTITY"];
                 $total_quantity++;
@@ -51,11 +49,12 @@
             <?} else {?>
             Корзина пуста
             <?}?>
-
     </div>
 </a>
-<?/*
-    <a href="/personal/basket.php?clear_cache=Y" id="korz1">В корзине <?=$total_quantity?> товаров</a>
-    <span id="korz2">На сумму <?=CCurrencyRates::ConvertCurrency($total_price, "USD", "RUR");?> руб.</span>
-    <a href="/catalog/notebook.php" id="korz3">В блокноте <?=$delay_quantity?> товаров</a>
-*/?>
+<? $frame->beginStub() ?>
+<div id="loadFacebookG">
+	<div id="blockG_1" class="facebook_blockG"></div>
+	<div id="blockG_2" class="facebook_blockG"></div>
+	<div id="blockG_3" class="facebook_blockG"></div>
+</div>
+<? $frame->end() ?>

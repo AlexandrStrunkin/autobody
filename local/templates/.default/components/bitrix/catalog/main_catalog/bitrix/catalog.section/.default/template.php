@@ -1,37 +1,7 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?> 
 <?
-    $db_list = CIBlockSection::GetList(Array(), Array('IBLOCK_ID'=>$arResult['IBLOCK_ID'], 'ID'=>$arResult['ID']), false, array('UF_*'), array());
-    $ar_result = $db_list->Fetch();
-    if($_REQUEST["PAGEN_1"]):
-        $page = " - страница ".$_REQUEST["PAGEN_1"];
-
-        endif;
-
-    if (!$ar_result['UF_TITLE']) {
-        $ar_result['UF_TITLE'] = $ar_result["NAME"]." - купить оптом со склада в Москве, Омске, Санкт-Петербурге, Екатеребурге".$page;
-    }
-
-    if (!$ar_result['UF_DESCR']) {
-        $ar_result['UF_DESCR'] =  "Выгодные цены на ".$ar_result["NAME"].": оптом в интернет магазине 8 (800) 707-78-13. Доставка в Москву, Екатеринбург, Омск, Санкт-Питербург".$page; 
-    }
-
-    if (!$ar_result['UF_KEYWORDS']) {
-        $ar_result['UF_KEYWORDS'] = "купить ".$ar_result["NAME"].", цена, оптом, Москва, Санкт-питербург, Омск, Екатеринбург "; 
-    }
-
-    if ($_REQUEST["q"]) {
-        $ar_result['UF_TITLE'] = 'Результаты поиска по запросу "'.$_REQUEST["q"].'"'; 
-    }
-
-    $APPLICATION->SetPageProperty("keywords", $ar_result['UF_KEYWORDS']);
-    $APPLICATION->SetPageProperty("title", $ar_result['UF_TITLE']);
-    $APPLICATION->SetPageProperty("description", $ar_result['UF_DESCR']);
-
     $PRICE_CODE = $arParams["PRICE_CODE"][0];       
-
-    // arshow($arParams);
 ?>
-<?//arshow($arResult,true)?>
 
 <div class="section_header">
     <h1 class="name"><?if ($ar_result['UF_H1']) {echo $ar_result['UF_H1'].$page;} else echo $arResult["NAME"].$page?></h1>
@@ -79,11 +49,7 @@
 
         ?>
         <?foreach($arResult["ITEMS"] as $cell=>$arElement):
-
-                //     arshow($arElement);
-
                 $ar_res=CCatalogProduct::GetByID($arElement['ID']);
-
             ?>
             <?
                 $this->AddEditAction($arElement['ID'], $arElement['EDIT_LINK'], CIBlock::GetArrayByID($arParams["IBLOCK_ID"], "ELEMENT_EDIT"));
@@ -97,11 +63,9 @@
                 $dateCreateLabel = mktime(0,0,0,$dateCreate[1],$dateCreate[0],$dateCreate[2]);  //метка времени даты создания
             ?>
 
-
             <tr>
                 <td>
                     <?
-                        // echo $_SERVER["DOCUMENT_ROOT"]."/upload/images/".$arItem['CODE'].".jpg<br>";
                         if (file_exists($_SERVER["DOCUMENT_ROOT"]."/upload/images/".$arElement['CODE'].".jpg")) {$img_path = "/upload/images/".$arElement['CODE'].".jpg";}
                         else if (file_exists($_SERVER["DOCUMENT_ROOT"]."/upload/images/".$arElement['CODE'].".JPG")) {$img_path = "/upload/images/".$arElement['CODE'].".JPG";}
                             else {$img_path = "";}
@@ -109,21 +73,12 @@
                     <?if ($img_path != ""){?>
                         <a property="url" href="<?=$img_path?>" class="fancybox" title="<?=$arElement["NAME"]?>">
                             <div property="image" class="forward_catalog_new_foto" title="Кликните, чтобы посмотреть фото">
-                                <?/*
-                                    <div class="forward_catalog_new_foto_container">
-                                    <div class="forward_catalog_new_foto_container_arr_tail"></div>
-                                    <div class="forward_catalog_new_item_img"><img src="<?=$img_path?>"></div>
-                                    </div>
-                                */?>
                             </div>
                         </a>
                         <?} else {?>
                         <div class="forward_catalog_new_nofoto" title="изображение отсутствует"></div>
                         <?}?>
-                    <?/*<br><a href="<?=$arElement["ADD_URL"];?>">добавить</a>*/?>
-
                 </td>
-
 
                 <td  <?if (($curDate - $dateCreateLabel) < $dif) {?> class="catalog_section_item_new_label"<?}?>><?=$arElement['CODE']?></td>
                 <td><?
@@ -150,9 +105,26 @@
                         </div>
                         <?}?>
                 </td>
-                <td><div class="cbox <?if (in_array($arElement["ID"],$_SESSION["COMPARE"])){echo "cbox_c";}?>" onclick="check_compare(<?=$arElement["ID"]?>)"></div></td>
+                <td>
+                	<?
+                		$frame_compare = new \Bitrix\Main\Page\FrameHelper("compare_boxes");
+						$frame_compare->begin();
+                	?>
+                	<div class="cbox <?if (in_array($arElement["ID"],$_SESSION["COMPARE"])){echo "cbox_c";}?>" onclick="check_compare(<?=$arElement["ID"]?>)"></div>
+                	<? $frame_compare->beginStub() ?>
+                    <div id="loadFacebookG">
+						<div id="blockG_1" class="facebook_blockG"></div>
+						<div id="blockG_2" class="facebook_blockG"></div>
+						<div id="blockG_3" class="facebook_blockG"></div>
+					</div>
+                    <? $frame_compare->end() ?>
+                </td>
                 <td><span property="highPrice"><?=ceil($arElement["PRICES"][$PRICE_CODE]["VALUE"])?></span></td>
                 <td id="last_cell_<?=$arElement["ID"]?>">
+                	<?
+                		$frame = new \Bitrix\Main\Page\FrameHelper("table_stores");
+						$frame->begin();
+                	?>
                     <?global $this_count; $this_count = 0;?>
                     <?$APPLICATION->IncludeComponent("bitrix:catalog.store.amount", "cat_q_list", 
                             array(
@@ -210,26 +182,23 @@
 
                         <div class="catalog_basket_na" title="товара нет в наличии"></div> 
                         <?}?>
+                    <? $frame->beginStub() ?>
+                    <div id="loadFacebookG">
+						<div id="blockG_1" class="facebook_blockG"></div>
+						<div id="blockG_2" class="facebook_blockG"></div>
+						<div id="blockG_3" class="facebook_blockG"></div>
+					</div>
+                    <? $frame->end() ?>
                 </td>
 
                 <td class="catalog_item_info_cell" id="item_info_<?=$arElement["ID"]?>" title="Нажмите, чтобы посмотреть количество на складах">
                     <div class="catalog_info_container">
                         <div title="" class="warehouses_popup whp_<?=$arElement["ID"]?>">  </div>
-
                     </div>
-
                 </td>
-
-
             </tr>
-
-
-            <?endforeach; // foreach($arResult["ITEMS"] as $arElement):?>
-
-
+            <?endforeach;?>
     </table>
-
-
 
     <script>
         function showcatdet(ID,quantity)
@@ -243,8 +212,6 @@
             $("#qw").val(1);
             $("#idm").val(ID);
         }
-
-
     </script>
 
     <script>
@@ -257,9 +224,7 @@
         <a href="#" id="closemodal" class="jqmClose"></a>
         <form method="get" name="addbaskmod">
 
-
             <input type="hidden" name="id" id="idm" value=""/>
-
 
             <div class="modtitle">Добавление товара в корзину</div>
             <table>
@@ -283,8 +248,12 @@
                     <td>Текущий склад:</td>
                     <td>
                         <?
-                            $wh = GKCommon::GetWarehouseByID(GKCommon::GetSavedWarehouse());
-                            echo $wh;
+                        	$frame = $this->createFrame()->begin();
+                            	$wh = GKCommon::GetWarehouseByID(GKCommon::GetSavedWarehouse());
+                            	echo $wh;
+							$frame->beginStub();
+								echo "Ajax";
+							$frame->end();
                         ?>
                     </td>
                 </tr>
@@ -297,15 +266,12 @@
                 <input type="button" class="plus" value="+" onClick="if (Number($('#qw').val())<Number($('#catqwm').html()))$('#qw').val(Number($('#qw').val())+1);"/>
                 <a href="javascript:add2basket();" class="modalsave">Добавить</a>
             </div>
-
-
         </form>
     </div>
 
     <?if($arParams["DISPLAY_BOTTOM_PAGER"]):?>
         <br /><?=$arResult["NAV_STRING"]?>
         <?endif;?>
-
     <br/><br/><br/><br/><br/><br/>
     <?echo $arResult['DESCRIPTION']?>
 </div>
