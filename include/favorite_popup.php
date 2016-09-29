@@ -1,6 +1,9 @@
 <!--Favorite Popup-->
-    
-     <div id="favorite_overlay">
+<div id="favorite_overlay">
+    <?
+		$frame = new \Bitrix\Main\Page\FrameHelper("favorite_overlay");
+		$frame->begin();
+	?>
     <div id="favorite_block_wrapper">
         <table id="header_and_close">
             <colspan>
@@ -177,6 +180,12 @@
             </table>
         </div>
     </div>
+    <? $frame->beginStub() ?>
+    	<div id="loadFacebookG">
+			<div id="blockG_1" class="facebook_blockG"></div>
+			<div id="blockG_2" class="facebook_blockG"></div>
+			<div id="blockG_3" class="facebook_blockG"></div>
+		</div>
+	<? $frame->end() ?>
 </div>
-    
-    <!--Favorite Popup-->
+<!--Favorite Popup-->
