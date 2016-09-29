@@ -1,6 +1,7 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
 <? $frame = $this->createFrame("login_composite", false)->begin() ?>
-<? if (!$arResult['ERROR'] && $arResult['USER_LOGIN']) { ?>
+<? global $USER; ?>
+<? if ($USER->IsAuthorized()) { ?>
 <div class="header-url first_auth_block">
     <div class="lk-header">
 	    <img class="lk-logo" src="/images/lk.png" alt=""/ style="cursor: default;">  
