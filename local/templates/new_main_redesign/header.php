@@ -557,54 +557,47 @@
     </div> 
     </td>
     <td class="wrap_table_2"> 
-    <div class="right-menu-new">  
-    <div class="right-menu-items">
-    <div class="right-menu-title">НОВЫЕ ТОВАРЫ</div>
-
-    <?
-    //получаем список элементов каталога за последние 30 дней
-    $arFilter = array();
-    $arFilter["IBLOCK_ID"] = 88;
-    $arFilter["SECTION_ID"] = array();
-    $sections_all = CIBLockSection::GetTreeList(array($arFilter["IBLOCK_ID"]),array("ID"));
-    while($arSections_all = $sections_all->Fetch()) {
-    $arFilter["SECTION_ID"][] = $arSections_all["ID"];
-    }                                               
-
-    $days_count = 30;
-
-    $arFilter[">=DATE_CREATE"] = date($DB -> DateFormatToPHP(CLang::GetDateFormat("SHORT")), date("U") - 86400*$days_count);
-
-
-    $items = CIBLockElement::GetList(array("RAND"=>"ASC"), $arFilter, false, array("nTopCount"=>4), array("ID","NAME","CODE","PROPERTY_SIZE","IBLOCK_SECTION_ID","DATE_CREATE"));
-
-    ?> 
-    <?while ($arElement = $items->Fetch()){?>
-    <div class="right-menu-item"> 
-    <?$dateCreate = explode(".",substr($arElement["DATE_CREATE"],0,10));?>
-    <div class="new-item-date"><?=$dateCreate[0]?>/<?=$dateCreate[1]?></div> 
-    <br> 
-    <a class="url" href="/catalog/<?=$arElement["IBLOCK_SECTION_ID"]?>/<?=$arElement["ID"]?>/">
-    <?
-    if (file_exists($_SERVER["DOCUMENT_ROOT"]."/upload/images/".$arElement['CODE'].".jpg")) {$img_path = "/upload/images/".$arElement['CODE'].".jpg";}
-    else if (file_exists($_SERVER["DOCUMENT_ROOT"]."/upload/images/".$arElement['CODE'].".JPG")) {$img_path = "/upload/images/".$arElement['CODE'].".JPG";}
-    else {$img_path = "";}
-    ?>
-    <?if ($img_path != ""){?>
-    <img title="<?=htmlspecialchars($arElement["NAME"])?>" src="<?=$img_path?>" alt="Форвард - <?=htmlspecialchars($arElement["NAME"])?>"/>
-    <?}?>
-    <div class="new-item-code blue-text"><?=$arElement["CODE"]?></div>
-    </a>
-    <div class="deleter"></div>
-    <div class="new-item-note"><?=$arElement["NAME"]?></div>
-    </div>
-
-    <?}?>    
-
-
-
-    </div>
-    </div>
+	    <div class="right-menu-new">  
+		    <div class="right-menu-items">
+			    <div class="right-menu-title">НОВЫЕ ТОВАРЫ</div>
+			    <?
+			    //получаем список элементов каталога за последние 30 дней
+			    $arFilter = array();
+			    $arFilter["IBLOCK_ID"] = 88;
+			    $arFilter["SECTION_ID"] = array();
+			    $sections_all = CIBLockSection::GetTreeList(array($arFilter["IBLOCK_ID"]),array("ID"));
+			    while($arSections_all = $sections_all->Fetch()) {
+			    	$arFilter["SECTION_ID"][] = $arSections_all["ID"];
+			    }                                               
+			    $days_count = 30;
+			    $arFilter[">=DATE_CREATE"] = date($DB -> DateFormatToPHP(CLang::GetDateFormat("SHORT")), date("U") - 86400*$days_count);
+			    $items = CIBLockElement::GetList(array("RAND"=>"ASC"), $arFilter, false, array("nTopCount"=>4), array("ID","NAME","CODE","PROPERTY_SIZE","IBLOCK_SECTION_ID","DATE_CREATE"));
+			    ?> 
+			    <? while ($arElement = $items->Fetch()) { ?>
+			    <div class="right-menu-item"> 
+				    <? $dateCreate = explode(".",substr($arElement["DATE_CREATE"],0,10)); ?>
+				    <div class="new-item-date"><?=$dateCreate[0]?>/<?=$dateCreate[1]?></div> 
+				    <br> 
+				    <a class="url" href="/catalog/<?=$arElement["IBLOCK_SECTION_ID"]?>/<?=$arElement["ID"]?>/">
+					    <? if (file_exists($_SERVER["DOCUMENT_ROOT"]."/upload/images/".$arElement['CODE'].".jpg")) {
+					       		$img_path = "/upload/images/".$arElement['CODE'].".jpg";
+							} elseif (file_exists($_SERVER["DOCUMENT_ROOT"]."/upload/images/".$arElement['CODE'].".JPG")) {
+								$img_path = "/upload/images/".$arElement['CODE'].".JPG";
+							} else {
+								$img_path = "";
+							}
+					    ?>
+					    <? if ($img_path != "") { ?>
+					    	<img title="<?=htmlspecialchars($arElement["NAME"])?>" src="<?=$img_path?>" alt="Форвард - <?=htmlspecialchars($arElement["NAME"])?>"/>
+				    	<? } ?>
+				    	<div class="new-item-code blue-text"><?= $arElement["CODE"] ?></div>
+				    </a>
+				    <div class="deleter"></div>
+				    <div class="new-item-note"><?=$arElement["NAME"]?></div>
+			    </div>
+			    <? } ?>    
+		    </div>
+	    </div>
     </td>
     </tr>
     </table>
