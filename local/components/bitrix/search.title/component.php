@@ -75,7 +75,7 @@ if(
         $arOthersFilter[] = $exFILTER;
         
         $pattern = "/(\W)/u";
-         $patternForNonWord = "/([^a-zA-Z\sà-ÿÀ-ß0-9])/u";
+         $patternForNonWord = "/([^a-zA-Z\sÐ°-ÑÐ-Ð¯0-9])/u";
     $patternForMultWhitespace = "/(\s{2,})/u";
     $patternForSearch = "/(\s{1,})/u";
 
@@ -235,6 +235,9 @@ if(
     }
 }
 
+if (isset($arResult["CATEGORIES"])) {
+    unset($arResult["CATEGORIES"]);
+}
 $arResult["FORM_ACTION"] = htmlspecialcharsbx(str_replace("#SITE_DIR#", SITE_DIR, $arParams["PAGE"]));
 
 if (
@@ -243,6 +246,7 @@ if (
         !isset($_REQUEST["INPUT_ID"])
         || $_REQUEST["INPUT_ID"] == $arParams["INPUT_ID"]
     )
+    && (isset($arResult["CATEGORIES"])) 
 )
 {
     $APPLICATION->RestartBuffer();
@@ -253,9 +257,11 @@ if (
     die();
 }
 else
-{
-    $APPLICATION->AddHeadScript($this->GetPath().'/script.js');
-    CUtil::InitJSCore(array('ajax'));
+{   
+    if (isset($arResult["CATEGORIES"])) {
+        $APPLICATION->AddHeadScript($this->GetPath().'/script.js');
+        CUtil::InitJSCore(array('ajax'));
+    }
     $this->IncludeComponentTemplate();
 }
 ?>
