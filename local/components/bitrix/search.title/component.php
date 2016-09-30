@@ -75,7 +75,7 @@ if(
         $arOthersFilter[] = $exFILTER;
         
         $pattern = "/(\W)/u";
-         $patternForNonWord = "/([^a-zA-Z\s‡-ˇ¿-ﬂ0-9])/u";
+         $patternForNonWord = "/([^a-zA-Z\s–∞-—è–ê-–Ø0-9])/u";
     $patternForMultWhitespace = "/(\s{2,})/u";
     $patternForSearch = "/(\s{1,})/u";
 
