@@ -107,22 +107,20 @@
                 </td>
                 <td>
                 	<?
-                		$frame_compare = new \Bitrix\Main\Page\FrameHelper("compare_boxes");
+                		$frame_compare = new \Bitrix\Main\Page\FrameHelper("compare_boxes_" . $arElement['ID']);
 						$frame_compare->begin();
                 	?>
                 	<div class="cbox <?if (in_array($arElement["ID"],$_SESSION["COMPARE"])){echo "cbox_c";}?>" onclick="check_compare(<?=$arElement["ID"]?>)"></div>
                 	<? $frame_compare->beginStub() ?>
-                    <div id="loadFacebookG">
-						<div id="blockG_1" class="facebook_blockG"></div>
-						<div id="blockG_2" class="facebook_blockG"></div>
-						<div id="blockG_3" class="facebook_blockG"></div>
+					<div class="cssload-container">
+						<div class="cssload-speeding-wheel"></div>
 					</div>
                     <? $frame_compare->end() ?>
                 </td>
                 <td><span property="highPrice"><?=ceil($arElement["PRICES"][$PRICE_CODE]["VALUE"])?></span></td>
                 <td id="last_cell_<?=$arElement["ID"]?>">
                 	<?
-                		$frame = new \Bitrix\Main\Page\FrameHelper("table_stores");
+                		$frame = new \Bitrix\Main\Page\FrameHelper("table_stores_" . $arElement['ID']);
 						$frame->begin();
                 	?>
                     <?global $this_count; $this_count = 0;?>
@@ -183,10 +181,8 @@
                         <div class="catalog_basket_na" title="товара нет в наличии"></div> 
                         <?}?>
                     <? $frame->beginStub() ?>
-                    <div id="loadFacebookG">
-						<div id="blockG_1" class="facebook_blockG"></div>
-						<div id="blockG_2" class="facebook_blockG"></div>
-						<div id="blockG_3" class="facebook_blockG"></div>
+					<div class="cssload-container">
+						<div class="cssload-speeding-wheel"></div>
 					</div>
                     <? $frame->end() ?>
                 </td>

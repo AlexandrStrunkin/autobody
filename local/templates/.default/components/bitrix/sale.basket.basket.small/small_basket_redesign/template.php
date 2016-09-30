@@ -52,9 +52,7 @@
     </div>
 </a>
 <? $frame->beginStub() ?>
-<div id="loadFacebookG">
-	<div id="blockG_1" class="facebook_blockG"></div>
-	<div id="blockG_2" class="facebook_blockG"></div>
-	<div id="blockG_3" class="facebook_blockG"></div>
+<div class="cssload-container">
+	<div class="cssload-speeding-wheel"></div>
 </div>
 <? $frame->end() ?>
