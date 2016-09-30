@@ -235,6 +235,9 @@ if(
     }
 }
 
+if (isset($arResult["CATEGORIES"])) {
+    unset($arResult["CATEGORIES"]);
+}
 $arResult["FORM_ACTION"] = htmlspecialcharsbx(str_replace("#SITE_DIR#", SITE_DIR, $arParams["PAGE"]));
 
 if (
@@ -243,6 +246,7 @@ if (
         !isset($_REQUEST["INPUT_ID"])
         || $_REQUEST["INPUT_ID"] == $arParams["INPUT_ID"]
     )
+    && (isset($arResult["CATEGORIES"])) 
 )
 {
     $APPLICATION->RestartBuffer();
