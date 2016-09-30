@@ -112,10 +112,8 @@
                 	?>
                 	<div class="cbox <?if (in_array($arElement["ID"],$_SESSION["COMPARE"])){echo "cbox_c";}?>" onclick="check_compare(<?=$arElement["ID"]?>)"></div>
                 	<? $frame_compare->beginStub() ?>
-                    <div id="loadFacebookG">
-						<div id="blockG_1" class="facebook_blockG"></div>
-						<div id="blockG_2" class="facebook_blockG"></div>
-						<div id="blockG_3" class="facebook_blockG"></div>
+					<div class="cssload-container">
+						<div class="cssload-speeding-wheel"></div>
 					</div>
                     <? $frame_compare->end() ?>
                 </td>
@@ -183,10 +181,8 @@
                         <div class="catalog_basket_na" title="товара нет в наличии"></div> 
                         <?}?>
                     <? $frame->beginStub() ?>
-                    <div id="loadFacebookG">
-						<div id="blockG_1" class="facebook_blockG"></div>
-						<div id="blockG_2" class="facebook_blockG"></div>
-						<div id="blockG_3" class="facebook_blockG"></div>
+					<div class="cssload-container">
+						<div class="cssload-speeding-wheel"></div>
 					</div>
                     <? $frame->end() ?>
                 </td>
