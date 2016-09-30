@@ -257,9 +257,11 @@ if (
     die();
 }
 else
-{
-    $APPLICATION->AddHeadScript($this->GetPath().'/script.js');
-    CUtil::InitJSCore(array('ajax'));
+{   
+    if (isset($arResult["CATEGORIES"])) {
+        $APPLICATION->AddHeadScript($this->GetPath().'/script.js');
+        CUtil::InitJSCore(array('ajax'));
+    }
     $this->IncludeComponentTemplate();
 }
 ?>
