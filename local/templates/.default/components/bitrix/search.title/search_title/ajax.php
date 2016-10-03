@@ -10,7 +10,7 @@ if(!empty($arResult["CATEGORIES"])):?>
 			<?foreach($arCategory["ITEMS"] as $i => $arItem):?>
 			<tr>
 				<?if($i == 0):?>
-					<th>&nbsp;<?echo $arCategory["TITLE"]?></th>
+					<th>&nbsp;<?echo GetMessage("RESULTS")?></th>
 				<?else:?>
 					<th>&nbsp;</th>
 				<?endif?>
@@ -37,6 +37,10 @@ if(!empty($arResult["CATEGORIES"])):?>
 		<tr>
 			<th class="title-search-separator">&nbsp;</th>
 			<td class="title-search-separator">&nbsp;</td>
+		</tr>
+		<tr class="">
+			<th>&nbsp;</th>
+			<td class="title-search-all" onclick="document.location.href = '/search_result.php?q=<?=urlencode($arResult['query'])?>&p=name'"><?echo GetMessage("SHOW_ALL")?></td>
 		</tr>
 	</table><div class="title-search-fader"></div>
 <?endif;
