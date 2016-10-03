@@ -1,6 +1,6 @@
-<?if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
-
-if ($arParams["SHOW_RESULTS"] == "Y")
+<?if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
+<? $this->createFrame()->begin(); ?>
+<?if ($arParams["SHOW_RESULTS"] == "Y")
 {
 	$this->IncludeLangFile("result.php");
 }

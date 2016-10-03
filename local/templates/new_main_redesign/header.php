@@ -419,7 +419,7 @@
     "COMPONENT_TEMPLATE" => "vote-main"
     ),
     false
-    );?>       
+    );?>       
 
     <!--<div class="left-vote-title">КАК ВАМ НОВЫЙ <br> ДИЗАЙН?</div>
     <div class="left-vote-note">Поделитесь Вашим <br> мнением с нами, <br> учавствуйте в опросе!</div>

@@ -1,6 +1,6 @@
-<?if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
-
-if (!empty($arResult["ERROR_MESSAGE"])): 
+<?if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
+<? $this->createFrame()->begin(); ?>
+<? if (!empty($arResult["ERROR_MESSAGE"])): 
 ?>
 <div class="vote-note-box vote-note-error">
 	<div class="vote-note-box-text"><?=ShowError($arResult["ERROR_MESSAGE"])?></div>
