@@ -375,8 +375,23 @@ function JCTitleSearch(arParams)
 			this.WAIT.style.position = 'absolute';
 			this.WAIT.style.zIndex = '1100';
 		}
-
-		BX.bind(this.INPUT, 'bxchange', function() {_this.onChange()});
+		
+		// заменяем тормознутый битриксовый onChange
+		this.INPUT.addEventListener('keyup', function() {
+			$.post(
+				_this.arParams.AJAX_PAGE, 
+				{
+					'ajax_call':'y',
+					'INPUT_ID':_this.arParams.INPUT_ID,
+					'q':_this.INPUT.value,
+					'l':_this.arParams.MIN_QUERY_LEN
+				}, function(result) {
+					_this.cache[_this.cache_key] = result;
+					_this.ShowResult(result);
+					_this.currentRow = -1;
+					_this.EnableMouseEvents();
+		    });
+		});
 	};
 	BX.ready(function (){_this.Init(arParams)});
 }

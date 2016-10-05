@@ -1,6 +1,16 @@
 <?
 if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die();
 CModule::IncludeModule("iblock");
+CModule::IncludeModule('highloadblock');
+
+use Bitrix\Highloadblock as HL;
+use Bitrix\Main\Entity;
+
+$hl_block = HL\HighloadBlockTable::getById(1)->fetch();
+$entity = HL\HighloadBlockTable::compileEntity($hl_block);
+$entity_data_class = $entity->getDataClass();
+$entity_table_name = $hl_block['TABLE_NAME'];
+
 if(!IsModuleInstalled("search"))
 {
     ShowError(GetMessage("CC_BST_MODULE_NOT_INSTALLED"));
@@ -53,23 +63,39 @@ if(
             $iblock_filter[] = $iblock_id;
         }
     }
-    $arFilter = array(
-        "IBLOCK_ID" => 88,
-        "INCLUDE_SUBSECTIONS" => "Y",
-        array(
-            "LOGIC" => "OR",
-            array("PROPERTY_SEARCH_CODE"=>"%".preg_replace($pattern,"",$arResult["query"])."%"),
-            array("?NAME"=>$nameSearch),
-            array("PROPERTY_SEARCH_WARRANTY"=>"%".preg_replace($pattern,"",$arResult["query"])."%"),
-            array("PROPERTY_CROSS_NUM"=>"%".trim($arResult["query"])."%"),
-            array("PROPERTY_SEARCH_UNC"=>"%".preg_replace($pattern,"",$arResult["query"])."%")
-        )
-    );
-    $arSelect = Array('ID','NAME','DETAIL_PAGE_URL','PROPERTY_SIZE','PROPERTY_FIRM');
-    $res = CIBlockElement::GetList(array("ID"=>"ASC"), $arFilter, false, Array("nPageSize" => 6), $arSelect);
-    while($ob = $res->Fetch()) {
-        $arResult["CATEGORIES"][$i]["ITEMS"][] = $ob;
-    }
+    
+    $search_tips_filter = array(
+		'LOGIC' => 'OR',
+		array(
+			'UF_TITLE' => "%" . $nameSearch . "%"
+		),
+		array(
+			'=%UF_CODE' => "%" . preg_replace($pattern, "", $arResult["query"]) . "%",
+		),
+		array(
+			'=%UF_WARRANTY' => "%" . preg_replace($pattern, "", $arResult["query"]) . "%",
+		),
+		array(
+			'=%UF_UNC' => "%" . preg_replace($pattern, "", $arResult["query"]) . "%"
+		)
+	);
+	
+	$table_id = 'tbl_' . $entity_table_name;
+	$result = $entity_data_class::getList(array(
+		"select" => array('*'),
+		"filter" => $search_tips_filter,
+		"limit"  => 5,
+		"order"  => array("ID" => "ASC")
+	));
+	$result = new CDBResult($result, $table_id);
+	while ($search_tip = $result->Fetch()) {
+		$arResult["CATEGORIES"][$i]["ITEMS"][] = array(
+			"NAME"                => $search_tip['UF_TITLE'],
+			"DETAIL_PAGE_URL"     => $search_tip['UF_DETAIL_URL'],
+			"CODE"                => $search_tip['UF_CODE_DISPLAY'],
+			"PROPERTY_SIZE_VALUE" => $search_tip['UF_SIZE']
+		);
+	}
 }
 
 $arResult["FORM_ACTION"] = htmlspecialcharsbx(str_replace("#SITE_DIR#", SITE_DIR, $arParams["PAGE"]));
