@@ -43,5 +43,4 @@ if(!empty($arResult["CATEGORIES"])):?>
 			<td class="title-search-all" onclick="document.location.href = '/search_result.php?q=<?=urlencode($arResult['query'])?>&p=name'"><?echo GetMessage("SHOW_ALL")?></td>
 		</tr>
 	</table><div class="title-search-fader"></div>
-<?endif;
-?>
+<?endif;?>
