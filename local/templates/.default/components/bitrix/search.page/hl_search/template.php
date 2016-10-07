@@ -47,7 +47,7 @@
 			'=%UF_UNC' => "%" . preg_replace($pattern, "", $_GET['q']) . "%"
 		),
 		array(
-			"=%UF_CROSS" => "%" . $_GET['q'] . "%"
+			"=%UF_CROSS" => "%" . preg_replace($pattern, "", $_GET['q']) . "%"
 		)
 	);
 	

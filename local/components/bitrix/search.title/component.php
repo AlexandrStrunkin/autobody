@@ -79,7 +79,7 @@ if(
 			'=%UF_UNC' => "%" . preg_replace($pattern, "", $arResult["query"]) . "%"
 		),
 		array(
-			"=%UF_CROSS" => "%" . $arResult["query"] . "%"
+			"=%UF_CROSS" => "%" . preg_replace($pattern, "", $arResult["query"]) . "%"
 		)
 	);
 	

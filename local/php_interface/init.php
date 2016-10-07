@@ -293,7 +293,7 @@
 			   array('ID' => 'ASC'),
 			   array('IBLOCK_ID' => 88, "ID" => $arFields["ID"]),
 			   false, false,
-			   array('NAME', 'ID', 'CODE', 'SECTION_ID', 'URL', 'DETAIL_PAGE_URL', 'PROPERTY_SIZE', 'PROPERTY_SEARCH_CODE', 'PROPERTY_SEARCH_UNC', 'PROPERTY_SEARCH_WARRANTY', 'PROPERTY_UNC', 'PROPERTY_FIRM', 'PROPERTY_WARRANTY')
+			   array('NAME', 'ID', 'CODE', 'SECTION_ID', 'URL', 'DETAIL_PAGE_URL', 'PROPERTY_SIZE', 'PROPERTY_SEARCH_CODE', 'PROPERTY_SEARCH_UNC', 'PROPERTY_SEARCH_WARRANTY', 'PROPERTY_UNC', 'PROPERTY_FIRM', 'PROPERTY_WARRANTY', 'PROPERTY_CROSS_NUM')
 			);
 			while ($ar = $rs->Fetch()) {
 			   // у результата добавления тип Bitrix\Main\Entity\AddResult
@@ -312,7 +312,8 @@
 			      'UF_ORIGINAL_ID'      => $ar['ID'],
 			      'UF_WARRANTY_DISPLAY' => $ar['PROPERTY_WARRANTY_VALUE'],
 			      'UF_FIRM_DISPLAY'     => $firms[$ar['PROPERTY_FIRM_VALUE']],
-			      'UF_UNC_DISPLAY'      => $ar['PROPERTY_UNC_VALUE']
+			      'UF_UNC_DISPLAY'      => $ar['PROPERTY_UNC_VALUE'],
+			      'UF_CROSS'            => $ar['PROPERTY_CROSS_NUM_VALUE']
 			   ));
 			}
 		}
