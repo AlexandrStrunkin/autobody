@@ -46,7 +46,7 @@ switch($_POST['filter_by']){
 			$search_tips_filter = array(
 				'LOGIC' => 'OR',
 				array('>UF_ORIGINAL_ID' => $_POST['last_item'], '=%UF_WARRANTY' => "%" . $cleared_search . "%"),
-				array('>UF_ORIGINAL_ID' => $_POST['last_item'], '=%UF_CROSS' => "%" . $_POST['search_param'] . "%")
+				array('>UF_ORIGINAL_ID' => $_POST['last_item'], '=%UF_CROSS' => "%" . $cleared_search . "%")
 			);
         break;
     case "by_oem":
