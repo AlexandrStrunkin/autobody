@@ -43,7 +43,11 @@ switch($_POST['filter_by']){
     		$search_tips_filter = array('>UF_ORIGINAL_ID' => $_POST['last_item'], 'UF_TITLE' => "%" . $nameSearch . "%");
         break;
     case "by_manufacturer": 
-    		$search_tips_filter = array('>UF_ORIGINAL_ID' => $_POST['last_item'], '=%UF_WARRANTY' => "%" . $cleared_search . "%",);
+			$search_tips_filter = array(
+				'LOGIC' => 'OR',
+				array('>UF_ORIGINAL_ID' => $_POST['last_item'], '=%UF_WARRANTY' => "%" . $cleared_search . "%"),
+				array('>UF_ORIGINAL_ID' => $_POST['last_item'], '=%UF_CROSS' => "%" . $_POST['search_param'] . "%")
+			);
         break;
     case "by_oem":
     		$search_tips_filter = array('>UF_ORIGINAL_ID' => $_POST['last_item'], '=%UF_UNC' => "%" . $cleared_search . "%");

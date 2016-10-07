@@ -45,6 +45,9 @@
 		),
 		array(
 			'=%UF_UNC' => "%" . preg_replace($pattern, "", $_GET['q']) . "%"
+		),
+		array(
+			"=%UF_CROSS" => "%" . $_GET['q'] . "%"
 		)
 	);
 	
@@ -63,7 +66,7 @@
 		} elseif (stripos($search_result['UF_CODE'], $cleared_search) !== false) {
 			// найдено по артикулу
 			array_push($sorted_result['by_article'], $search_result);
-		} elseif (stripos($search_result['UF_WARRANTY'], $cleared_search) !== false) {
+		} elseif (stripos($search_result['UF_WARRANTY'], $cleared_search) !== false || stripos($search_result['UF_CROSS'], $_GET['q']) !== false) {
 			// найдено по номеру производителя
 			array_push($sorted_result['by_manufacturer'], $search_result);
 		} elseif (stripos($search_result['UF_UNC'], $cleared_search) !== false) {
