@@ -9,6 +9,8 @@
 
 
     class ApiCore {
+    	
+		public static $api_cache_path = "/api_queries";
 
         /*****
         * Verify the existence of user with this token

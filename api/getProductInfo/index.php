@@ -3,7 +3,9 @@ include("../apiCore.php");
 
 class AutoBodyProduct{
     
-    
+    const CACHE_TIME_LIMIT = 18000;
+	const CACHE_PREFIX = "getProduct_";
+	
     /*********
      * 
      *@param string $s
@@ -131,15 +133,25 @@ class AutoBodyProduct{
         self::cyrillicSymbolsValidator($item);
 
         // --- check auth, if user with this token doesn't exist then throw error and exit
-        $authResult = ApiCore::checkUserByToken($token);     
-        $element = self::getItem($item); 
-        if(gettype($element)=='array'){
-            $element = json_encode($element);
-            echo $element;
-        } else {
-            die(ApiErrorHandler::raiseError('notFound'));  
-        }   
-
+        $authResult = ApiCore::checkUserByToken($token);
+		$cache = new CPHPCache();
+		// проверяем кеш на наличие сохраненного результата 
+		if ($cache->InitCache(self::CACHE_TIME_LIMIT, self::CACHE_PREFIX . $item, ApiCore::$api_cache_path)) {
+		    $data = $cache->GetVars();
+			echo $data['result'];
+		    return false;
+		} elseif ($cache->StartDataCache()) {
+	        $element = self::getItem($item); 
+	        if(gettype($element)=='array'){
+	            $element = json_encode($element);
+				
+				$cache->EndDataCache(array("result" => $element)); // записываем в кеш
+				
+	            echo $element;
+	        } else {
+	            die(ApiErrorHandler::raiseError('notFound'));  
+	        }
+		}
     }  
 }
     //---- call API GetProductInfo method
