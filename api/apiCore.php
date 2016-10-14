@@ -20,7 +20,7 @@
 
         public function checkUserByToken($token){
             if (!empty($token)){
-                $filter = Array("UF_RESTTOKEN" => $token);
+                $filter = Array("UF_RESTTOKEN" => $token, "ACTIVE" => "Y");
                 $rsUsers = CUser::GetList(($by=""), ($order=""), $filter); // выбираем пользователей      
                 $rsUser=$rsUsers->NavNext(true, "f_");   
                 if (gettype($rsUser)=='array'){  

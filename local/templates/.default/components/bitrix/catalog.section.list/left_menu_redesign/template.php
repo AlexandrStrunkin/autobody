@@ -44,9 +44,9 @@
 <script>
     //функция раскрытия/закрытия бокового меню
     $(function(){
-        $("body").on("click",".leftMenuLink",function(e) {   
-            e.preventDefault();   
-            get_submenu($(this).attr("rel"),false);                   
+        $("body").on("click",".leftMenuLink",function(e) {
+            e.preventDefault();
+            get_submenu($(this).attr("rel"),false);
         })
 
     })
@@ -60,7 +60,7 @@
         })
 
         //если клик по открытому разделу, то скрываем его содержимое
-        if ($(".s" + section_id).find("ul").attr("id") == "ss" + section_id) { 
+        if ($(".s" + section_id).find("ul").attr("id") == "ss" + section_id) {
             $("#ss" + section_id).remove();
             $(".s" + section_id).removeClass("active");
         }
@@ -78,9 +78,9 @@
             });
         }
     }
- 
 
-</script>    
+
+</script>
 
 
 <?
@@ -88,12 +88,12 @@
     $CURRENT_DEPTH = $TOP_DEPTH;
 
     foreach($arResult["SECTIONS"] as $arSection)
-    {  
+    {
         $menu_item_count++;
         //проверяем дату создания
         $dateCreate = explode(".", substr($arSection["DATE_CREATE"],0,10));
         $curDate = date("U"); //текущая дата
-        $dif = 86400 * 30; //30 дней  
+        $dif = 86400 * 30; //30 дней
         $dateCreateLabel = mktime(0,0,0,$dateCreate[1],$dateCreate[0],$dateCreate[2]);  //метка времени даты создания
 
 
@@ -122,31 +122,31 @@
         echo "\n",str_repeat("\t", $arSection["DEPTH_LEVEL"]-$TOP_DEPTH);
 
 
-    ?> 
+    ?>
 
 
     <li id="<?=$this->GetEditAreaId($arSection['ID']);?>" class="s<?=$arSection['ID']?>">
     <? if ($menu_item_count==7) {   ?>
-        <div class="left-menu-deliter"><img src="/images/left-menu-del.png"></div> 
-        <?   
-    } ?> 
+        <div class="left-menu-deliter"><img src="/images/left-menu-del.png"></div>
+        <?
+    } ?>
     <a href="/catalog/<?=$arSection["ID"]?>/" rel="<?=$arSection["ID"]?>" class="leftMenuLink">
         <?=$arSection["NAME"]?>
-        <?if($arParams["COUNT_ELEMENTS"]):?>&nbsp;(<?=$arSection["ELEMENT_CNT"]?>)<?endif;?> 
+        <?if($arParams["COUNT_ELEMENTS"]):?>&nbsp;(<?=$arSection["ELEMENT_CNT"]?>)<?endif;?>
         <?if (($curDate - $dateCreateLabel) < $dif) {/*?>
             <span class="catalog_section_new_label">NEW</span>
         <?*/}?>
-    </a> 
+    </a>
     <?
 
 
 
         $CURRENT_DEPTH = $arSection["DEPTH_LEVEL"];
-    } 
+    }
 
     while($CURRENT_DEPTH > $TOP_DEPTH)
     {
-        echo "</li>";   
+        echo "</li>";
         echo "\n",str_repeat("\t", $CURRENT_DEPTH-$TOP_DEPTH),"<li><a href='/new_products/' class='new_products_link' title='Новые товары за последние 30 дней'>НОВЫЕ ТОВАРЫ</a></li></ul>","\n",str_repeat("\t", $CURRENT_DEPTH-$TOP_DEPTH-1);
         $CURRENT_DEPTH--;
     }
