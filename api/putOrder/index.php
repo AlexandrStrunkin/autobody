@@ -212,6 +212,10 @@ class AutoBodyOrder {
      ******/
 
     private static function makeOrder($s,$uid,$d,$p,$w,$desc){
+    	// это необходимо для корректного обмена с 1С
+    	global $USER;
+		$USER->Authorize($uid);
+		
         $arFields = array(
             "LID" =>  's1',
             "PERSON_TYPE_ID" => 22,
@@ -224,7 +228,7 @@ class AutoBodyOrder {
             "PAY_SYSTEM_ID" => $p,
             "DELIVERY_ID" => $d,
             "ROOM_NUMBER" => $w,
-            "USER_DESCRIPTION" => $desc,
+            "USER_DESCRIPTION" => "Создан из API. " . $desc
         );
         $ORDER_ID = CSaleOrder::Add($arFields);
 
