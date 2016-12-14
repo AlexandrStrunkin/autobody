@@ -4,6 +4,12 @@
     <div class="method_desc">
         Возвращает информацию о товарах, у которых одно из полей Артикул/OEM/Номер соответствует запросу. 
     </div>
+    
+    <div class="important">
+        <span>важно</span>
+        <span>Данный метод, фактически, является поиском по каталогу. Если вам известен Артикул/OEM/Номер товара, который вы хотите получить, то пользуйтесь методом <a href="/api/docs/getProductInfo.php">getProductInfo</a></span>
+    </div>
+    
     <h2>URL для запроса</h2>
     <div class="url_ex">
         http://www.autobody.ru/api/getProducts/

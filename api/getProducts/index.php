@@ -2,6 +2,9 @@
     include("../apiCore.php");        
 
     class AutoBodyProduct{
+    	
+		const CACHE_TIME_LIMIT = 18000;
+		const CACHE_PREFIX = "getProduct_";
 
 
         /*********
@@ -143,7 +146,18 @@
             self::cyrillicSymbolsValidator($item);
 
             // --- check auth, if user with this token doesn't exist then throw error and exit
-            $authResult = ApiCore::checkUserByToken($token);     
+            $authResult = ApiCore::checkUserByToken($token);
+			$cache = new CPHPCache();
+			
+			// т.к. некоторые начали пользоваться данным методом как методом для возврата 1 товара, то сначала смотрим кеш метода GetProductInfo
+			if ($cache->InitCache(self::CACHE_TIME_LIMIT, self::CACHE_PREFIX . $item, ApiCore::$api_cache_path)) {
+			    $data = $cache->GetVars();
+				$decoded_result = json_decode($data['result'], true);
+				$cached_result = json_encode(array($decoded_result));
+				echo $cached_result;
+			    return false;
+			}
+			
             $element = self::getItem($item); 
             if(gettype($element)=='array'){
                 $element = json_encode($element);

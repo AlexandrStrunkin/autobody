@@ -4,6 +4,12 @@
             <div class="method_desc">
                Возвращает информацию о товаре по Артикулу/OEM/Номеру производителя. 
             </div>
+            
+            <div class="important">
+                <span>важно</span>
+                <span>Данный метод используется для получения данных по 1 конкретному товару</span>
+            </div>
+            
             <h2>URL для запроса</h2>
             <div class="url_ex">
                 http://www.autobody.ru/api/getProductInfo/
