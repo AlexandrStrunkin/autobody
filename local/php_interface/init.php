@@ -282,41 +282,6 @@
 
 
     function NewItemInfo($arFields) {
-    	// актуализируем инфу для поиска, переносим инфу о новых деталях в HL блок
-		if ($arFields["IBLOCK_ID"] == 88) {
-			
-			$hlblock = HL\HighloadBlockTable::getById(1)->fetch();
-			$entity = HL\HighloadBlockTable::compileEntity($hlblock);
-			$entity_data_class = $entity->getDataClass();
-			
-			$rs = CIBlockElement::GetList(
-			   array('ID' => 'ASC'),
-			   array('IBLOCK_ID' => 88, "ID" => $arFields["ID"]),
-			   false, false,
-			   array('NAME', 'ID', 'CODE', 'SECTION_ID', 'URL', 'DETAIL_PAGE_URL', 'PROPERTY_SIZE', 'PROPERTY_SEARCH_CODE', 'PROPERTY_SEARCH_UNC', 'PROPERTY_SEARCH_WARRANTY', 'PROPERTY_UNC', 'PROPERTY_FIRM', 'PROPERTY_WARRANTY', 'PROPERTY_CROSS_NUM')
-			);
-			while ($ar = $rs->Fetch()) {
-			   // у результата добавления тип Bitrix\Main\Entity\AddResult
-			   // т.к. ссылка больше автоматически не формируется, сделаем это вручную здесь
-			   $detail_href = str_replace("#SECTION_ID#", $ar['IBLOCK_SECTION_ID'], $ar['DETAIL_PAGE_URL']);
-			   $detail_href = str_replace("#ID#", $ar['ID'], $detail_href);
-			   
-			   $result = $entity_data_class::add(array(
-			      'UF_TITLE'            => $ar['NAME'],
-			      'UF_CODE'             => $ar['PROPERTY_SEARCH_CODE_VALUE'],
-			      'UF_WARRANTY'         => $ar['PROPERTY_SEARCH_WARRANTY_VALUE'],
-			      'UF_UNC'              => $ar['PROPERTY_SEARCH_UNC_VALUE'],
-			      'UF_CODE_DISPLAY'     => $ar['CODE'],
-			      'UF_SIZE'             => $ar['PROPERTY_SIZE_VALUE'],
-			      'UF_DETAIL_URL'       => $detail_href,
-			      'UF_ORIGINAL_ID'      => $ar['ID'],
-			      'UF_WARRANTY_DISPLAY' => $ar['PROPERTY_WARRANTY_VALUE'],
-			      'UF_FIRM_DISPLAY'     => $firms[$ar['PROPERTY_FIRM_VALUE']],
-			      'UF_UNC_DISPLAY'      => $ar['PROPERTY_UNC_VALUE'],
-			      'UF_CROSS'            => $ar['PROPERTY_CROSS_NUM_VALUE']
-			   ));
-			}
-		}
         //предложение картинок
         if ($arFields["IBLOCK_ID"] == 96) {
 
@@ -377,7 +342,41 @@
             addSearchProps($arFields["ID"]);
         }
 
-
+		// актуализируем инфу для поиска, переносим инфу о новых деталях в HL блок
+		if ($arFields["IBLOCK_ID"] == 88) {
+			
+			$hlblock = HL\HighloadBlockTable::getById(1)->fetch();
+			$entity = HL\HighloadBlockTable::compileEntity($hlblock);
+			$entity_data_class = $entity->getDataClass();
+			
+			$rs = CIBlockElement::GetList(
+			   array('ID' => 'ASC'),
+			   array('IBLOCK_ID' => 88, "ID" => $arFields["ID"]),
+			   false, false,
+			   array('NAME', 'ID', 'CODE', 'SECTION_ID', 'URL', 'DETAIL_PAGE_URL', 'PROPERTY_SIZE', 'PROPERTY_SEARCH_CODE', 'PROPERTY_SEARCH_UNC', 'PROPERTY_SEARCH_WARRANTY', 'PROPERTY_UNC', 'PROPERTY_FIRM', 'PROPERTY_WARRANTY', 'PROPERTY_CROSS_NUM')
+			);
+			while ($ar = $rs->Fetch()) {
+			   // у результата добавления тип Bitrix\Main\Entity\AddResult
+			   // т.к. ссылка больше автоматически не формируется, сделаем это вручную здесь
+			   $detail_href = str_replace("#SECTION_ID#", $ar['IBLOCK_SECTION_ID'], $ar['DETAIL_PAGE_URL']);
+			   $detail_href = str_replace("#ID#", $ar['ID'], $detail_href);
+			   
+			   $result = $entity_data_class::add(array(
+			      'UF_TITLE'            => $ar['NAME'],
+			      'UF_CODE'             => $ar['PROPERTY_SEARCH_CODE_VALUE'],
+			      'UF_WARRANTY'         => $ar['PROPERTY_SEARCH_WARRANTY_VALUE'],
+			      'UF_UNC'              => $ar['PROPERTY_SEARCH_UNC_VALUE'],
+			      'UF_CODE_DISPLAY'     => $ar['CODE'],
+			      'UF_SIZE'             => $ar['PROPERTY_SIZE_VALUE'],
+			      'UF_DETAIL_URL'       => $detail_href,
+			      'UF_ORIGINAL_ID'      => $ar['ID'],
+			      'UF_WARRANTY_DISPLAY' => $ar['PROPERTY_WARRANTY_VALUE'],
+			      'UF_FIRM_DISPLAY'     => $firms[$ar['PROPERTY_FIRM_VALUE']],
+			      'UF_UNC_DISPLAY'      => $ar['PROPERTY_UNC_VALUE'],
+			      'UF_CROSS'            => $ar['PROPERTY_CROSS_NUM_VALUE']
+			   ));
+			}
+		}
     }
 
 
