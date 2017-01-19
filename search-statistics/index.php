@@ -2,7 +2,7 @@
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Поисковая статистика");
 ?>
-<p>Поисковые запросы хранятся в течении 62 дней.</p><br>
+<p>Поисковые запросы хранятся в течении 62 дней. Показываются только запросы с количеством просмотров больше <?= SEARCH_STATISTIC_VIEWS?>. </p><br>
 <form action="">
     <?$APPLICATION->IncludeComponent(
             "bitrix:main.calendar",
@@ -40,7 +40,7 @@ $APPLICATION->SetTitle("Поисковая статистика");
                 $AND .=' and TIMESTAMP_X >= "'.$date_from.'"';
             }
         }
-        $query = "select distinct TIMESTAMP_X, PHRASE, count(PHRASE) as CountOf from b_search_phrase group by PHRASE having CountOf >= 100 ".$AND." ORDER BY CountOf DESC";
+        $query = "select distinct TIMESTAMP_X, PHRASE, count(PHRASE) as CountOf from b_search_phrase group by PHRASE having CountOf >= ".SEARCH_STATISTIC_VIEWS." ".$AND." ORDER BY CountOf DESC";
 
         GLOBAL $DB;
         $res = $DB -> query($query);        

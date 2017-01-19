@@ -20,6 +20,7 @@
 	define("HL_TABLE_NAME", "tbl_webgk_details");
 	define("CATALOG_IBLOCK_ID", 88);
 	define("HL_BLOCK_DETAILS_ID", 1);
+    define("SEARCH_STATISTIC_VIEWS", 100);
 
     CModule::IncludeModule('sale');
     CModule::IncludeModule('catalog');
