@@ -2,16 +2,25 @@
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Подписка на рассылку");
 ?>
-<?$APPLICATION->IncludeComponent("bitrix:subscribe.simple", "subscr", Array(
-	"AJAX_MODE" => "N",	// Включить режим AJAX
-		"SHOW_HIDDEN" => "Y",	// Показать скрытые рубрики подписки
-		"CACHE_TYPE" => "A",	// Тип кеширования
-		"CACHE_TIME" => "3600",	// Время кеширования (сек.)
-		"SET_TITLE" => "Y",	// Устанавливать заголовок страницы
-		"AJAX_OPTION_JUMP" => "N",	// Включить прокрутку к началу компонента
-		"AJAX_OPTION_STYLE" => "Y",	// Включить подгрузку стилей
-		"AJAX_OPTION_HISTORY" => "N",	// Включить эмуляцию навигации браузера
-	),
-	false
+<?$APPLICATION->IncludeComponent(
+    "bitrix:subscribe.edit", 
+    "autobody.subscribe.edit", 
+    array(
+        "AJAX_MODE" => "N",
+        "SHOW_HIDDEN" => "Y",
+        "ALLOW_ANONYMOUS" => "Y",
+        "SHOW_AUTH_LINKS" => "Y",
+        "CACHE_TYPE" => "A",
+        "CACHE_TIME" => "3600",
+        "SET_TITLE" => "Y",
+        "AJAX_OPTION_JUMP" => "N",
+        "AJAX_OPTION_STYLE" => "Y",
+        "AJAX_OPTION_HISTORY" => "N",
+        "COMPONENT_TEMPLATE" => "autobody.subscribe.edit",
+        "AJAX_OPTION_ADDITIONAL" => "undefined",
+        "COMPOSITE_FRAME_MODE" => "A",
+        "COMPOSITE_FRAME_TYPE" => "AUTO"
+    ),
+    false
 );?>
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

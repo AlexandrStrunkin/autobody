@@ -1,0 +1,67 @@
+div.subscribe-edit .red {
+	color:red;
+}
+div.subscribe-edit .green {
+	color:green;
+}
+div.subscribe-edit .errorcolor {
+	color:red;
+}
+div.subscribe-edit .successcolor {
+	color:green;
+} 	
+div.subscribe-edit {
+    font-size: 14px;
+}
+span.subscriptionName {
+    font-size: 24px;
+    font-family: 'clear_sansbold';
+    text-transform: uppercase; 
+    color: #000;   
+}
+div.checker span.checked, div.checker span {                                  
+    margin-top: -7px;  
+}
+
+div.subscribe-edit input[type="reset"] {    
+    background-color: #dadada;
+    margin-right: 15px;   
+    margin-top: 5px;                    
+    width: 130px;
+    height: 35px;
+    line-height: 35px;
+    color: #fff;
+    font-size: 12px;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-align: center;
+    border-radius: 3px;
+    font-weight: bold;  
+    border: none;  
+}
+div.subscribe-edit input[type="text"] {
+    color: #807971;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 20px;
+    border: 2px solid #d3d3d3;
+    outline: none;
+    background: white;
+}
+
+div.subscribe-edit input[type="submit"] {    
+    background-color: #1ab1c8;
+    margin-right: 15px;   
+    margin-top: 5px;                    
+    width: 130px;
+    height: 35px;
+    line-height: 35px;
+    color: #fff;
+    font-size: 12px;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-align: center;
+    border-radius: 3px;
+    font-weight: bold;
+    border: none;      
+}

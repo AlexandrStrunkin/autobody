@@ -5,36 +5,21 @@ $APPLICATION->SetTitle("Новости");
 ?>
 
 <?
-  if(!$USER->IsAuthorized()){
-      $APPLICATION->IncludeComponent(
-	"bitrix:subscribe.form", 
-	"subscr_news", 
-	array(
-		"USE_PERSONALIZATION" => "Y",
-		"PAGE" => "#SITE_DIR#company/subscr.php",
-		"SHOW_HIDDEN" => "N",
-		"CACHE_TYPE" => "A",
-		"CACHE_TIME" => "3600",
-		"CACHE_NOTES" => "",
-		"COMPONENT_TEMPLATE" => "subscr_news"
-	),
-	false
-);   
-  }else{
-    $APPLICATION->IncludeComponent("bitrix:subscribe.simple", "subscr_news", Array(
-        "AJAX_MODE" => "N",    // Включить режим AJAX
-            "SHOW_HIDDEN" => "Y",    // Показать скрытые рубрики подписки
-            "CACHE_TYPE" => "A",    // Тип кеширования
-            "CACHE_TIME" => "3600",    // Время кеширования (сек.)
-            "SET_TITLE" => "Y",    // Устанавливать заголовок страницы
-            "AJAX_OPTION_JUMP" => "N",    // Включить прокрутку к началу компонента
-            "AJAX_OPTION_STYLE" => "Y",    // Включить подгрузку стилей
-            "AJAX_OPTION_HISTORY" => "N",    // Включить эмуляцию навигации браузера
+    $APPLICATION->IncludeComponent(
+        "bitrix:subscribe.form", 
+        "subscr_news", 
+        array(
+            "USE_PERSONALIZATION" => "Y",
+            "ALLOW_ANONYMOUS" => "Y", 
+            "PAGE" => "#SITE_DIR#company/subscr_edit.php",
+            "SHOW_HIDDEN" => "N",
+            "CACHE_TYPE" => "A",
+            "CACHE_TIME" => "3600",
+            "CACHE_NOTES" => "",
+            "COMPONENT_TEMPLATE" => "subscr_news"
         ),
-        false
-    );
-  } 
- 
+    false
+);
 ?>
 <br>
 <? if (checkSite() == 'opt') {?>
