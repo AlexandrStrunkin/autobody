@@ -430,6 +430,9 @@ function add2basket(){
     var id = $("#idm").val();
     var quantity = $("#qw").val();
     var price = $("#catpricem").html();
+    if (!price) {
+        price = $("#item_price_" + id).val();
+    }
     //////////////////////
     //alert(id + " " + quantity + " " + price);
 

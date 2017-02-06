@@ -954,4 +954,176 @@
     function OnBeforeUserUpdateHandler(&$arFields) {
         logger($arFields, $_SERVER["DOCUMENT_ROOT"].'/cgi-bin/log_user_update.txt' );
     }
+	
+	/*------ Временные функции для обмена -------*/
+	
+	/*function lu(){
+        return date("Y-m-d H:i:s");
+    }*/
+	
+	/*function tempClientUdate() {
+		CModule::IncludeModule('main');
+		CModule::IncludeModule("iblock");
+		$userDataFile = $_SERVER["DOCUMENT_ROOT"]."/_import/userdata.txt";
+        if(file_exists($userDataFile)){
+
+            $balanceIblockID = 106;
+            $companyIblockID = 105;
+
+            $arCompanies = array();
+            $companies = CIBlockElement::GetList(array(),array("IBLOCK_ID"=>$companyIblockID),false,false,array("PROPERTY_INN","ID"));
+            while ($arCompany = $companies->Fetch()) {
+                $arCompanies[$arCompany["PROPERTY_INN_VALUE"]] = $arCompany["ID"];
+            }
+
+
+            //очищаем данные
+            $data = CIBlockElement::GetList(array(),array("IBLOCK_ID"=>$balanceIblockID),false,false,array("ID"));
+            while($arData = $data->Fetch()) {
+                CIBlockElement::Delete($arData["ID"]); 
+            }    
+
+            $empty = array();
+
+            $handle = fopen($userDataFile, "r");
+            while (!feof($handle)) {
+                $buffer = fgets($handle, 4096);
+                $data = explode(";",$buffer);
+
+                if ($arCompanies[$data[1]] > 0) {
+                    //проверяем существование записи для текущего пользователя и компании
+                    $el = new CIBlockElement;
+
+                    $PROP = array();
+                    $PROP["COMPANY"] = $arCompanies[$data[1]];  
+                    $PROP["TYPE"] = $data[2];     
+                    $PROP["BALANCE"] = $data[3];
+                    $PROP["DATE"] = $data[4];
+
+                    $arLoadProductArray = Array(
+                        "IBLOCK_SECTION_ID" => false,          // элемент лежит в корне раздела
+                        "IBLOCK_ID"      => $balanceIblockID,
+                        "PROPERTY_VALUES"=> $PROP,
+                        "NAME"           => $data[0],                    
+                    );      
+
+
+                    if ($PROP["COMPANY"] > 0)  {
+                        $res = $el->Add($arLoadProductArray);  
+                    }
+
+                }
+
+            }
+            fclose($handle);
+            unlink($userDataFile);
+			logger(lu() . " --- Updated", $_SERVER['DOCUMENT_ROOT'] . "/update_logs/clients.log");
+            //return  array("return" => "user data update complete");
+        }
+		return "tempClientUdate();";
+	}
+	
+	function tempCrossUdate() {
+		CModule::IncludeModule('main');
+		CModule::IncludeModule("iblock");
+		$file_array = file($_SERVER['DOCUMENT_ROOT'] . "/_import/cross_f_www.txt");
+        if (!$file_array) {
+            //echo("Ошибка открытия файла");
+        } else {
+            for ($i = 0; $i < count($file_array); $i++) {
+                $crossStringDelimited = explode(";", $file_array[$i]);
+                $res = CIBlockElement::GetList(Array(), Array("IBLOCK_ID" => 88, "ACTIVE_DATE" => "Y", "ACTIVE" => "Y", "CODE" => $crossStringDelimited[0]), false, Array("nPageSize" => 1), Array("ID", "CODE"));
+                if ($ob = $res -> GetNextElement()) {
+                    $arFields = $ob -> GetFields();
+                }
+                CIBlockElement::SetPropertyValuesEx($arFields['ID'], 88, array("CROSS_NUM" => $crossStringDelimited[1]));
+            }
+            unlink($_SERVER['DOCUMENT_ROOT'] . "/_import/cross_f_www.txt");
+			logger(lu() . " --- Updated", $_SERVER['DOCUMENT_ROOT'] . "/update_logs/cross.log");
+            //return  array("return" => "cross update complete");
+        }   
+		return "tempCrossUdate();";
+	}
+	
+	function tempInputUdate() {
+		CModule::IncludeModule('main');
+		CModule::IncludeModule("iblock");
+		// Проверим на существование файла с данными
+        $root_path = $_SERVER["DOCUMENT_ROOT"]."/_import/input.txt";
+        if(file_exists($root_path)){
+            global $DB;
+            //собираем массив id=>артикул
+            $ids = array();
+            $elements = CIBLockElement::GetList(array(), array("IBLOCK_ID"=>88), false, false ,array("ID","CODE")) ;
+            while($element = $elements->Fetch()) {
+                $ids[$element["ID"]] =  $element["CODE"];
+            }
+            //arshow($ids);
+
+            $resultArray = Array();
+            $f = fopen($root_path, "r");
+            while($str = fgets($f, 1024)){
+                $resultArray[] = explode(";", $str);
+            }
+            fclose($f);
+            @unlink($root_path);
+
+            $data = $resultArray;
+
+            mysql_query("truncate _items");
+            mysql_query("truncate _warehouses");
+
+            $counter = 0;
+            $warehouses = $data[0];
+            foreach($warehouses as $value){
+                $counter++;
+                if($counter > 1){
+                    //mysql_query("insert into `_warehouses` (`name`, `real_id`, `last_update`) values('".$value."', 1, '".lu()."')"); 
+                    $query = "insert into `_warehouses` (`name`, `real_id`, `last_update`) values('".$value."', 1, '".lu()."')";
+                    $DB->query($query);
+                }
+            }
+
+            $counter = 0;
+            foreach($data as $values){
+                $counter++;
+                if($counter > 1){
+                    $vendor = $values[0];
+                    $_counter = 0;
+                    foreach($values as $id => $vndr){
+                        $_counter++;
+                        if($_counter > 1){
+                            $supply_date_1st = explode("[",$vndr);
+                            $supply_date = str_replace("]","",$supply_date_1st[1]);
+                            //mysql_query("insert into `_items` (`vendor`, `id_warehouse`, `count`, `last_update`, `supply_date`) values('".$vendor."', ".$id.", ".intval($vndr).", '".lu()."', '".$supply_date."')");
+                            $query = "insert into `_items` (`vendor`, `id_warehouse`, `count`, `last_update`, `supply_date`) values('".$vendor."', ".$id.", ".intval($vndr).", '".lu()."', '".$supply_date."')";
+                            $DB->query($query);
+                            //обновляем количество на складе в битриксе
+                            $item_ids = array_keys($ids,$vendor);
+                            foreach($item_ids as $item_id) {    //цикл, так как один артикул может встречаться несколько раз
+                                //проверяем, есть ли запись о количестве в БД, если есть - обновляем, если нет - добавляем
+
+                                $check = mysql_query("SELECT * FROM `b_catalog_store_product` WHERE `product_id`=".$item_id." and `store_id`=".$id);
+                                $arRes = mysql_num_rows($check);
+                                //если запись есть - обновляем ее
+                                if (intval($arRes) > 0) {
+                                    $update = mysql_query("update `b_catalog_store_product` set `amount`=".intval($vndr)." where `product_id`=".$item_id." and store_id=".$id);
+                                }
+                                //если нет - добавляем
+                                else {
+                                    $insert =  mysql_query("insert into `b_catalog_store_product` (`amount`, `product_id`, `store_id`) values('".intval($vndr)."', '".$item_id."', '".$id."' ) ");
+                                }                                       
+
+                            }
+                        }
+                    }
+                }
+
+
+            }                       
+			logger(lu() . " --- Updated", $_SERVER['DOCUMENT_ROOT'] . "/update_logs/input.log");
+        }
+		return "tempInputUdate();";
+	}*/
+	
 ?>
