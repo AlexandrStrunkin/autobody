@@ -11,7 +11,7 @@ $APPLICATION->SetTitle("Новости");
         array(
             "USE_PERSONALIZATION" => "Y",
             "ALLOW_ANONYMOUS" => "Y", 
-            "PAGE" => "#SITE_DIR#company/subscr_edit.php",
+            "PAGE" => "#SITE_DIR#personal/subscr_edit.php",
             "SHOW_HIDDEN" => "N",
             "CACHE_TYPE" => "A",
             "CACHE_TIME" => "3600",

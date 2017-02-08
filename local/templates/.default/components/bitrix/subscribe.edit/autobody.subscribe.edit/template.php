@@ -20,14 +20,6 @@ if($arResult["ID"] == 0 && empty($_REQUEST["action"]) || CSubscription::IsAuthor
 	{
 		include("authorization.php");
 	}
-	//show authorization section for new subscription
-	if($arResult["ID"]==0 && !$USER->IsAuthorized())
-	{
-		if($arResult["ALLOW_ANONYMOUS"]=="N" || ($arResult["ALLOW_ANONYMOUS"]=="Y" && $arResult["SHOW_AUTH_LINKS"]=="Y"))
-		{
-			include("authorization_new.php");
-		}
-	}
 	//setting section
 	include("setting.php");
 	//status and unsubscription/activation section
@@ -36,7 +28,7 @@ if($arResult["ID"] == 0 && empty($_REQUEST["action"]) || CSubscription::IsAuthor
 		include("status.php");
 	}
 	?>
-	<p><span class="starrequired">*</span><?echo GetMessage("subscr_req")?></p>
+	<p class="subcriptionRequired"><span class="starrequired">*</span><?echo GetMessage("subscr_req")?></p>
 	<?
 }
 else
