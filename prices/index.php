@@ -1,65 +1,29 @@
 <?
-    require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetPageProperty("description", "✔✔✔  Скачать прайс-лист на всю продукцию компании Форвард");
-    $APPLICATION->SetTitle("Прайс-листы");
-?> 
- 
+$APPLICATION->SetTitle("Прайс-листы");
+?>
 <h1> 
-  <div>
-  <?
-  if(!$USER->IsAuthorized()){
+    <div>
+    <?                              
       $APPLICATION->IncludeComponent(
         "bitrix:subscribe.form", 
         "autoBody_subscribe", 
         array(
             "USE_PERSONALIZATION" => "Y",
-            "PAGE" => "#SITE_DIR#company/subscr.php",
+            "PAGE" => "#SITE_DIR#company/subscr_edit.php",
             "SHOW_HIDDEN" => "N",
+            "ALLOW_ANONYMOUS" => "Y", 
             "CACHE_TYPE" => "A",
             "CACHE_TIME" => "3600",
             "CACHE_NOTES" => "",
             "COMPONENT_TEMPLATE" => "autoBody_subscribe"
         ),
         false
-      ); 
-  }else{
-    $APPLICATION->IncludeComponent("bitrix:subscribe.simple","subscr_edit",Array(
-            "AJAX_MODE" => "N", 
-            "SHOW_HIDDEN" => "Y", 
-            "CACHE_TYPE" => "A", 
-            "CACHE_TIME" => "3600", 
-            "SET_TITLE" => "Y", 
-            "AJAX_OPTION_JUMP" => "N", 
-            "AJAX_OPTION_STYLE" => "Y", 
-            "AJAX_OPTION_HISTORY" => "N" 
-        ),
-        false
-    );
-  } 
-
-
-
-?>
-<?if($USER->IsAdmin()){
-
-}
-?>
-<?/*$APPLICATION->IncludeComponent("bitrix:subscribe.edit","",Array(
-        "AJAX_MODE" => "N", 
-        "SHOW_HIDDEN" => "Y", 
-        "ALLOW_ANONYMOUS" => "Y", 
-        "SHOW_AUTH_LINKS" => "Y", 
-        "CACHE_TYPE" => "A", 
-        "CACHE_TIME" => "3600", 
-        "SET_TITLE" => "Y", 
-        "AJAX_OPTION_JUMP" => "N", 
-        "AJAX_OPTION_STYLE" => "Y", 
-        "AJAX_OPTION_HISTORY" => "N" 
-    ),
-    false
-);*/?>
-      </div>
- </h1>
+      );
+    ?>
+    </div>
+</h1>
  
 <div class="price-page"> 
   <div class="priceHeader"> 

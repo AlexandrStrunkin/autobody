@@ -4953,7 +4953,8 @@ label.custom-radio-wh {
 }
 
 .subscribe-form table {
-	margin-top: 30px;
+    margin-top: 16px;
+    padding-bottom: 20px;
 }
 
 .page-news-detail {

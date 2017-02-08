@@ -1,0 +1,258 @@
+div.subscribe-edit .red {
+	color:red;
+}
+div.subscribe-edit .green {
+	color:green;
+}
+div.subscribe-edit .errorcolor {
+	color:red;
+}
+div.subscribe-edit .successcolor {
+	color:green;
+} 	
+div.subscribe-edit {
+    font-family: 'clear_sansregular'; 
+    font-size: 13px;
+    color: #989898;
+    line-height: 20px;
+}
+
+div.checker span.checked, div.checker span {                                  
+    margin-top: -7px;  
+}
+
+div.subscribe-edit input[type="reset"] {    
+    background-color: #dadada;
+    margin-right: 15px;   
+    margin-top: 5px;                    
+    width: 130px;
+    height: 35px;
+    line-height: 35px;
+    color: #fff;
+    font-size: 12px;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-align: center;
+    border-radius: 3px;
+    font-weight: bold;  
+    border: none;  
+}
+
+div.subscribe-edit input[type="text"] {
+    color: #1aa1c8;
+    height: 38px;                        
+    font-family: 'clear_sansregular'; 
+    font-size: 13px;   
+    line-height: 40px;
+    padding-left: 18px;
+    border: 1px solid #1aa1c8;
+    outline: none;
+    background: white;
+    width: 330px;
+}
+
+div.subscribe-edit input[type="submit"], div.subscribe-edit input[type="submit"]:active {    
+    width: 170px;
+    height: 40px;
+    line-height: 40px;
+    background: #1aa1c8;
+    text-align: center;
+    font-size: 12px;
+    font-family: 'clear_sansregular';
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    color: #fff;
+    margin: 0px;
+    border-radius: 0px;     
+    border: none;
+}
+
+div.subscribe-edit .subcriptionTitle { 
+    font-family: 'clear_sans_mediumregular';
+    color: #303030;
+    font-size: 24px;    
+    padding-bottom: 16px;
+    border-bottom: 1px #000000 solid;      
+}
+
+div.subscribe-edit .subcriptionInputTitle {  
+    font-family: 'clear_sansregular';
+    color: #7f7f7f;
+    font-size: 13px;    
+    padding-bottom: 12px;                
+}
+
+div.subscribe-edit .subcriptionSecondtd { 
+    padding-top: 16px;  
+    padding-left: 30px;           
+}
+
+div.subscribe-edit .subcriptionSecondtdBottom {  
+    padding-top: 16px;  
+    padding-left: 30px;   
+    vertical-align: bottom;    
+}
+
+div.subscribe-edit .subcriptionFirsttd {  
+    padding-top: 16px;  
+    width: 350px;
+}
+
+div.subscribe-edit .subcriptionConfDate { 
+    font-family: 'clear_sansregular'; 
+    font-size: 13px;      
+    border-bottom: 1px #cacaca dotted;
+    height: 50px;
+    line-height: 50px; 
+}                  
+
+div.subscribe-edit .subcriptionConfDateLeft {
+    float:left;                        
+    color: #7f7f7f;                   
+}
+
+div.subscribe-edit .subcriptionConfDateRight {
+    float:right;                
+    color: #000000;          
+}
+
+div.subscribe-edit .subcriptionSendCode {
+    width: 170px;
+    height: 40px;    
+    line-height: 40px;
+    background: #dadada;
+    text-align: center;
+    font-size: 12px;                   
+    font-family: 'clear_sansregular';
+    font-weight: bold;
+    text-transform: uppercase; 
+    color: #fff;   
+    float: left;
+    margin-right: 30px;
+    letter-spacing: 0.025em;
+}
+                          
+div.subscribe-edit .subcriptionConfirmCode {
+    width: 170px;
+    height: 40px;    
+    line-height: 40px;
+    background: #1aa1c8;
+    text-align: center;
+    font-size: 12px;                    
+    font-family: 'clear_sansregular';
+    text-transform: uppercase; 
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    color: #fff;  
+    margin: 0px;      
+    border-radius: 0px;  
+}
+
+div.subscribe-edit .subcriptionConfirmNote {
+    height: 50px;        
+    font-size: 13px;      
+    padding-top: 13px;
+    line-height: 20px;                
+    font-family: 'clear_sansregular';        
+    color: #989898;  
+    margin: 0px;      
+    border-radius: 0px;  
+}
+        
+
+div.subscribe-edit  a{        
+    color: #000;                
+}
+                       
+div.subscribe-edit .subcriptionSendButtonBlock {
+    margin-top: 30px;
+}                      
+
+div.subscribe-edit .subcriptionAuthUserLogin {               
+    color: #d91016;       
+}
+
+div.subscribe-edit .subcriptionRubrics { 
+    
+}
+
+div.subscribe-edit .subcriptionRubrics .subscriptionName { 
+    font-family: 'clear_sansregular'; 
+    font-size: 16px;
+    color: #000;      
+}
+
+div.subscribe-edit label {
+    display: inline-block;
+}
+
+div.subscribe-edit div.checker, div.subscribe-edit div.checker span, div.subscribe-edit div.checker input {
+    width:15px;
+    height:15px;   
+    margin-top: -2px;
+}
+     
+div.subscribe-edit div.checker span.checked {
+    background: url(/images/small-checkbox-on.png) no-repeat 0 0;    
+}
+
+div.subscribe-edit div.checker span {
+    background: url(/images/small-checkbox-off.png) no-repeat 0 0;    
+}
+
+div.subscribe-edit div.checker.hover span.checked {
+    background: url(/images/small-checkbox-on.png) no-repeat 0 0;    
+}
+
+div.subscribe-edit div.checker.hover span {
+    background: url(/images/small-checkbox-off.png) no-repeat 0 0;    
+}
+
+div.subscribe-edit .subcriptionRubricsList {
+    width: 570px;
+    display: inline-table;
+    margin-top: 20px;
+}
+                         
+div.subscribe-edit .subcriptionRubricsTitle {     
+    border-top: 1px #cdcdcd solid;   
+    padding-top: 16px; 
+    margin-top: 20px;   
+}
+                         
+div.subscribe-edit .subcriptionSettingsNote {    
+    padding-top: 24px;
+    line-height: 20px;   
+}
+
+div.subscribe-edit .subcriptionBlack {    
+    color: #000;             
+}            
+                        
+div.subscribe-edit .subcriptionRubrics .subscriptionChange, div.subscribe-edit .subcriptionRubrics .subscriptionChange:active {    
+    float: right;        
+    margin-top: 10px;    
+}          
+                                        
+div.subscribe-edit .subcriptionStatusFirsttd {    
+    text-align: left;  
+    border-bottom: 1px #cdcdcd dotted;
+    padding: 16px 0;
+} 
+                                    
+div.subscribe-edit .subcriptionStatusSecondtd {    
+    text-align: right;  
+    border-bottom: 1px #cdcdcd dotted;  
+    color: #000;
+    padding: 16px 0;
+}    
+
+div.subscribe-edit .errortext{          
+    color: #d91016 !important;      
+}                     
+div.subscribe-edit .subcriptionRequired{          
+    color: #000;   
+    border-bottom: 1px #000 solid;  
+    padding: 12px 0; 
+}  
