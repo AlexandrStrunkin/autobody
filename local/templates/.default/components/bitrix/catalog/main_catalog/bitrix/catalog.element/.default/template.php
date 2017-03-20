@@ -56,11 +56,10 @@
 
 
         //обновление кнопок при добавлении в корзину
-        function status_change() {
-            if (window.MoreThanAllowed != 'Y') {
-                console.log(window.MoreThanAllowed);
+        function status_change() {               
+            if (window.MoreThanAllowed != 'Y') {       
                 $(".inbasket").remove();
-                $(".buts").prepend('<div class="catalog_card_in_basket"><a href="/personal/basket/" title="Перейти в корзину">в корзине</a></div>');
+                $(".buts").prepend('<div class="catalog_card_in_basket"><a href="/personal/basket/" title="Перейти в корзину">в корзине</a></div>'); 
             }                                                                                                                                                     
         }
     </script>
