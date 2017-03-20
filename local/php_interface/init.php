@@ -21,7 +21,7 @@
 	define("CATALOG_IBLOCK_ID", 88);
 	define("HL_BLOCK_DETAILS_ID", 1);
     define("SEARCH_STATISTIC_VIEWS", 100);
-    define("MAX_BASKET_ITEMS", 5); //Максимальное количество позиций в корзине
+    define("MAX_BASKET_ITEMS", 100); //Максимальное количество позиций в корзине
 
     CModule::IncludeModule('sale');
     CModule::IncludeModule('catalog');
