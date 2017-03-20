@@ -426,7 +426,7 @@ function check_delivery_date(id,art){
 
 //добавление в корзину
 function add2basket(){
-    //берем данные из всплывающего окна
+    //берем данные из всплывающего окна     
     var id = $("#idm").val();
     var quantity = $("#qw").val();
     var price = $("#catpricem").html();
@@ -434,30 +434,34 @@ function add2basket(){
         price = $("#item_price_" + id).val();
     }
     //////////////////////
-    //alert(id + " " + quantity + " " + price);
+    //console.log(id + " " + quantity + " " + price);
 
     $.post("/ajax/add2basket.php", { id: id, quantity: quantity, price:price},
-        function(data){
-            if (data) {
-                // alert(data);
-                //перезагружаем малую корзину
-                $.post("/ajax/small_basket.php", {},
-                    function(data){
-                        $("#header_right").html(data);
-                });
-
-                //выводим надпись что товар в корзине и закрываем всплывающее окно
-                var path = "/personal/basket.php";
-                $("#last_cell_"+id).html("<span class='forward_catalog_new_in_b'><a href='/personal/basket.php' title='корзина'>В корзине</a></span>");
-                $(".jqmClose").click();
-
-
+        function(data){                
+            if (data == 'MoreThanAllowed') {     
+                window.MoreThanAllowed = 'Y';   
+                $(".jqmClose").click(); 
+                $(".jqmOverlay_basket").show();
+                $(".jqmbasket_error").show();
+            } else {
+                window.MoreThanAllowed = 'N'; 
+                if (data) {            
+                    //перезагружаем малую корзину
+                    $.post("/ajax/small_basket.php", {},
+                        function(data){
+                            $("#header_right").html(data);
+                    });
+                    //выводим надпись что товар в корзине и закрываем всплывающее окно
+                    var path = "/personal/basket.php";
+                    $("#last_cell_"+id).html("<span class='forward_catalog_new_in_b'><a href='/personal/basket.php' title='корзина'>В корзине</a></span>");
+                    $(".jqmClose").click(); 
+                    status_change();
+                }
+                // $("#dialog").html(data);
             }
-            // $("#dialog").html(data);
     });
-}
-
-
+} 
+  
 //проверяем ниличие товара в массиве сравнения
 function check_compare(id){
     $.post("/ajax/compare.php", { compare_id: id},

@@ -57,8 +57,11 @@
 
         //обновление кнопок при добавлении в корзину
         function status_change() {
-            $(".inbasket").remove();
-            $(".buts").prepend('<div class="catalog_card_in_basket"><a href="/personal/basket/" title="Перейти в корзину">в корзине</a></div>');
+            if (window.MoreThanAllowed != 'Y') {
+                console.log(window.MoreThanAllowed);
+                $(".inbasket").remove();
+                $(".buts").prepend('<div class="catalog_card_in_basket"><a href="/personal/basket/" title="Перейти в корзину">в корзине</a></div>');
+            }                                                                                                                                                     
         }
     </script>
 
@@ -228,7 +231,7 @@
                                     if (in_array($arResult["ID"], $arBasketItemsIDs)) {?>
                                     <div class="catalog_card_in_basket"><a href="/personal/basket/" title="Перейти в корзину">в корзине</a></div>
                                     <?} else {?>
-                                    <a class="inbasket active button" href="javascript:add2basket(); status_change()" >в корзину</a>
+                                    <a class="inbasket active button" href="javascript:add2basket()" >в корзину</a>
                                     <?}?>
                                 <?} else {?>
                                 <div class="catalog_card_no_item">нет в наличии</div>
